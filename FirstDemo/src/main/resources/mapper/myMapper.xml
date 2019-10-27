@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper:根标签，namespace：命名空间，随便写，一般保证命名空间唯一 -->
+<mapper namespace="MyMapper">
+    <!-- statement，内容：sql语句。id：唯一标识，随便写，在同一个命名空间下保持唯一
+       resultType：sql语句查询结果集的封装类型,test1即为数据库中的表
+     -->
+    <select id="selectUser" resultType="Com.easyArch.entity.User">
+      select * from SSHpro.UserInfo where Sno= #{Sno}
+   </select>
+
+    <select id="selectSno" resultType="Com.easyArch.entity.User">
+    select SSHpro.UserInfo.Sno from SSHpro.UserInfo where Sno =#{Sno}
+    </select>
+
+    <select id="selectAdmin" resultType="Com.easyArch.entity.User">
+      select * from SSHpro.admins where username = #{username}
+   </select>
+
+    <select id="findall" resultType="Com.easyArch.entity.User">
+      select * from SSHpro.UserInfo
+   </select>
+
+    <select id="findallcount" resultType="Integer">
+        select COUNT(*) from SSHpro.UserInfo
+    </select>
+
+    <select id="findbysno" resultType="Com.easyArch.entity.User">
+        select * FROM SSHpro.UserInfo where Sno like  concat(concat("%",#{Sno}),"%")
+    </select>
+
+    <select id="findbyAge" resultType="Com.easyArch.entity.User">
+        select * from SSHpro.UserInfo where Sage = #{Sage}
+    </select>
+    <select id="findbyName" resultType="Com.easyArch.entity.User">
+        select * from SSHpro.UserInfo where Sname like  concat(concat("%",#{sname}),"%")
+    </select>
+    <select id="findbyCollage" resultType="Com.easyArch.entity.User">
+        select * from SSHpro.UserInfo where Collage like concat(concat("%",#{collage}),"%")
+    </select>
+    <select id="findbyClass" resultType="Com.easyArch.entity.User">
+        select * from SSHpro.UserInfo where Sclass like concat(concat("%",#{sclass}),"%")
+    </select>
+
+    <select id="findAgeCount" resultType="Integer">
+        select COUNT(*) from SSHpro.UserInfo where Sage = #{age}
+    </select>
+    <select id="findCollageCount" resultType="Integer">
+        select COUNT(*) from SSHpro.UserInfo where Collage like concat(concat("%",#{collage}),"%")
+    </select>
+    <select id="findClassCount" resultType="Integer">
+        select COUNT(*) from SSHpro.UserInfo where Sclass like concat(concat("%",#{sclass}),"%")
+    </select>
+    <select id="findNameCount" resultType="Integer">
+        select COUNT(*) from SSHpro.UserInfo where Sname like  concat(concat("%",#{sname}),"%")
+    </select>
+    <select id="findSnoCount" resultType="Integer">
+        select COUNT(*) from SSHpro.UserInfo where Sno like  concat(concat("%",#{sno}),"%")
+    </select>
+
+    <insert id="addUser" parameterType="Com.easyArch.entity.User" useGeneratedKeys="true">
+        insert into SSHpro.UserInfo(id,Sno,Spwd) values (null,#{Sno},#{Spwd})
+    </insert>
+
+</mapper>

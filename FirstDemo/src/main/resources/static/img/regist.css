@@ -1,0 +1,216 @@
+html,
+body,
+div,
+img,
+span,
+a,
+ul,
+li,
+dl,
+dt,
+dd,
+table,
+tbody,
+tr,
+td,
+h2{
+	margin: 0;
+	padding: 0;
+}
+ul,li{
+	list-style: none;
+}
+body{
+	font-size: 12px;
+}
+a{
+	text-decoration: none;
+	
+}
+body{
+	background: url(bg_1.jpg) no-repeat ;
+	background-size: 100%;
+}
+.reg_user{
+	width: 1000px;
+	margin: 0 auto;
+	
+	}
+#header{
+	width: 800px;
+    position: absolute;
+    top: 100px;
+    left: 36%;
+}
+#header h2{
+	
+	font-size: 31px;
+    color: #240255;
+}
+.reg_content {
+	width: 640px;
+	font-size: 12px;
+	margin: 200px auto;
+}
+
+.reg_content li {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.reg_content .red {
+	color: red;
+}
+
+.input_txt {
+	padding: 0px 8px;
+	font-size: 14px;
+	height: 35px;
+	line-height: 35px;
+	font-family: Arial;
+	font-weight: bold;
+	color: #4c4c4c;
+	letter-spacing: 1px;
+	border: 1px solid #ccc;
+	vertical-align: middle;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 3px;
+	background: url(input_bg.gif) repeat-x 0px 0px;
+	margin-left: 14px;
+	background-color: #CCCCCC;
+}
+
+.current{
+	background: url(a3.gif) no-repeat 0px 0px;
+	font-size: 12px;
+    padding: 0px 15px;
+    margin-left: 10px;
+    position: absolute;
+    left: 364px;
+    top: 10px;
+	height: 13px;
+	display: none;
+}
+.error_tip{
+        background: url(regist_error.png) no-repeat 4px 6px #fff5f5;
+    position: absolute;
+    border: solid 1px #ff3131;
+    padding: 5px 10px;
+    line-height: 1.5;
+    z-index: 1;
+    text-indent: 18px;
+    top: 0px;
+    left: 400px;
+    width: 200px;
+    font-size: 14px;
+}
+
+.pro_tip {
+    background: url(info.png) no-repeat 4px 6px #f9f9f9;
+    position: absolute;
+    border: solid 1px #c9c9c9;
+    padding: 5px 10px;
+    width: 200px;
+    z-index: 1;
+    text-indent: 18px;
+    font-size: 14px;
+    left: 400px;
+    top: 0px;
+	line-height: 1.5;
+}
+.pro_tip,.error_tip{
+	display: none;
+}
+.company{
+	display: none;
+}
+.reg_content li {
+	position: relative;
+	margin-bottom: 42px;
+}
+
+.reg_content li:after {
+	clear: both;
+	height: 0;
+	overflow: hidden;
+	display: block;
+	visibility: hidden;
+	content: ".";
+}
+
+.reg_content li span {
+	white-space: nowrap;
+    float: left;
+    font-size: 18px;
+    line-height: 35px;
+    margin: 0 5px;
+    text-align: right;
+    width: 100px;
+}
+
+.reg_text {
+	margin-left: 105px;
+}
+
+.btn_shouji {
+	width: 65px;
+	height: 23px;
+	border: 0;
+	text-align: center;
+	margin-left: 15px;
+	margin-top: 7px;
+	cursor: pointer;
+	background: url(mbcode.png) no-repeat;
+}
+#code{
+	font-family:Arial,宋体;
+	font-style:italic;
+	color:green;
+	border:0;
+	padding:2px 3px;
+	letter-spacing:3px;
+	font-weight:bolder;
+	width:70px;
+	height: 30px;
+	margin-left: 20px;
+}
+.reg_btn1,.reg_btn2 {
+	/*background: url(../img/button1.gif) no-repeat;*/
+	color: #ff5471;
+	width: 105px;
+	height: 35px;
+	font-size: 20px;
+	border: none;
+	margin: 0px 0 0 130px;
+	line-height: 35px;
+	position: absolute;
+	display: block;
+	cursor: pointer;
+}
+.reg_btn1{
+	color: #fff;
+	display: none;
+}
+
+
+a.blue {
+	color: #39F;
+}
+
+ul:after,
+li:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/* #jhform .reg_content li .J_span {
+	float: none;
+	display: inline-block;
+	width: 7px;
+	font-size: 12px;
+} */
+
