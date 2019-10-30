@@ -1,9 +1,9 @@
 package Com.easyArch.service;
 
 import Com.easyArch.dao.UserDaoImp;
+import Com.easyArch.entity.Admin;
 import Com.easyArch.entity.User;
 import Com.easyArch.util.Page;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -98,10 +98,10 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public User adminLogin(String username, String pwd) {
-        user=userDao.adminlogin(username, pwd);
+    public Admin adminLogin(String username, String pwd) {
+        Admin user=userDao.adminlogin(username, pwd);
         if(user!=null){
-            if(pwd.equals(user.getSpwd())){
+            if(pwd.equals(user.getPassword())){
                 return user;
             }
         }

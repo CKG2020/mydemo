@@ -1,5 +1,6 @@
 package Com.easyArch.service;
 
+import Com.easyArch.entity.Admin;
 import Com.easyArch.entity.User;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public interface UserService {
     User findUserBySno(String sno);
 
     Object login(String username, String pwd);
-    User adminLogin(String username, String pwd);
+    Admin adminLogin(String username, String pwd);
     boolean updateUser(User user);
 
     int findallcount();

@@ -1,6 +1,7 @@
 package Com.easyArch.dao;
 
 
+import Com.easyArch.entity.Admin;
 import Com.easyArch.entity.User;
 import Com.easyArch.util.mybatis;
 import org.apache.ibatis.session.SqlSession;
@@ -68,7 +69,7 @@ public class UserDaoImp implements UserDAO{
     }
 
     @Override
-    public User adminlogin(String username, String pwd) {
+    public Admin adminlogin(String username, String pwd) {
         return sqlSession.selectOne("MyMapper.selectAdmin",username);
     }
 

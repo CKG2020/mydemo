@@ -15,7 +15,7 @@
     select SSHpro.UserInfo.Sno from SSHpro.UserInfo where Sno =#{Sno}
     </select>
 
-    <select id="selectAdmin" resultType="Com.easyArch.entity.User">
+    <select id="selectAdmin" resultType="Com.easyArch.entity.Admin">
       select * from SSHpro.admins where username = #{username}
    </select>
 
@@ -62,6 +62,21 @@
 
     <insert id="addUser" parameterType="Com.easyArch.entity.User" useGeneratedKeys="true">
         insert into SSHpro.UserInfo(id,Sno,Spwd) values (null,#{Sno},#{Spwd})
+    </insert>
+
+    <update id="updateUser" parameterType="Com.easyArch.entity.User" >
+        update SSHpro.UserInfo set
+        Sname=#{sname},Sage=#{sage},
+        Scall=#{scall},Collage=#{collage},
+        Major=#{major},Sclass=#{sclass}
+        where Sno=#{sno}
+    </update>
+
+    <select id="showQuestion" parameterType="Com.easyArch.entity.Question">
+        select * from SSHpro.Questions
+    </select>
+    <insert id="addQuestion" parameterType="Com.easyArch.entity.Question" useGeneratedKeys="true">
+        insert into SSHpro.Questions(id,A1,A2,A3,A4) values (null,#{a1},#{a2},#{a3},#{a4})
     </insert>
 
 </mapper>

@@ -1,5 +1,6 @@
 package Com.easyArch.dao;
 
+import Com.easyArch.entity.Admin;
 import Com.easyArch.entity.User;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public interface UserDAO {
     List<User> findUsersByCollage(String collage);
     List<User> findUsersByClass(String sclass);
     User login(String username, String pwd);
-    User adminlogin(String username, String pwd);
+    Admin adminlogin(String username, String pwd);
     boolean updateUser(User user);
 
     int findSnoCount(String sno);
