@@ -33,11 +33,6 @@ public class UserDaoImp implements UserDAO{
     }
 
     @Override
-    public boolean addFriend(String sno1, String sno2) {
-        return false;
-    }
-
-    @Override
     public List<User> findUsersBySno(String Sno) {
         return sqlSession.selectList("UserMapper.findbysno",Sno);
     }

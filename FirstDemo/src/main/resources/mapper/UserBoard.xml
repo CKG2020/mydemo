@@ -19,15 +19,22 @@
         IsFinishedQuestion=#{isFinished} where Sno=#{sno}
     </update>
 
-    <select id="myFriends" resultType="java.lang.String">
-        select SSHpro.pyq.Sno2 from SSHpro.pyq where Sno1=#{sno}
-    </select>
+    <select id="myFriends" resultType="java.util.Map" parameterType="java.lang.String">
+        select SSHpro.UserInfo.Sname,SSHpro.UserInfo.Sno
+        from SSHpro.UserInfo where Sno in (select SSHpro.pyq.Sno2 from SSHpro.pyq where Sno1=#{sno})
+        </select>
+
     <select id="countFriends" resultType="Integer">
         select COUNT(*) from SSHpro.pyq where Sno1=#{sno}
     </select>
     <insert id="addFriend" useGeneratedKeys="true">
         insert into SSHpro.pyq(Sno1,Sno2) values (null,#{sno1},#{sno2})
     </insert>
+
+    <delete id="delFriend">
+        delete from SSHpro.pyq where Sno1=#{sno1} and Sno2=#{sno2};
+        delete from SSHpro.pyq where Sno2=#{sno1} and Sno1=#{sno2}
+    </delete>
 
 
 </mapper>

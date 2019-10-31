@@ -68,7 +68,7 @@
         Major=#{major},Sclass=#{sclass}
         where Sno=#{sno}
     </update>
-    <delete id="delUser">
+    <delete id="delUser" >
         delete from SSHpro.UserInfo where Sno=#{sno};
         delete from SSHpro.pyq where Sno1=#{sno} and Sno2=#{sno};
         delete from SSHpro.UserBoard where Sno=#{sno};
