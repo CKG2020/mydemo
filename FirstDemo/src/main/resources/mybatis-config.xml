@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE configuration
-        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<!-- 根标签 -->
+<!DOCTYPE configuration [
+        <!ELEMENT configuration (properties|environments|mappers)*>
+        <!ELEMENT properties (property)*>
+        <!ELEMENT property (#PCDATA)>
+        <!ATTLIST property
+                name CDATA #REQUIRED
+                value CDATA #REQUIRED>
+        <!ELEMENT environments (environment)*>
+        <!ATTLIST environments
+                default CDATA #REQUIRED>
+        <!ELEMENT environment (transactionManager|dataSource)*>
+        <!ATTLIST environment
+                id CDATA #REQUIRED>
+        <!ELEMENT transactionManager (#PCDATA)>
+        <!ATTLIST transactionManager
+                type CDATA #REQUIRED>
+        <!ELEMENT dataSource (property)*>
+        <!ATTLIST dataSource
+                type CDATA #REQUIRED>
+        <!ELEMENT mappers (mapper)*>
+        <!ELEMENT mapper (#PCDATA)>
+        <!ATTLIST mapper
+                resource CDATA #REQUIRED>
+        ]>
 <configuration>
     <properties>
         <property name="driver" value="com.mysql.jdbc.Driver"/>
@@ -38,7 +58,8 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mapper/myMapper.xml"/>
-        <mapper resource="mapper/userMapper.xml"/>
+        <mapper resource="mapper/QuestionMapper.xml"/>
+        <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/UserBoard.xml"/>
     </mappers>
 </configuration>

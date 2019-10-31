@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper:根标签，namespace：命名空间，随便写，一般保证命名空间唯一 -->
+<mapper namespace="UserBoard">
+
+    <insert id="Init" parameterType="Com.easyArch.entity.UserBoard">
+        insert into SSHpro.UserBoard(Sno, Birth, Board, Cares) values (#{sno},#{birth},#{board},#{cares})
+    </insert>
+
+    <update id="submitScores" parameterType="Com.easyArch.entity.UserBoard">
+        update SSHpro.UserBoard set
+        Scores=#{scores} where Sno=#{sno}
+    </update>
+
+    <update id="finishQuestion" parameterType="Com.easyArch.entity.UserBoard">
+        update SSHpro.UserBoard set
+        IsFinishedQuestion=#{isFinished} where Sno=#{sno}
+    </update>
+
+    <select id="myFriends" resultType="java.lang.String">
+        select SSHpro.pyq.Sno2 from SSHpro.pyq where Sno1=#{sno}
+    </select>
+    <select id="countFriends" resultType="Integer">
+        select COUNT(*) from SSHpro.pyq where Sno1=#{sno}
+    </select>
+    <insert id="addFriend" useGeneratedKeys="true">
+        insert into SSHpro.pyq(Sno1,Sno2) values (null,#{sno1},#{sno2})
+    </insert>
+
+
+</mapper>

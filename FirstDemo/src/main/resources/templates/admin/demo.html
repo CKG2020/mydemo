@@ -8,7 +8,7 @@
     <script type="text/javascript" src="http://unpkg.com/view-design/dist/iview.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
-<body onload="allcount();findall()">
+<body onload="allcount()">
 <div id="app">
     <div class="layout">
         <layout :style="{minHeight: '100vh'}">
@@ -100,10 +100,6 @@
         {
             title: "Sclass",
             key: "sclass"
-        },
-        {
-            title: "friends",
-            key: 'friends'
         }
     ];
 
@@ -217,12 +213,6 @@
             success(res){
                 setPage(res);
             }
-        })
-    }
-    function findall() {
-        $.ajax({
-            url:'/admin/findall',
-            type:'get'
         })
     }
     function setPage(all) {

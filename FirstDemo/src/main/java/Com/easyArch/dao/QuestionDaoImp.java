@@ -15,11 +15,11 @@ public class QuestionDaoImp implements QuestionDao{
 
     @Override
     public List<Question> QUESTION_LIST() {
-        return sqlSession.selectList("myMapper.showQuestion");
+        return sqlSession.selectList("QuestionMapper.showQuestion");
     }
 
     @Override
     public int addQuestion(Question question) {
-        return sqlSession.insert("myMapper.addQuestion",question);
+        return sqlSession.insert("QuestionMapper.addQuestion",question);
     }
 }

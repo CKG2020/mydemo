@@ -24,14 +24,10 @@ public class admin {
         return userService.findallcount();
     }
 
-    @RequestMapping("findall")
-    public void findall(){
-        userService.findAll();
-    }
-
     @RequestMapping("findpage")
     @ResponseBody
     public List<User> findpage(@RequestParam String curr, String pageSize){
+        userService.findAll();
         return userService.findpage(Integer.valueOf(curr),Integer.valueOf(pageSize));
     }
 

@@ -11,7 +11,7 @@ public interface UserDAO {
     boolean deleteUser(int id);
 
     List<User> findAll();//管理员查所有成员 简单分页
-    boolean addFriend(int id1, int id2);
+    boolean addFriend(String sno1, String sno2);
 
     List<User> findUsersBySno(String sno);
     List<User> findUsersByName(String name);

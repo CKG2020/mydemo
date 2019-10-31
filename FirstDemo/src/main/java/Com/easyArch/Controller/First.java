@@ -87,12 +87,14 @@ public class First {
 
     }
 
-//    @RequestMapping(value = "addUser" ,method = RequestMethod.POST)
-//    public String submit(@RequestParam String Sno, String Spwd){
-//        user=userService.addUser(Sno,Spwd);
-//        System.out.println("user"+user);
-//        return "stu/MoreInfo";
-//    }
+    @RequestMapping(value = "addUser" ,method = RequestMethod.POST)
+    public String submit(@RequestParam String Sno, String Spwd){
+        User user=userService.addUser(Sno,Spwd);
+        HttpSession session = request.getSession();
+        session.setAttribute("user",user);
+        System.out.println("user"+user);
+        return "stu/MoreInfo";
+    }
 
 
 

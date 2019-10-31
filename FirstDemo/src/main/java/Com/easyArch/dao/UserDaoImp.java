@@ -17,7 +17,7 @@ public class UserDaoImp implements UserDAO{
 
     @Override
     public int addUser(User user) {
-        int s=sqlSession.insert("MyMapper.addUser",user);
+        int s=sqlSession.insert("UserMapper.addUser",user);
         sqlSession.commit();
         return s;
     }
@@ -29,48 +29,48 @@ public class UserDaoImp implements UserDAO{
 
     @Override
     public List<User> findAll() {
-        return sqlSession.selectList("MyMapper.findall");
+        return sqlSession.selectList("UserMapper.findall");
     }
 
     @Override
-    public boolean addFriend(int id1, int id2) {
+    public boolean addFriend(String sno1, String sno2) {
         return false;
     }
 
     @Override
     public List<User> findUsersBySno(String Sno) {
-        return sqlSession.selectList("MyMapper.findbysno",Sno);
+        return sqlSession.selectList("UserMapper.findbysno",Sno);
     }
 
     @Override
     public List<User> findUsersByName(String name) {
-        return sqlSession.selectList("MyMapper.findbyName",name);
+        return sqlSession.selectList("UserMapper.findbyName",name);
     }
 
     @Override
     public List<User> findUsersByAge(int age) {
-        return sqlSession.selectList("MyMapper.findbyAge",age);
+        return sqlSession.selectList("UserMapper.findbyAge",age);
     }
 
     @Override
     public List<User> findUsersByCollage(String collage) {
-        return sqlSession.selectList("MyMapper.findbyCollage",collage);
+        return sqlSession.selectList("UserMapper.findbyCollage",collage);
     }
 
     @Override
     public List<User> findUsersByClass(String sclass) {
-        return sqlSession.selectList("MyMapper.findbyClass",sclass);
+        return sqlSession.selectList("UserMapper.findbyClass",sclass);
     }
 
 
     @Override
     public User login(String Sno, String pwd) {
-        return sqlSession.selectOne("MyMapper.selectUser",Sno);
+        return sqlSession.selectOne("UserMapper.selectUser",Sno);
     }
 
     @Override
     public Admin adminlogin(String username, String pwd) {
-        return sqlSession.selectOne("MyMapper.selectAdmin",username);
+        return sqlSession.selectOne("UserMapper.selectAdmin",username);
     }
 
     @Override
@@ -80,37 +80,37 @@ public class UserDaoImp implements UserDAO{
 
     @Override
     public int findSnoCount(String sno) {
-        return sqlSession.selectOne("MyMapper.findSnoCount",sno);
+        return sqlSession.selectOne("UserMapper.findSnoCount",sno);
     }
 
     @Override
     public int findallcount(){
-        return sqlSession.selectOne("MyMapper.findallcount");
+        return sqlSession.selectOne("UserMapper.findallcount");
     }
 
     @Override
     public int findAgeCount(int age){
-        return sqlSession.selectOne("MyMapper.findAgeCount",age);
+        return sqlSession.selectOne("UserMapper.findAgeCount",age);
     }
 
     @Override
     public int findNameCount(String name) {
-        return sqlSession.selectOne("MyMapper.findNameCount",name);
+        return sqlSession.selectOne("UserMapper.findNameCount",name);
     }
 
     @Override
     public int findCollageCount(String collage) {
-        return sqlSession.selectOne("MyMapper.findCollageCount",collage);
+        return sqlSession.selectOne("UserMapper.findCollageCount",collage);
     }
 
     @Override
     public int findClassCount(String sclass) {
-        return sqlSession.selectOne("MyMapper.findClassCount",sclass);
+        return sqlSession.selectOne("UserMapper.findClassCount",sclass);
     }
 
     @Override
     public User findUserBySno(String sno) {
-        return sqlSession.selectOne("MyMapper.selectSno",sno);
+        return sqlSession.selectOne("UserMapper.selectSno",sno);
     }
     //实现对数据库操作的接口中的方法
 }
