@@ -3,18 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="../../static/img/regist.css"/>
     <link rel="stylesheet" type="text/css" href="http://unpkg.com/view-design/dist/styles/iview.css">
     <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
     <script type="text/javascript" src="http://unpkg.com/view-design/dist/iview.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../static/img/regist.css"/>
-    <script src="../../static/js/jquery-1.12.2.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../../static/js/regist_test.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../../static/js/code.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
-<script src="//unpkg.com/vue/dist/vue.js"></script>
-<script src="//unpkg.com/iview/dist/iview.min.js"></script>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
 <div class="reg_user">
 <div id="header">
     <h2>人际关系追踪系统</h2>
@@ -103,12 +98,13 @@
                 this.$refs[name].resetFields();
             },
             f() {
-                let sno = this.formCustom.sno;
+                let Sno = this.formCustom.sno;
+                alert(Sno);
                 $.ajax({
                     url:'isused',
-                    type:'get',
+                    type:'post',
                     data:{
-                        "Sno":sno
+                        "Sno":Sno
                     },
                     success(res){
                         alert(res);
@@ -127,7 +123,8 @@
                         "Sno":this.formCustom.sno,
                         "Spwd":this.formCustom.passwd
                     }
-                })
+                });
+                window.location.href="/stu/MoreInfo";
             }
         }
     });

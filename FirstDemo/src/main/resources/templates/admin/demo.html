@@ -19,9 +19,11 @@
                             用户管理
                             <icon type="ios-paper" />
                         </template>
-                        <menu-item name="1-1">新增用户</menu-item>
-                        <menu-item name="1-2">用户查询</menu-item>
-                        <menu-item name="1-3">删除用户</menu-item>
+                        <menu-item name="1-1">新增用户></menu-item>
+                        <menu-item name="1-2">用户查询></menu-item>
+                        <menu-item name="1-3">
+                        <span onclick="r()">删除用户
+                        </span>></menu-item>
                     </submenu>
                     <submenu name="2">
                         <template slot="title">
@@ -103,12 +105,15 @@
         }
     ];
 
+    function r() {
+        window.location.href='/admin/deleteuser'
+    }
     var Page = new Vue({
         el:'#app',
         data () {
             return {
                 isCollapsed: false,
-                columns1:[],
+                columns1:cols,
                 data1:[],
                 dataCount:0,
                 pageSize:8,
@@ -140,7 +145,7 @@
                     success(res) {
                         let msg = JSON.stringify(res);
                         msg = $.parseJSON(msg);
-                        setTable(cols, msg);
+                        setTable(msg);
                     }
                 })
             },
@@ -219,8 +224,8 @@
         Page.dataCount=all;
         Page.changepage(1);
     }
-    function setTable(columns,dat) {
-        Page.columns1=columns;
+    function setTable(dat) {
+        // Page.columns1=columns;
         Page.data1=dat;
     }
     function countSage() {

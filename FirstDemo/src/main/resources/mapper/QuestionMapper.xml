@@ -5,12 +5,8 @@
 <!-- mapper:根标签，namespace：命名空间，随便写，一般保证命名空间唯一 -->
 <mapper namespace="QuestionMapper">
 
-    <select id="showQuestion" parameterType="Com.easyArch.entity.Question">
-        select * from SSHpro.Questions
+
+    <select id="loadAnswers" resultType="java.lang.String" >
+        select SSHpro.Questions.PageUrl from SSHpro.Questions
     </select>
-    <insert id="addQuestion" parameterType="Com.easyArch.entity.Question" useGeneratedKeys="true">
-        insert into SSHpro.Questions(id,A1,A2,A3,A4) values (null,#{a1},#{a2},#{a3},#{a4})
-    </insert>
-
-
 </mapper>

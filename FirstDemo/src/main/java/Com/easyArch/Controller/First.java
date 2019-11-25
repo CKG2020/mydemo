@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 @EnableRedisHttpSession
 @RequestMapping("/")
 @Controller
+
 public class First {
 
     @Autowired
@@ -42,9 +43,13 @@ public class First {
         return user;
     }//用户登录
 
-    @RequestMapping("suc")//登录成功跳转页面
+    @RequestMapping("stu")//登录成功跳转页面
     public String suc(){
-        return "stu/MoreInfo";
+        if(request.getSession().getAttribute("user")==null){
+            return "First/Login";
+        }else{
+            return "stu/MoreInfo";
+        }
     }
 
     //跳转后再把user查出来
@@ -77,7 +82,8 @@ public class First {
 
     @RequestMapping("isused")
     @ResponseBody
-    public Object used(@RequestParam String Sno){
+    public String used(@RequestParam String Sno){
+        System.out.println(Sno);
         Object obj = userService.findUserBySno(Sno);
         if(obj!=null){
             return "此用户已存在!";
@@ -95,6 +101,16 @@ public class First {
         System.out.println("user"+user);
         return "stu/MoreInfo";
     }
+
+    @RequestMapping("logout")
+    public String logout(){
+        HttpSession session = request.getSession();
+        session.removeAttribute("user");
+        request.getSession().invalidate();
+        return "First/Login";
+    }
+
+
 
 
 

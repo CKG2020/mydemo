@@ -10,25 +10,21 @@ import java.io.InputStream;
 
 public class mybatis {
 
-    private static String resource = "mybatis-config.xml";
-    private static SqlSessionFactory sqlSessionFactory;
-    private static SqlSession sqlSession;
-
     public static SqlSession Connection() {
 
         // 读取配置文件
         InputStream inputStream = null;
         try {
+            String resource = "mybatis-config.xml";
             inputStream = Resources.getResourceAsStream(resource);
         } catch (IOException e) {
             e.printStackTrace();
         }
         // 构建sqlSessionFactory
-        sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         // 获取sqlSession
-        sqlSession = sqlSessionFactory.openSession();
 
-        return sqlSession;
+        return sqlSessionFactory.openSession();
     }
 
 }

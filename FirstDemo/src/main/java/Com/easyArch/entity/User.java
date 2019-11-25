@@ -19,5 +19,7 @@ public class User implements Serializable {
     private String Collage;
     private String Major;
     private String Sclass;
+    private String Birth;
+    private boolean Gender;
 
 }

@@ -23,8 +23,14 @@ public class UserDaoImp implements UserDAO{
     }
 
     @Override
-    public boolean deleteUser(int id) {
-        return false;
+    public boolean deleteUser(String sno) {
+//
+        sqlSession.delete("UserMapper.delpyq",sno);
+        sqlSession.delete("UserMapper.delb",sno);
+        sqlSession.delete("UserMapper.delUser", sno);
+        sqlSession.commit();
+        return true;
+
     }
 
     @Override
@@ -55,6 +61,11 @@ public class UserDaoImp implements UserDAO{
     @Override
     public List<User> findUsersByClass(String sclass) {
         return sqlSession.selectList("UserMapper.findbyClass",sclass);
+    }
+
+    @Override
+    public String findUserNameBySno(String sno) {
+        return sqlSession.selectOne("UserMapper.findUserNameBySno",sno);
     }
 
 
@@ -105,7 +116,7 @@ public class UserDaoImp implements UserDAO{
 
     @Override
     public User findUserBySno(String sno) {
-        return sqlSession.selectOne("UserMapper.selectSno",sno);
+        return sqlSession.selectOne("UserMapper.selectUser",sno);
     }
     //实现对数据库操作的接口中的方法
 }

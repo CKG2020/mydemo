@@ -2,10 +2,11 @@ package Com.easyArch.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
-public class UserBoard {
+public class UserBoard implements Serializable {
     private boolean IsFinishedQuestion ;
     private int Scores;
     private String Sno;

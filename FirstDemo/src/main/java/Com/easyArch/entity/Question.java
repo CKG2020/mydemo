@@ -3,11 +3,15 @@ package Com.easyArch.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+import java.util.*;
+
 @Data
-public class Question {
+public class Question implements Serializable {
+
+    private int QuestionID;//题号
     private String Title;
-    private String A1;
-    private String A2;
-    private String A3;
-    private String A4;
+    private List<Answer> answers;
+    private boolean isFinished = false;
+
 }

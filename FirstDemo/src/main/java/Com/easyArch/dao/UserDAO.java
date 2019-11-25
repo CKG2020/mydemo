@@ -8,7 +8,7 @@ import java.util.List;
 public interface UserDAO {
     //对数据库操作的接口
     int addUser(User user);//注册
-    boolean deleteUser(int id);
+    boolean deleteUser(String id);
 
     List<User> findAll();//管理员查所有成员 简单分页
 
@@ -17,6 +17,10 @@ public interface UserDAO {
     List<User> findUsersByAge(int age);
     List<User> findUsersByCollage(String collage);
     List<User> findUsersByClass(String sclass);
+
+    String findUserNameBySno(String sno);
+
+
     User login(String username, String pwd);
     Admin adminlogin(String username, String pwd);
     boolean updateUser(User user);

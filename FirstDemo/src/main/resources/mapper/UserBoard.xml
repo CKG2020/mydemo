@@ -6,7 +6,7 @@
 <mapper namespace="UserBoard">
 
     <insert id="Init" parameterType="Com.easyArch.entity.UserBoard">
-        insert into SSHpro.UserBoard(Sno, Birth, Board, Cares) values (#{sno},#{birth},#{board},#{cares})
+        insert into SSHpro.UserBoard(Sno, Birth, Board) values (#{sno},#{birth},#{board})
     </insert>
 
     <update id="submitScores" parameterType="Com.easyArch.entity.UserBoard">

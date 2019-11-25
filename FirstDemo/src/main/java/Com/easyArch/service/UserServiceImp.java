@@ -36,8 +36,8 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public boolean delUser(int id) {
-        return userDao.deleteUser(id);
+    public boolean delUser(String sno) {
+        return userDao.deleteUser(sno);
     }
 
     @Override

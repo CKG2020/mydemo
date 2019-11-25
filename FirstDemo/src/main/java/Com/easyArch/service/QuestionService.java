@@ -4,11 +4,28 @@ import Com.easyArch.entity.Question;
 
 import java.util.List;
 
-public interface QuestionService {
+public interface QuestionService  {
 
-    List<Question> showQuestion();
+    List<Question> list = null;
 
-    int addQuestion(String title,String a1,String a2,String a3,String a4);
+    List<Question> showQuestion(int curr,int pageSzie);
+
+    List<Question> changeQuestion();//分题
+
+    List getUserAnswers(List<Object> answers);
+    //将用户答案整合一下
+    
+    int addScores();
+
+    void RecordUserAnswers(String ans);
+
+    String RetrunResult(int scores);
+
+
+
+
+
+
 
 
 

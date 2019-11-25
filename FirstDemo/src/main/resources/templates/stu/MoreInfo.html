@@ -15,11 +15,36 @@
     <div class="layout">
         <layout :style="{minHeight: '100vh'}">
             <sider collapsible :collapsed-width="78" v-model="isCollapsed">
-                <i-menu theme="dark" width="auto" :class="menuitemClasses">
-                    <menu-item name="1-1">
-                        <icon type="ios-navigate"></icon>
-                        <span>完善信息</span>
-                    </menu-item>
+                <i-menu theme="dark" width="auto" :class="menuitemClasses" open-names="['1','2']">
+                    <submenu name="1">
+                        <template slot="title">
+                            个人中心
+                            <icon type="ios-paper"/>
+                        </template>
+                        <menu-item name="1-1">完善信息</menu-item>
+                        <menu-item name="1-2">
+                            <span onclick="Board()">
+                                留言板
+                            </span></menu-item>
+                        <menu-item name="1-3">
+                            <span onclick="Questions()">
+                                调查问卷
+                            </span></menu-item>
+                        <menu-item name="1-4">
+                            <span onclick="Analyzing()">
+                                分析结果
+                            </span></menu-item>
+                    </submenu>
+                    <submenu name="2">
+                        <template slot="title">聊天室
+                            <icon type="ios-people" />
+                        </template>
+                        <menu-item name="2-1">
+                            <span onclick="FriendList()">好友列表</span></menu-item>
+                        <menu-item name="2-2">
+                            <span onclick="chat()">聊天室</span>
+                            </menu-item>
+                    </submenu>
                 </i-menu>
             </sider>
             <layout>
@@ -27,15 +52,70 @@
                     <div style="float: left;margin-left: 70%">
                         <h1>欢迎您 ! &nbsp;&nbsp; {{message}}</h1>
                     </div>
-                        <a href="/Login" style="margin-left: 50px"> 注销</a>
-
+                        <a href="/logout" style="margin-left: 50px"> 注销</a>
                 </i-header>
                 <i-content :style="{padding: '0 16px 16px'}">
                     <breadcrumb :style="{margin: '16px 0'}">
                         {{info}}
                     </breadcrumb>
                     <card>
-                        <div style="height: 600px">Content</div>
+                        <div style="height: 600px;width: 500px;float: left">
+                            <div style="margin-top: 3%;margin-left: 7%;width: 400px">
+                                <i-form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80":disabled="isdisabledFn">
+                                    <form-item label="姓名" prop="name">
+                                        <i-input v-model="formValidate.name" placeholder="Enter your name" style="width: 200px"></i-input>
+                                    </form-item>
+                                    <form-item label="年龄" prop="age">
+                                        <i-input v-model="formValidate.age" placeholder="Enter your age" style="width: 200px"></i-input>
+                                    </form-item>
+                                    <form-item label="电话" prop="call">
+                                        <i-input v-model="formValidate.call" placeholder="Enter your phone-number" style="width: 200px"></i-input>
+                                    </form-item>
+                                    <form-item label="学院" prop="collage" style="width: 300px" >
+                                        <i-select v-model="formValidate.collage" placeholder="Select your collage">
+                                            <i-option value="信息技术工程学院">信息技术工程学院</i-option>
+                                            <i-option value="艺术学院">艺术学院</i-option>
+                                            <i-option value="理学院">理学院</i-option>
+                                        </i-select>
+                                    </form-item>
+                                    <form-item label="专业" prop="major" style="width: 300px">
+                                        <i-select v-model="formValidate.major" placeholder="Select your major">
+                                            <i-option value="软件工程">软件工程</i-option>
+                                            <i-option value="计算机科学与技术">计算机科学与技术</i-option>
+                                            <i-option value="数字媒体">数字媒体</i-option>
+                                        </i-select>
+                                    </form-item>
+                                    <form-item label="班级" prop="sclass" style="width: 300px">
+                                        <i-select v-model="formValidate.sclass" placeholder="Select your sclass">
+                                            <i-option value="1701">1701</i-option>
+                                            <i-option value="1702">1702</i-option>
+                                        </i-select>
+                                    </form-item>
+                                    <form-item label="生日" >
+                                        <row>
+                                            <i-col span="11">
+                                                <form-item prop="date">
+                                                    <date-picker type="date" placeholder="Select date" v-model="formValidate.date"></date-picker>
+                                                </form-item>
+                                            </i-col>
+                                        </row>
+                                    </form-item>
+                                    <form-item label="性别" prop="gender">
+                                        <radio-group v-model="formValidate.gender">
+                                            <radio label="male">男</radio>
+                                            <radio label="female">女</radio>
+                                        </radio-group>
+                                    </form-item>
+                                    <form-item >
+                                        <i-button type="primary" @click="handleSubmit('formValidate')">Submit</i-button>
+                                        <i-button @click="handleReset('formValidate')" style="margin-left: 8px">Reset</i-button>
+                                    </form-item>
+                                </i-form>
+                            </div>
+                        </div>
+                        <div style="margin-left: 65%;margin-top: 25%">
+                            <img src="/static/pic/cat.png" style="height: 250px;width: 250px">
+                        </div>
                     </card>
                 </i-content>
             </layout>
@@ -44,6 +124,9 @@
 </div>
 
 <script>
+
+    var uu;
+
     function f(){
         $.ajax({
             url:'/search',
@@ -51,6 +134,7 @@
             success(res) {
                 let msg=JSON.stringify(res);
                 msg=$.parseJSON(msg);
+                uu=msg;
                 if(res.sname===null){
                     active("新用户!","请完善你的个人信息");
                 }else{
@@ -59,38 +143,128 @@
             }
         })
     }
-
-    function active(res,ss) {
-        let ap = new Vue({
-            el:'#app',
-            data(){
-                return{
-                    message:res,
-                    info:ss,
-                    isCollapsed: false,
-                    formItem: {
-                        input: '',
-                        select: '',
-                        radio: 'male',
-                        checkbox: [],
-                        switch: true,
-                        date: '',
-                        time: '',
-                        slider: [20, 50],
-                        textarea: ''
-                    }
+    var mVue = new Vue({
+        el:'#app',
+        data(){
+            const validatePhone = (rule, value, callback) => {
+                if (!value) {
+                    return callback(new Error('手机号不能为空'));
+                } else if (!/^1[34578]\d{9}$/.test(value)) {
+                    callback('手机号格式不正确');
+                } else {
+                    callback();
                 }
-            },
-            computed: {
-                menuitemClasses: function () {
-                    return [
-                        'menu-item',
-                        this.isCollapsed ? 'collapsed-menu' : ''
-                    ]
+            };
+            return{
+                message:'',
+                info:'',
+                isCollapsed: false,
+                choose:'',
+                isdisabled:true,
+                formValidate: {
+                    name: '',
+                    age:'',
+                    call: '',
+                    collage: '',
+                    major:'',
+                    sclass:'',
+                    gender: '',
+                    date: '',
+                },
+                ruleValidate: {
+                    name: [
+                        { required: true, message: '姓名不能为空', trigger: 'blur' }
+                    ],
+                    age: [
+                        { required: true, message: '年龄不能为空', trigger: 'blur' }
+                    ],
+                    call: [
+                        { required: true, validator:validatePhone, trigger: 'blur' },
+                    ],
+                    collage: [
+                        { required: true, message: '请选择学院', trigger: 'change' }
+                    ],
+                    major: [
+                        { required: true, message: '请选择专业', trigger: 'change' }
+                    ],
+                    sclass: [
+                        { required: true, message: '请选择班级', trigger: 'change' }
+                    ],
+                    gender: [
+                        { required: true, message: '请选择性别', trigger: 'change' }
+                    ],
+                    date: [
+                        { required: true, type: 'date', message: '请选择日期', trigger: 'change' }
+                    ],
                 }
             }
-        })
+        },
+        computed: {
+            menuitemClasses: function () {
+                return [
+                    'menu-item',
+                    this.isCollapsed ? 'collapsed-menu' : ''
+                ]
+            },
+            isdisabledFn(){
+                if(uu.sname!=null){
+                    this.formValidate.name=uu.sname;
+                    this.formValidate.age=uu.sage;
+                    this.formValidate.call=uu.scall;
+                    this.formValidate.collage=uu.collage;
+                    this.formValidate.major=uu.major;
+                    this.formValidate.sclass=uu.sclass;
+
+                    return this.isdisabled=true;
+                }else{
+                    return this.isdisabled=false;
+                }
+            }
+        },
+        methods:{
+            change(){
+                mVue.choose="xxx";
+            },
+            handleSubmit (name) {
+                this.$refs[name].validate((valid) => {
+                    if (valid) {
+                        this.$Message.success('Success!');
+                    } else {
+                        this.$Message.error('Fail!');
+                    }
+                })
+            },
+            handleReset (name) {
+                this.$refs[name].resetFields();
+            }
+        }
+    });
+
+    function active(res,ss) {
+        mVue.message=res;
+        mVue.info=ss;
     }
+    function chat() {
+        mVue.choose="chat";
+        // window.location.href="/stu/chat";
+    }
+    function Questions() {
+        mVue.choose="Questions";
+        window.location.href="/stu/Questions/";
+    }
+    function Analyzing() {
+        mVue.choose="Analyzing";
+        // window.location.href="/stu/Analyzing/";
+    }
+    function Board() {
+        mVue.choose="Board";
+        // window.location.href="/stu/Board/";
+    }
+    function FriendList() {
+        mVue.choose="FriendList";
+        // window.location.href="/stu/FriendList/";
+    }
+
 </script>
 </body>
 </html>

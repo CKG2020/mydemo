@@ -11,7 +11,7 @@ public interface UserService {
 
     User addUser(String sno, String pwd);
 
-    boolean delUser(int id);
+    boolean delUser(String sno);
     List<User> findAll();
     List<User> findUsersBySno(String sno);
     List<User> findUsersByName(String name);

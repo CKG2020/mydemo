@@ -1,10 +1,13 @@
 package Com.easyArch.dao;
 
 import Com.easyArch.entity.Question;
+import Com.easyArch.util.LoadTxt;
 import Com.easyArch.util.mybatis;
 import org.apache.ibatis.session.SqlSession;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.util.List;
+
 
 public class QuestionDaoImp implements QuestionDao{
 
@@ -14,8 +17,10 @@ public class QuestionDaoImp implements QuestionDao{
     }
 
     @Override
-    public List<Question> QUESTION_LIST() {
-        return sqlSession.selectList("QuestionMapper.showQuestion");
+    public List<Question> questionList() {
+        String str = sqlSession.selectOne("QuestionMapper.loadAnswers");
+        System.out.println(LoadTxt.ReadQuestions(str));
+        return LoadTxt.ReadQuestions(str);
     }
 
     @Override

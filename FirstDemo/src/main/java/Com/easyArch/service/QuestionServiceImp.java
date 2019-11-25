@@ -3,25 +3,43 @@ package Com.easyArch.service;
 import Com.easyArch.dao.QuestionDao;
 import Com.easyArch.dao.QuestionDaoImp;
 import Com.easyArch.entity.Question;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class QuestionServiceImp implements QuestionService{
-    QuestionDao questionDao= new QuestionDaoImp();
+@Service
+public class QuestionServiceImp implements QuestionService {
+
+    QuestionDao questionDao = new QuestionDaoImp();
 
     @Override
-    public List<Question> showQuestion() {
-        return questionDao.QUESTION_LIST();
+    public List<Question> showQuestion(int curr,int pageSize) {
+        return questionDao.questionList();
     }
 
     @Override
-    public int addQuestion(String title, String a1, String a2, String a3, String a4) {
-        Question q = new Question();
-        q.setTitle(title);
-        q.setA1(a1);
-        q.setA2(a2);
-        q.setA3(a3);
-        q.setA4(a4);
-        return questionDao.addQuestion(q);
+    public List<Question> changeQuestion() {
+        return null;
+    }
+
+    @Override
+    public List getUserAnswers(List<Object> answers) {
+        return null;
+    }
+
+
+    @Override
+    public int addScores() {
+        return 0;
+    }
+
+    @Override
+    public void RecordUserAnswers(String ans) {
+
+    }
+
+    @Override
+    public String RetrunResult(int scores) {
+        return null;
     }
 }

@@ -21,13 +21,13 @@ public class admin {
     @RequestMapping("findallcount")
     @ResponseBody
     public int findallcount(){
+        userService.findAll();
         return userService.findallcount();
     }
 
     @RequestMapping("findpage")
     @ResponseBody
     public List<User> findpage(@RequestParam String curr, String pageSize){
-        userService.findAll();
         return userService.findpage(Integer.valueOf(curr),Integer.valueOf(pageSize));
     }
 
@@ -87,6 +87,21 @@ public class admin {
     @ResponseBody
     public int findSnoCount(@RequestParam String Sno){
         return userService.findSnoCount(Sno);
+    }
+
+    @RequestMapping("deleteuser")
+    public String deleteuser(){
+        return "admin/demodel";
+    }
+
+    @RequestMapping("delete")
+    @ResponseBody
+    public String delete(@RequestParam String Sno){
+        if(userService.delUser(Sno))
+            return "ok";
+        else{
+            return "wrong!";
+        }
     }
 
 }

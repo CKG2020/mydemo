@@ -65,16 +65,27 @@
         update SSHpro.UserInfo set
         Sname=#{sname},Sage=#{sage},
         Scall=#{scall},Collage=#{collage},
-        Major=#{major},Sclass=#{sclass}
+        Major=#{major},Sclass=#{sclass},
+        Gender=#{gender},Birth=#{birth}
         where Sno=#{sno}
     </update>
     <delete id="delUser" >
         delete from SSHpro.UserInfo where Sno=#{sno};
-        delete from SSHpro.pyq where Sno1=#{sno} and Sno2=#{sno};
-        delete from SSHpro.UserBoard where Sno=#{sno};
+    </delete>
+
+    <delete id="delpyq">
+        delete from SSHpro.pyq where Sno1=#{sno} or Sno2=#{sno};
+    </delete>
+
+    <delete id="delb">
+        delete from SSHpro.UserBoard where Sno = #{sno};
     </delete>
 
     <select id="searchSname" resultType="String">
+        select SSHpro.UserInfo.Sname from SSHpro.UserInfo where Sno=#{sno}
+    </select>
+
+    <select id="findUserNameBySno" resultType="String">
         select SSHpro.UserInfo.Sname from SSHpro.UserInfo where Sno=#{sno}
     </select>
 
