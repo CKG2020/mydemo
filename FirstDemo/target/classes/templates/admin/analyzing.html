@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content=no-cache/ http-equiv=Cache-Control>
+    <title>综合分析</title>
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/view-design/dist/styles/iview.css">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/view-design/dist/iview.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body onload="finishedPercent()">
+<div id="app" >
+    <div class="layout">
+        <layout :style="{minHeight: '100vh'}">
+            <sider collapsible :collapsed-width="78" v-model="isCollapsed">
+                <i-menu  theme="dark" width="auto" :class="menuitemClasses" open-names="['1','2']">
+                    <submenu name="1">
+                        <template slot="title">
+                            用户管理
+                            <icon type="ios-paper" />
+                        </template>
+                        <menu-item name="1-1">新增用户></menu-item>
+                        <menu-item name="1-2">
+                            <span onclick="demo()">
+                                用户查询
+                            </span></menu-item>
+                        <menu-item name="1-3">
+                        <span onclick="deleteuser()">删除用户
+                        </span>></menu-item>
+                    </submenu>
+                    <submenu name="2">
+                        <template slot="title">
+                            问卷管理
+                            <icon type="ios-people" />
+                        </template>
+                        <menu-item name="2-1">
+                            <span onclick="analyzing()">
+                                答题情况
+                            </span></menu-item>
+                        <menu-item name="2-2">
+                            <span onclick="analyzing()">
+                                综合分析
+                            </span></menu-item>
+                        <menu-item name="2-3">
+                            <span onclick="addQuestion()">
+                                更新题库
+                            </span></menu-item>
+                    </submenu>
+                    <submenu name="3">
+                        <template slot="title">
+                            <span onclick="listener()">
+                                聊天室监控
+                            </span>
+                            <icon type="ios-stats" />
+                        </template>
+                    </submenu>
+                </i-menu>
+            </sider>
+            <layout>
+                <i-header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}">
+                    <h2 style="margin-left: 20px">欢迎您!管理员</h2>
+                </i-header>
+                <i-content :style="{padding: '0 16px 16px'}">
+                    <breadcrumb :style="{margin: '16px 0'}">
+                       分析仪表盘
+                    </breadcrumb>
+                    <card>
+                        <div style="width: max-content;margin-top: 20px;margin-left: 20px">
+                                    <i-circle
+                                        :size="250"
+                                        :trail-width="4"
+                                        :stroke-width="5"
+                                        :percent="percent"
+                                        stroke-linecap="square"
+                                        stroke-color="#43a3fb">
+                                    <div class="demo-Circle-custom">
+                                        <p>注册人数</p>
+                                        <h1>{{allCount}}</h1>
+                                        <p>完成人数</p>
+                                        <h1>{{finishedCount}}</h1>
+                                        <span>总占人数<i>{{percent}}%</i></span>
+                                    </div>
+                                </i-circle>
+                                    <span style="float:right;margin-left: 120px;margin-top: 30px">
+                                        <h3>A类型:</h3>
+                                        <p>人际交往能力很强，具有合群、同情、爱心、助人的精神</p>
+                                        <h3>B类型:</h3>
+                                        <p>人际交往能力较强</p>
+                                        <h3>C类型:</h3>
+                                        <p>人际关系有待改善，需要向具有合群、同情、爱心、助人的精神方面努力</p>
+                                        <h3>D类型:</h3>
+                                        <p>人际交往能力较差，加强学习，多交朋友，多向别人请教人际交往的知识</p>
+                                    </span>
+                        </div>
+
+                        <div style="margin-top: 20px;margin-left: 30px">
+                        <i-circle
+                                :size="235"
+                                :trail-width="4"
+                                :stroke-width="5"
+                                :percent="percentA"
+                                stroke-linecap="square"
+                                stroke-color="#FF3333">
+                            <div class="demo-Circle-custom">
+                                <p>A类型人数</p>
+                                <h1>{{countA}}</h1>
+                                <span>总占人数<i>{{percentA}}%</i>
+                                </span>
+                            </div>
+                        </i-circle>
+                        <i-circle
+                                :size="235"
+                                :trail-width="4"
+                                :stroke-width="5"
+                                :percent="percentB"
+                                stroke-linecap="square"
+                                stroke-color="#FF6600" style="margin-left: 20px">
+                            <div class="demo-Circle-custom">
+                                <p>B类型人数</p>
+                                <h1>{{countB}}</h1>
+                                <span>总占人数<i>{{percentB}}%</i>
+                                </span>
+                            </div>
+                        </i-circle>
+                        <i-circle
+                                :size="235"
+                                :trail-width="4"
+                                :stroke-width="5"
+                                :percent="percentC"
+                                stroke-linecap="square"
+                                stroke-color="#3333FF" style="margin-left: 20px">
+                            <div class="demo-Circle-custom">
+                                <p>C类型人数</p>
+                                <h1>{{countC}}</h1>
+                                <span>总占人数<i>{{percentC}}%</i>
+                                </span>
+                            </div>
+                        </i-circle>
+                        <i-circle
+                                :size="235"
+                                :trail-width="4"
+                                :stroke-width="5"
+                                :percent="percentD"
+                                stroke-linecap="square"
+                                stroke-color="#CCCCCC" style="margin-left: 20px">
+                            <div class="demo-Circle-custom" >
+                                <p>D类型人数</p>
+                                <h1>{{countD}}</h1>
+                                <span>总占人数<i>{{percentD}}%</i>
+                                </span>
+                            </div>
+                        </i-circle>
+                        </div>
+                    </card>
+                </i-content>
+            </layout>
+        </layout>
+    </div>
+</div>
+</body>
+<script>
+
+    function finishedPercent() {
+        $.ajax({
+            url:'finishedPercent',
+            type:'post',
+            success(res) {
+                console.log(res.percent);
+                console.log(res.finishedCount);
+                console.log(res.allCount);
+                Page.percent=res.percent;
+                Page.allCount=res.allCount;
+                Page.finishedCount=res.finishedCount;
+                Page.countA=res.countA;
+                Page.countB=res.countB;
+                Page.countC=res.countC;
+                Page.countD=res.countD;
+                Page.percentA=res.percentA;
+                Page.percentB=res.percentB;
+                Page.percentC=res.percentC;
+                Page.percentD=res.percentD;
+            }
+        })
+    }
+    var Page = new Vue({
+        el:'#app',
+        data () {
+            return {
+                isCollapsed: false,
+                percent:33.33,
+                allCount:100,
+                finishedCount:30,
+                countA:'',
+                countB:'',
+                countC:'',
+                countD:'',
+                percentA:'',
+                percentB:'',
+                percentC:'',
+                percentD:''
+            };
+        },
+        computed: {
+            menuitemClasses: function () {
+                return [
+                    'menu-item',
+                    this.isCollapsed ? 'collapsed-menu' : ''
+                ]
+            }
+        },
+    });
+
+
+    function listener() {
+        window.location.href='/admin/listener'
+    }
+    function addQuestion() {
+        window.location.href='/admin/addQuestion'
+    }
+    function demo() {
+        window.location.href='/findall'
+    }
+    function deleteuser() {
+        window.location.href='/admin/deleteuser'
+    }
+</script>
+</html>

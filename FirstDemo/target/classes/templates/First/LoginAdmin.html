@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LoginAdmin</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/view-design/dist/styles/iview.css">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/view-design/dist/iview.min.js"></script>
+    <link rel="stylesheet" href="../../static/img/regist.css">
+</head>
+<body>
+<script src="//unpkg.com/vue/dist/vue.js"></script>
+<script src="//unpkg.com/iview/dist/iview.min.js"></script>
+<div class="reg_user">
+    <div id="header">
+        <h2>人际关系追踪系统</h2>
+        <div id="app" style="margin-top:35px">
+            <i-form ref="formInline" :model="formInline" :rules="ruleInline" style="width: 250px"
+                     method="post">
+                <form-item prop="user">管理员登录
+                    <i-input type="text" v-model="formInline.user" placeholder="Username" size="large">
+                        <icon type="ios-person-outline" slot="prepend"></icon>
+                    </i-input>
+                </form-item>
+                <form-item prop="password">
+                    <i-input type="password" v-model="formInline.password" placeholder="Password" size="large">
+                        <icon type="ios-lock-outline" slot="prepend"></icon>
+                    </i-input>
+                </form-item>
+                <form-item>
+                    <div style="margin-top: 20px">
+                        <i-button type="primary" @click="handleReset('formInline')" style="margin-left: 30px">Reset</i-button>
+                        <i-button type="primary" @click="handleSubmit('formInline')" style="margin-left: 50px">Signin</i-button>
+                    </div>
+                </form-item>
+            </i-form>
+        </div>
+    </div>
+</div>
+<script>
+
+    var Main = {
+        data () {
+            return {
+                formInline: {
+                    user: '',
+                    password: ''
+                },
+                ruleInline: {
+                    user: [
+                        { required: true, message: 'Please fill in the user name', trigger: 'blur' }
+                    ],
+                    password: [
+                        { required: true, message: 'Please fill in the password.', trigger: 'blur' },
+                        { type: 'string', min: 6, message: 'The password length cannot be less than 6 bits', trigger: 'blur' }
+                    ]
+                }
+            }
+        },
+        methods: {
+            handleSubmit(name) {
+                this.$refs[name].validate((valid) => {
+                    if (valid) {
+                        this.$Message.success('Success!');
+                        this.save()
+                    } else {
+                        this.$Message.error('Fail!');
+                    }
+                })
+            },
+            handleReset (name) {
+                this.$refs[name].resetFields();
+            },
+            save() {
+                let Sno=this.formInline.user;
+                let Spwd=this.formInline.password;
+                $.ajax({
+                    type: "post",
+                    url: "/admin",
+                    data: {
+                        "Sno":Sno,
+                        "Spwd":Spwd
+                    },
+                    success(res){
+                        if(res==="ok"){
+                            window.location.href = 'findall';
+                        }else{
+                            alert("wrong!")
+                        }
+                    }
+                })
+            }
+        }
+    };
+    var Component = Vue.extend(Main);
+    new Component().$mount('#app')
+
+</script>
+</body>
+</html>

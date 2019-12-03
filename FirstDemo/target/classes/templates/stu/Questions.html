@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调查问卷</title>
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/view-design/dist/styles/iview.css">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/view-design/dist/iview.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body onload="f()">
+<!--<h1>SUCCESS!</h1>-->
+<div id="app">
+    <!--    {{message}}-->
+    <div class="layout">
+        <layout :style="{minHeight: '100vh'}">
+            <sider collapsible :collapsed-width="78" v-model="isCollapsed">
+                <i-menu theme="dark" width="auto" :class="menuitemClasses" open-names="['1','2']">
+                    <submenu name="1">
+                        <template slot="title">
+                            个人中心
+                            <icon type="ios-paper"/>
+                        </template>
+                        <menu-item name="1-1">
+                            <span onclick="MoreInfo()">完善信息</span></menu-item>
+                        <menu-item name="1-2">
+                            <span onclick="Board()">
+                                留言板
+                            </span></menu-item>
+                        <menu-item name="1-3">
+                            <span>
+                                调查问卷
+                            </span></menu-item>
+                        <menu-item name="1-4">
+                            <span onclick="Analyzing()">
+                                分析结果
+                            </span></menu-item>
+                    </submenu>
+                    <submenu name="2">
+                        <template slot="title">聊天室
+                            <icon type="ios-people" />
+                        </template>
+                        <menu-item name="2-1">
+                            <span onclick="FriendList()">好友列表</span></menu-item>
+                        <menu-item name="2-2">
+                            <span onclick="chat()">聊天室</span>
+                        </menu-item>
+                    </submenu>
+                </i-menu>
+            </sider>
+            <layout>
+                <i-header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}">
+                    <div style="float: left;margin-left: 70%">
+                        <h1>欢迎您 ! &nbsp;&nbsp; {{message}}</h1>
+                    </div>
+                    <a href="/Login" style="margin-left: 50px"> 注销</a>
+
+                </i-header>
+                <i-content :style="{padding: '0 16px 16px'}">
+                    <breadcrumb :style="{margin: '16px 0'}">
+                        {{info}}
+                    </breadcrumb>
+                    <card>
+                        <div style="height: 600px;margin-left: 10%;margin-top: 4%" >
+                            <p>{{question1.title}}</p>
+                            <div id="app2" style="margin-left: 2%;margin-top: 1%">
+                                <radio-group v-model="vertical1" vertical>
+                                    <radio label="1">
+                                        <icon type="social-apple"></icon>
+                                        <span>{{question1.answers[0].context}}</span>
+                                    </radio>
+                                    <radio label="2">
+                                        <icon type="social-android"></icon>
+                                        <span>{{question1.answers[1].context}}</span>
+                                    </radio>
+                                    <radio label="3">
+                                        <icon type="social-windows"></icon>
+                                        <span>{{question1.answers[2].context}}</span>
+                                    </radio>
+                                </radio-group>
+                            </div>
+                            <p style="margin-top: 2%">{{question2.title}}</p>
+                            <div id="app3" style="margin-left: 2%;margin-top: 1%">
+                                <radio-group v-model="vertical2" vertical>
+                                    <radio label="1">
+                                        <icon type="social-apple"></icon>
+                                        <span>{{question2.answers[0].context}}</span>
+                                    </radio>
+                                    <radio label="2">
+                                        <icon type="social-android"></icon>
+                                        <span>{{question2.answers[1].context}}</span>
+                                    </radio>
+                                    <radio label="3">
+                                        <icon type="social-windows"></icon>
+                                        <span>{{question2.answers[2].context}}</span>
+                                    </radio>
+                                </radio-group>
+                            </div>
+                            <i-button type="primary" id="sub" style="display: none;margin-top: 5%;margin-left: 1%" @click="handleSubmit()">确认提交</i-button>
+                            <img id="pic1" src="/static/pic/next.png" style="margin-left: 70%;height: 45px;width: 55px" onclick="changeQuestions()">
+                        </div>
+                    </card>
+                </i-content>
+            </layout>
+        </layout>
+    </div>
+</div>
+
+<script>
+    function isFinished(sno) {
+        $.ajax({
+            url:'/stu/Questions/isFinished',
+            type:'post',
+            data:{
+                "sno":sno
+            },
+            success(res) {
+                if(res==="ok"){
+                    Analyzing();
+                }else{
+                    showQuestions();
+                    console.log("hahahahaha")
+                }
+            }
+        })
+    }
+    function f(){
+        $.ajax({
+            url:'/search',
+            type:'get',
+            success(res) {
+                let msg=JSON.stringify(res);
+                msg=$.parseJSON(msg);
+                console.log(msg);
+                if(res.sname==null){
+                    active("新用户!","请完善你的个人信息");
+                    MoreInfo();
+                }else{
+                    active(msg.sname);
+                }
+                isFinished(msg.sno);
+            }
+        })
+    }
+    var mVue = new Vue({
+        el:'#app',
+        data(){
+            return{
+                vertical1: '',
+                vertical2:'',
+                message:'',
+                info:'',
+                isCollapsed: false,
+                curr:1,
+                pageSize:2,
+                question1:{
+                    questionID:'',
+                    answers:[],
+                    title:'',
+                    finished:''
+                },
+                question2:{
+                    questionID:'',
+                    answers:[],
+                    title:'',
+                    finished:''
+                }
+            }
+
+        },
+        computed: {
+            menuitemClasses: function () {
+                return [
+                    'menu-item',
+                    this.isCollapsed ? 'collapsed-menu' : ''
+                ]
+            }
+        },
+        methods:{
+            change(){
+                mVue.choose="xxx";
+            },
+            handleSubmit(){
+                $.ajax({
+                    url:'/stu/Questions/sendAnswers',
+                    type:'post',
+                    contentType: "application/json;charset=UTF-8",
+                    data: JSON.stringify(answerList),
+                    success(res){
+                        alert("恭喜你提交成功！");
+                        Analyzing();
+                        console.log("xxx"+res);
+                    }
+                })
+            }
+        }
+    });
+
+    function active(res,ss) {
+        mVue.message=res;
+        mVue.info=ss;
+    }
+    function chat() {
+        window.location.href="/stu/chat";
+    }
+    function MoreInfo() {
+        // mVue.choose="Questions";
+        window.location.href="/stu/MoreInfo/";
+    }
+    function Analyzing() {
+        window.location.href="/stu/Analyzing/";
+    }
+    function Board() {
+        window.location.href="/stu/Board/";
+    }
+    function FriendList() {
+        window.location.href="/stu/FriendList/";
+    }
+    var answerList=new Array(20);
+    var k=0;
+    function changeQuestions() {
+        mVue.curr=mVue.curr+1;
+        if(mVue.vertical1===''||mVue.vertical2===''){
+            alert("请选择");
+            return;
+        }
+        let items1=mVue.question1.answers;
+        let items2=mVue.question2.answers;
+        for(let i=0;i<items1.length;i++){
+            if(items1[i].answerID==mVue.vertical1) {
+                let answer = {
+                    questionID: '',
+                    answerID: '',
+                    score: ''
+                };
+                answer.questionID = mVue.question1.questionID;
+                answer.answerID = items1[i].answerID;
+                answer.score = items1[i].score;
+                answerList[k] = answer;
+                k++;
+            }
+        }
+        for(let i=0;i<items2.length;i++){
+            if(items2[i].answerID==mVue.vertical2){
+                let answer={
+                    questionID:'',
+                    answerID:'',
+                    score:''
+                };
+                answer.questionID=mVue.question2.questionID;
+                answer.answerID=items2[i].answerID;
+                answer.score=items2[i].score;
+                answerList[k]=answer;
+                k++;
+            }
+        }
+        console.log("返给后端"+JSON.stringify(answerList));
+        if(mVue.curr===11){
+            window.document.getElementById("pic1").style.display="none";
+            window.document.getElementById("sub").style.display="block";
+
+        }else{
+            showQuestions();
+        }
+    }
+    // {"questionID":3,"answerID":1,"score":1}
+
+
+    function showQuestions() {
+        $.ajax({
+            url:'/stu/Questions/show',
+            type: 'post',
+            data:{
+                "curr":mVue.curr,
+                "pageSize":mVue.pageSize
+            },
+            success(res) {
+                mVue.question1=res[0];
+                mVue.question2=res[1];
+                console.log(JSON.stringify(mVue.question1));
+                console.log(mVue.vertical1);
+                mVue.vertical1='';
+                mVue.vertical2='';
+            }
+        });
+    }
+
+</script>
+</body>
+</html>
