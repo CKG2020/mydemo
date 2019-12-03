@@ -61,14 +61,22 @@
         insert into SSHpro.UserInfo(id,Sno,Spwd) values (null,#{Sno},#{Spwd})
     </insert>
 
+
     <update id="updateUser" parameterType="Com.easyArch.entity.User" >
         update SSHpro.UserInfo set
         Sname=#{sname},Sage=#{sage},
         Scall=#{scall},Collage=#{collage},
         Major=#{major},Sclass=#{sclass},
         Gender=#{gender},Birth=#{birth}
-        where Sno=#{sno}
+        where Sno=#{sno};
     </update>
+
+    <update id="updateBirth" parameterType="Com.easyArch.entity.User">
+        update SSHpro.UserBoard set Birth=#{birth} where Sno=#{sno}
+    </update>
+
+
+
     <delete id="delUser" >
         delete from SSHpro.UserInfo where Sno=#{sno};
     </delete>

@@ -14,10 +14,44 @@
         Scores=#{scores} where Sno=#{sno}
     </update>
 
-    <update id="finishQuestion" parameterType="Com.easyArch.entity.UserBoard">
-        update SSHpro.UserBoard set
-        IsFinishedQuestion=#{isFinished} where Sno=#{sno}
+    <select id="searchScore" resultType="Integer">
+        select SSHpro.UserBoard.Scores FROM SSHpro.UserBoard WHERE Sno=#{sno}
+    </select>
+
+    <update id="updateUserBoard" parameterType="Com.easyArch.entity.UserBoard" >
+        update SSHpro.UserInfo set
+        Birth=#{birth}
+        where Sno=#{sno}
     </update>
+
+    <insert id="addUserBoard" parameterType="Com.easyArch.entity.UserBoard">
+        insert into SSHpro.UserBoard(Sno)values(#{Sno})
+    </insert>
+
+    <update id="updateFinishedQuestion" parameterType="Com.easyArch.entity.UserBoard">
+        update SSHpro.UserBoard SET
+        IsFinishedQuestion=true,
+        Scores=#{scores}
+        where Sno = #{sno}
+    </update>
+
+    <select id="isFinished" resultType="Boolean">
+        select SSHpro.UserBoard.IsFinishedQuestion from SSHpro.UserBoard where Sno=#{sno}
+    </select>
+
+    <select id="isAllFinished">
+        select SSHpro.UserBoard.IsFinishedQuestion,Sno from SSHpro.UserBoard
+    </select>
+
+    <select id="allFinished" resultType="Integer">
+        select COUNT(*) from SSHpro.UserBoard where IsFinishedQuestion=1
+    </select>
+
+    <select id="findScore" resultType="Integer">
+        select SSHpro.UserBoard.Scores from SSHpro.UserBoard where IsFinishedQuestion=1
+    </select>
+
+
 
     <select id="myFriends" resultType="java.util.Map" parameterType="java.lang.String">
         select SSHpro.UserInfo.Sname,SSHpro.UserInfo.Sno

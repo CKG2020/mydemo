@@ -3,6 +3,10 @@ package Com.easyArch.service;
 import Com.easyArch.dao.QuestionDao;
 import Com.easyArch.dao.QuestionDaoImp;
 import Com.easyArch.entity.Question;
+import Com.easyArch.entity.ReturnAnswer;
+import Com.easyArch.entity.UserBoard;
+import Com.easyArch.util.LoadTxt;
+import Com.easyArch.util.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,16 +14,13 @@ import java.util.List;
 @Service
 public class QuestionServiceImp implements QuestionService {
 
-    QuestionDao questionDao = new QuestionDaoImp();
+    static QuestionDao questionDao = new QuestionDaoImp();
+    static List list =questionDao.questionList();
+
 
     @Override
-    public List<Question> showQuestion(int curr,int pageSize) {
-        return questionDao.questionList();
-    }
-
-    @Override
-    public List<Question> changeQuestion() {
-        return null;
+    public List showQuestion(int curr,int pageSize) {
+        return Page.pageDiv(curr,pageSize,list);
     }
 
     @Override
@@ -29,17 +30,34 @@ public class QuestionServiceImp implements QuestionService {
 
 
     @Override
-    public int addScores() {
-        return 0;
+    public void addScores(String sno,List<ReturnAnswer> list) {
+        int scores = 0;
+        for (ReturnAnswer returnAnswer : list) {
+            scores += returnAnswer.getScore();
+        }
+        questionDao.setScores(sno,scores);
     }
 
     @Override
-    public void RecordUserAnswers(String ans) {
-
+    public String returnResult(String sno) {
+        int scores = questionDao.searchScore(sno);
+        String x;
+        if(scores>=48){
+            x="A";
+        }else if(scores>=37){
+            x="B";
+        }else if(scores>=27){
+            x="C";
+        }else {
+            x="D";
+        }
+        return LoadTxt.sendResult(x);
     }
 
     @Override
-    public String RetrunResult(int scores) {
-        return null;
+    public boolean isFinished(String sno) {
+        return questionDao.isFinished(sno);
     }
+
+
 }

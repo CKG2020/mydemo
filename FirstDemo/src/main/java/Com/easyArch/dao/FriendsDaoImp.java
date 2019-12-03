@@ -10,7 +10,7 @@ public class FriendsDaoImp implements FriendsDao{
 
     SqlSession sqlSession ;
     {
-        sqlSession= mybatis.Connection();
+        sqlSession= mybatis.getSqlSession();
     }
 
     @Override

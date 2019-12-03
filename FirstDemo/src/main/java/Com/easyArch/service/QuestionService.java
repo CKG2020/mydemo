@@ -1,6 +1,7 @@
 package Com.easyArch.service;
 
 import Com.easyArch.entity.Question;
+import Com.easyArch.entity.ReturnAnswer;
 
 import java.util.List;
 
@@ -8,18 +9,16 @@ public interface QuestionService  {
 
     List<Question> list = null;
 
-    List<Question> showQuestion(int curr,int pageSzie);
-
-    List<Question> changeQuestion();//分题
+    List showQuestion(int curr,int pageSzie);
 
     List getUserAnswers(List<Object> answers);
     //将用户答案整合一下
     
-    int addScores();
+    void addScores(String sno,List<ReturnAnswer> list);
 
-    void RecordUserAnswers(String ans);
+    String returnResult(String sno);
 
-    String RetrunResult(int scores);
+    boolean isFinished(String sno);
 
 
 

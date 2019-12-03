@@ -12,6 +12,4 @@ public class UserBoard implements Serializable {
     private String Sno;
     private String Birth;
     private String Board;
-    private String Cares;
-    private List<String> friendList;
 }

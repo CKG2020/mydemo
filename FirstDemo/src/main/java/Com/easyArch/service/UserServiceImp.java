@@ -1,8 +1,7 @@
 package Com.easyArch.service;
 
 import Com.easyArch.dao.UserDaoImp;
-import Com.easyArch.entity.Admin;
-import Com.easyArch.entity.User;
+import Com.easyArch.entity.*;
 import Com.easyArch.util.Page;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +16,7 @@ public class UserServiceImp implements UserService{
 
     private static UserServiceImp userService= null;
     private User user;
+    private UserBoard userBoard;
 
     public static UserServiceImp getUserService() {
         if (userService == null){
@@ -29,7 +29,9 @@ public class UserServiceImp implements UserService{
         user = new User();
         user.setSno(sno);
         user.setSpwd(pwd);
-        if (userDao.addUser(user)!=0){
+        userBoard = new UserBoard();
+        userBoard.setSno(sno);
+        if (userDao.addUser(user,userBoard)==2){
             return user;
         }
         return null;
@@ -109,7 +111,17 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public boolean updateUser(User user) {
+    public boolean updateUser(FormValidate form) {
+        User user = new User();
+        user.setSname(form.getName());
+        user.setBirth(form.getDate());
+        user.setCollage(form.getCollage());
+        user.setGender(form.getGender());
+        user.setSno(form.getSno());
+        user.setSage(form.getAge());
+        user.setMajor(form.getMajor());
+        user.setSclass(form.getSclass());
+        user.setScall(form.getCall());
         return userDao.updateUser(user);
     }
 
@@ -120,7 +132,7 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public List<User> findpage(int curr, int pageSize) {
+    public List findpage(int curr, int pageSize) {
 
         return Page.pageDiv(curr,pageSize,userList);
     }
@@ -149,5 +161,69 @@ public class UserServiceImp implements UserService{
     public int findSnoCount(String sno) {
         return userDao.findSnoCount(sno);
     }
+
+
+
+    public double percent(int a,int b){
+        return Math.floor(((double) a / (double) b)*100);
+    }
+
+    public int findAllFinished(){
+        return userDao.findAllFinished();
+    }
+
+    public AnalyzingData analyzingRes(){
+        AnalyzingData data = new AnalyzingData();
+
+        int finishedCount=findAllFinished();
+        int allCount=findallcount();
+
+        data.setAllCount(allCount);
+        data.setFinishedCount(finishedCount);
+
+        data.setPercent(percent(finishedCount,allCount));
+        List<Integer> list = userDao.findScore();
+        int countA=0;
+        int countB=0;
+        int countC=0;
+        int countD=0;
+        for (Integer integer : list) {
+            if (integer >= 48) {
+                countA++;
+            } else if (integer >= 37) {
+                countB++;
+            } else if (integer >= 27) {
+                countC++;
+            } else {
+                countD++;
+            }
+        }
+        data.setCountA(countA);
+        data.setCountB(countB);
+        data.setCountC(countC);
+        data.setCountD(countD);
+        data.setPercentA(percent(countA,finishedCount));
+        data.setPercentB(percent(countB,finishedCount));
+        data.setPercentC(percent(countC,finishedCount));
+        data.setPercentD(percent(countD,finishedCount));
+        return data;
+    }
+
+//    @Override
+//    public String returnResult(String sno) {
+//        int scores = questionDao.searchScore(sno);
+//        String x;
+//        if(scores>=48){
+//            x="A";
+//        }else if(scores>=37){
+//            x="B";
+//        }else if(scores>=27){
+//            x="C";
+//        }else {
+//            x="D";
+//        }
+//        return LoadTxt.sendResult(x);
+//    }
+
 
 }

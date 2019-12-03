@@ -26,8 +26,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="iview" level="application" />
-    <orderEntry type="library" name="vue" level="application" />
     <orderEntry type="library" name="jquery-latest" level="application" />
+    <orderEntry type="library" name="vue" level="application" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-amqp:2.1.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.1.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-logging:2.1.9.RELEASE" level="project" />

@@ -99,7 +99,6 @@
             },
             f() {
                 let Sno = this.formCustom.sno;
-                alert(Sno);
                 $.ajax({
                     url:'isused',
                     type:'post',
@@ -107,28 +106,34 @@
                         "Sno":Sno
                     },
                     success(res){
-                        alert(res);
                         if(res==="ok"){
+                            alert("此账号可以使用");
                             console.log("ok");
                             Main.subm();
+                        }else{
+                            alert("此账号已注册过")
                         }
                     }
                 });
             },
             subm(){
+                pp1=this.formCustom.passwd;
+                pp2=this.formCustom.passwdCheck;
+                if(pp1===pp2)
                 $.ajax({
                     url:'/addUser',
                     type: 'post',
                     data:{
                         "Sno":this.formCustom.sno,
-                        "Spwd":this.formCustom.passwd
+                        "Spwd":pp1
+                    },
+                    success(res) {
+                        window.location.href="/stu/MoreInfo";
                     }
                 });
-                window.location.href="/stu/MoreInfo";
             }
         }
     });
-
     // var Component = Vue.extend(Main);
     // new Component().$mount('#app');
 

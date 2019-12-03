@@ -22,7 +22,7 @@
                         <menu-item name="1-1">新增用户></menu-item>
                         <menu-item name="1-2">用户查询></menu-item>
                         <menu-item name="1-3">
-                        <span onclick="r()">删除用户
+                        <span onclick="deleteuser()">删除用户
                         </span>></menu-item>
                     </submenu>
                     <submenu name="2">
@@ -30,13 +30,24 @@
                             问卷管理
                             <icon type="ios-people" />
                         </template>
-                        <menu-item name="2-1">答题情况</menu-item>
-                        <menu-item name="2-2">综合分析</menu-item>
-                        <menu-item name="2-3">更新题库</menu-item>
+                        <menu-item name="2-1">
+                            <span onclick="analyzing()">
+                                答题情况
+                            </span></menu-item>
+                        <menu-item name="2-2">
+                            <span onclick="analyzing()">
+                                综合分析
+                            </span></menu-item>
+                        <menu-item name="2-3">
+                            <span onclick="addQuestion()">
+                                更新题库
+                            </span></menu-item>
                     </submenu>
                     <submenu name="3">
                         <template slot="title">
-                            聊天室监控
+                            <span onclick="listener()">
+                                聊天室监控
+                            </span>
                             <icon type="ios-stats" />
                         </template>
                     </submenu>
@@ -105,8 +116,17 @@
         }
     ];
 
-    function r() {
+    function deleteuser() {
         window.location.href='/admin/deleteuser'
+    }
+    function listener() {
+        window.location.href='/admin/listener'
+    }
+    function analyzing() {
+        window.location.href='/admin/analyzing'
+    }
+    function addQuestion() {
+        window.location.href='/admin/addQuestion'
     }
     var Page = new Vue({
         el:'#app',

@@ -1,7 +1,9 @@
 package Com.easyArch.service;
 
 import Com.easyArch.entity.Admin;
+import Com.easyArch.entity.FormValidate;
 import Com.easyArch.entity.User;
+import Com.easyArch.entity.AnalyzingData;
 
 import java.util.List;
 
@@ -23,7 +25,7 @@ public interface UserService {
 
     Object login(String username, String pwd);
     Admin adminLogin(String username, String pwd);
-    boolean updateUser(User user);
+    boolean updateUser(FormValidate user);
 
     int findallcount();
     int findAgeCount(int age);
@@ -33,6 +35,10 @@ public interface UserService {
     int findSnoCount(String sno);
 
 
-    List<User> findpage(int start,int end);
+    int findAllFinished();
+    double percent(int a,int b);
+    AnalyzingData analyzingRes();
+
+    List findpage(int start, int end);
 
 }

@@ -2,12 +2,13 @@ package Com.easyArch.dao;
 
 import Com.easyArch.entity.Admin;
 import Com.easyArch.entity.User;
+import Com.easyArch.entity.UserBoard;
 
 import java.util.List;
 
 public interface UserDAO {
     //对数据库操作的接口
-    int addUser(User user);//注册
+    int addUser(User user, UserBoard userBoard);//注册
     boolean deleteUser(String id);
 
     List<User> findAll();//管理员查所有成员 简单分页
@@ -33,6 +34,7 @@ public interface UserDAO {
     int findClassCount(String sclass);
 
     User findUserBySno(String sno);
+
 
 //    List<User> findpage(int start,int end);
 

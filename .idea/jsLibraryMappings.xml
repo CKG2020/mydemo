@@ -2,5 +2,7 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$/FirstDemo" libraries="{jquery-latest}" />
+    <file url="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Analyzing.html" libraries="{iview, vue}" />
+    <file url="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Questions.html" libraries="{iview, vue}" />
   </component>
 </project>

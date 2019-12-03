@@ -10,7 +10,9 @@ import java.io.InputStream;
 
 public class mybatis {
 
-    public static SqlSession Connection() {
+    private static mybatis mm= new mybatis();
+    private static SqlSessionFactory sqlSessionFactory;
+    private mybatis(){
 
         // 读取配置文件
         InputStream inputStream = null;
@@ -21,9 +23,11 @@ public class mybatis {
             e.printStackTrace();
         }
         // 构建sqlSessionFactory
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         // 获取sqlSession
+    }
 
+    public static SqlSession getSqlSession() {
         return sqlSessionFactory.openSession();
     }
 

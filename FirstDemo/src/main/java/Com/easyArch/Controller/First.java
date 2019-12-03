@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 @EnableRedisHttpSession
 @RequestMapping("/")
 @Controller
-
 public class First {
 
     @Autowired
@@ -23,6 +22,10 @@ public class First {
 
     @RequestMapping("Login")
     public String test(){
+        HttpSession session = request.getSession();
+        if(session.getAttribute("user")!=null){
+            session.removeAttribute("user");
+        }
         return "First/Login";
     }
 
@@ -43,20 +46,21 @@ public class First {
         return user;
     }//用户登录
 
-    @RequestMapping("stu")//登录成功跳转页面
-    public String suc(){
-        if(request.getSession().getAttribute("user")==null){
-            return "First/Login";
-        }else{
-            return "stu/MoreInfo";
-        }
-    }
+//    @RequestMapping("stu")//登录成功跳转页面
+//    public String suc(){
+//        if(request.getSession().getAttribute("user")==null){
+//            return "First/Login";
+//        }else{
+//            return "stu/MoreInfo";
+//        }
+//    }
 
-    //跳转后再把user查出来
+//    跳转后再把user查出来
     @RequestMapping("search")
     @ResponseBody
     public Object search(){
         HttpSession session = request.getSession();
+        System.out.println(session.getAttribute("user"));
         return session.getAttribute("user");
     }
 
@@ -93,26 +97,18 @@ public class First {
 
     }
 
-    @RequestMapping(value = "addUser" ,method = RequestMethod.POST)
+    //method = RequestMethod.POST    为什么括号里加了这个方法后，我就接不到sno了
+    @RequestMapping(value = "addUser" )
     public String submit(@RequestParam String Sno, String Spwd){
-        User user=userService.addUser(Sno,Spwd);
+        userService.addUser(Sno,Spwd);
+        User user = userService.findUserBySno(Sno);
+        System.out.println(Sno);
         HttpSession session = request.getSession();
+
         session.setAttribute("user",user);
         System.out.println("user"+user);
+
         return "stu/MoreInfo";
     }
-
-    @RequestMapping("logout")
-    public String logout(){
-        HttpSession session = request.getSession();
-        session.removeAttribute("user");
-        request.getSession().invalidate();
-        return "First/Login";
-    }
-
-
-
-
-
 
 }

@@ -2,6 +2,7 @@ package Com.easyArch.entity;
 
 
 import lombok.Data;
+import org.springframework.context.annotation.Bean;
 
 import java.io.Serializable;
 
@@ -20,6 +21,6 @@ public class User implements Serializable {
     private String Major;
     private String Sclass;
     private String Birth;
-    private boolean Gender;
+    private int Gender;
 
 }

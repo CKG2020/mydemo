@@ -3,6 +3,7 @@ package Com.easyArch.dao;
 
 import Com.easyArch.entity.Admin;
 import Com.easyArch.entity.User;
+import Com.easyArch.entity.UserBoard;
 import Com.easyArch.util.mybatis;
 import org.apache.ibatis.session.SqlSession;
 import java.util.List;
@@ -12,12 +13,13 @@ public class UserDaoImp implements UserDAO{
     SqlSession sqlSession ;
 
     {
-        sqlSession=mybatis.Connection();
+        sqlSession=mybatis.getSqlSession();
     }
 
     @Override
-    public int addUser(User user) {
+    public int addUser(User user, UserBoard userBoard) {
         int s=sqlSession.insert("UserMapper.addUser",user);
+        sqlSession.insert("UserBoard.addUserBoard",userBoard);
         sqlSession.commit();
         return s;
     }
@@ -78,12 +80,13 @@ public class UserDaoImp implements UserDAO{
     public Admin adminlogin(String username, String pwd) {
         return sqlSession.selectOne("UserMapper.selectAdmin",username);
     }
-
     @Override
     public boolean updateUser(User user) {
-        return false;
+        sqlSession.update("UserMapper.updateUser",user);
+        sqlSession.update("UserMapper.updateBirth",user);
+        sqlSession.commit();
+        return true;
     }
-
     @Override
     public int findSnoCount(String sno) {
         return sqlSession.selectOne("UserMapper.findSnoCount",sno);
@@ -119,4 +122,12 @@ public class UserDaoImp implements UserDAO{
         return sqlSession.selectOne("UserMapper.selectUser",sno);
     }
     //实现对数据库操作的接口中的方法
+
+    public int findAllFinished(){
+        return sqlSession.selectOne("UserBoard.allFinished");
+    }
+
+    public List<Integer> findScore(){
+        return sqlSession.selectList("UserBoard.findScore");
+    }
 }

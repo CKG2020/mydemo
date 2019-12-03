@@ -1,9 +1,12 @@
 package Com.easyArch.Controller;
 
 
+import Com.easyArch.entity.AnalyzingData;
 import Com.easyArch.entity.User;
 import Com.easyArch.service.UserService;
+import com.rabbitmq.tools.json.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -89,11 +92,6 @@ public class admin {
         return userService.findSnoCount(Sno);
     }
 
-    @RequestMapping("deleteuser")
-    public String deleteuser(){
-        return "admin/demodel";
-    }
-
     @RequestMapping("delete")
     @ResponseBody
     public String delete(@RequestParam String Sno){
@@ -103,5 +101,34 @@ public class admin {
             return "wrong!";
         }
     }
+    @RequestMapping("deleteuser")
+    public String deleteuser(){
+        return "admin/demodel";
+    }
+    @RequestMapping("analyzing")
+    public String analyzing(){
+        return "admin/analyzing";
+    }
+    @RequestMapping("listener")
+    public String listener(){
+        return "admin/listener";
+    }
+    @RequestMapping("addQuestion")
+    public String addQuestion(){
+        return "admin/addQuestion";
+    }
+
+
+    @RequestMapping(value="finishedPercent")
+    @ResponseBody
+    public AnalyzingData finishedPercent(){
+        System.out.println(userService.analyzingRes());
+        return userService.analyzingRes();
+
+    }
+
+
+
+
 
 }

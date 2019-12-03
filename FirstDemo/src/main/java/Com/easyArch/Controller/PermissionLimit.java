@@ -10,5 +10,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface PermissionLimit {
     boolean limit() default true;
-
 }
