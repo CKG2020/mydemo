@@ -98,6 +98,11 @@ public class UserDaoImp implements UserDAO{
     }
 
     @Override
+    public int findAllFinished(){
+        return sqlSession.selectOne("UserBoard.allFinished");
+    }
+
+    @Override
     public int findAgeCount(int age){
         return sqlSession.selectOne("UserMapper.findAgeCount",age);
     }
@@ -118,16 +123,38 @@ public class UserDaoImp implements UserDAO{
     }
 
     @Override
+    public UserBoard setScores(String sno,int scores) {
+        UserBoard userBoard = new UserBoard();
+        userBoard.setSno(sno);
+        userBoard.setIsFinishedQuestion(true);
+        userBoard.setScores(scores);
+        sqlSession.update("updateFinishedQuestion",userBoard);
+        sqlSession.commit();
+        return userBoard;
+    }
+    @Override
+    public int searchScore(String sno){
+        return sqlSession.selectOne("UserBoard.searchScore",sno);
+    }
+
+    @Override
+    public boolean isFinished(String sno) {
+        if(sqlSession.selectOne("UserBoard.isFinished", sno)==null){
+            return false;
+        }
+        return sqlSession.selectOne("UserBoard.isFinished", sno);
+    }
+
+    @Override
     public User findUserBySno(String sno) {
         return sqlSession.selectOne("UserMapper.selectUser",sno);
     }
     //实现对数据库操作的接口中的方法
 
-    public int findAllFinished(){
-        return sqlSession.selectOne("UserBoard.allFinished");
-    }
-
+    @Override
     public List<Integer> findScore(){
         return sqlSession.selectList("UserBoard.findScore");
     }
+
+
 }

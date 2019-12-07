@@ -25,6 +25,7 @@ public class First {
         HttpSession session = request.getSession();
         if(session.getAttribute("user")!=null){
             session.removeAttribute("user");
+            session.removeAttribute("userBoard");
         }
         return "First/Login";
     }

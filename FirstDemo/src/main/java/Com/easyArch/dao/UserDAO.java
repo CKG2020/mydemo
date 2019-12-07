@@ -27,15 +27,21 @@ public interface UserDAO {
     boolean updateUser(User user);
 
     int findSnoCount(String sno);
+
     int findallcount();
+    int findAllFinished();
     int findAgeCount(int age);
     int findNameCount(String name);
     int findCollageCount(String collage);
     int findClassCount(String sclass);
 
+    UserBoard setScores(String sno,int scores);
+    int searchScore(String sno);
+    boolean isFinished(String sno);
+
+
     User findUserBySno(String sno);
-
-
+    List<Integer> findScore();
 //    List<User> findpage(int start,int end);
 
 }

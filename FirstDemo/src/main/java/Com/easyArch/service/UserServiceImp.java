@@ -1,7 +1,8 @@
 package Com.easyArch.service;
-
+import Com.easyArch.dao.UserDAO;
 import Com.easyArch.dao.UserDaoImp;
 import Com.easyArch.entity.*;
+import Com.easyArch.util.LoadTxt;
 import Com.easyArch.util.Page;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @Service
 public class UserServiceImp implements UserService{
 
-    UserDaoImp userDao = new UserDaoImp();
+    UserDAO userDao = new UserDaoImp();
     List<User> userList;
 
     private static UserServiceImp userService= null;
@@ -162,12 +163,19 @@ public class UserServiceImp implements UserService{
         return userDao.findSnoCount(sno);
     }
 
-
+    @Override
+    public UserBoard addScores(String sno,List<ReturnAnswer> list) {
+        int scores = 0;
+        for (ReturnAnswer returnAnswer : list) {
+            scores += returnAnswer.getScore();
+        }
+        return userDao.setScores(sno,scores);
+    }
 
     public double percent(int a,int b){
         return Math.floor(((double) a / (double) b)*100);
     }
-
+    @Override
     public int findAllFinished(){
         return userDao.findAllFinished();
     }
@@ -208,22 +216,26 @@ public class UserServiceImp implements UserService{
         data.setPercentD(percent(countD,finishedCount));
         return data;
     }
+    @Override
+    public String returnResult(String sno) {
+        int scores = userDao.searchScore(sno);
+        String x;
+        if(scores>=48){
+            x="A";
+        }else if(scores>=37){
+            x="B";
+        }else if(scores>=27){
+            x="C";
+        }else {
+            x="D";
+        }
+        return LoadTxt.sendResult(x);
+    }
 
-//    @Override
-//    public String returnResult(String sno) {
-//        int scores = questionDao.searchScore(sno);
-//        String x;
-//        if(scores>=48){
-//            x="A";
-//        }else if(scores>=37){
-//            x="B";
-//        }else if(scores>=27){
-//            x="C";
-//        }else {
-//            x="D";
-//        }
-//        return LoadTxt.sendResult(x);
-//    }
+    @Override
+    public boolean isFinished(String sno) {
+        return userDao.isFinished(sno);
+    }
 
 
 }

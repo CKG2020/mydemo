@@ -18,6 +18,7 @@
 /home/sj/Desktop/mydemo/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDao.java
 /home/sj/Desktop/mydemo/FirstDemo/src/main/java/Com/easyArch/entity/Question.java
 /home/sj/Desktop/mydemo/FirstDemo/src/main/java/Com/easyArch/dao/QuestionDao.java
+/home/sj/Desktop/mydemo/FirstDemo/src/main/java/Com/easyArch/entity/BoardMsg.java
 /home/sj/Desktop/mydemo/FirstDemo/src/main/java/Com/easyArch/dao/UserDAO.java
 /home/sj/Desktop/mydemo/FirstDemo/src/main/java/Com/easyArch/util/mybatis.java
 /home/sj/Desktop/mydemo/FirstDemo/src/main/java/Com/easyArch/entity/FormValidate.java

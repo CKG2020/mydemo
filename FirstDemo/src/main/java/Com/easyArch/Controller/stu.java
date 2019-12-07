@@ -2,11 +2,10 @@ package Com.easyArch.Controller;
 
 
 import Com.easyArch.entity.FormValidate;
+import Com.easyArch.entity.BoardMsg;
 import Com.easyArch.entity.User;
 import Com.easyArch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONException;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 
 @EnableRedisHttpSession
@@ -52,12 +52,10 @@ public class stu {
 
     @RequestMapping(value = "Board")
     public String Board(){
-
         return "stu/Board";
     }
     @RequestMapping(value = "FriendList")
     public String FriendList(){
-
         return "stu/FriendList";
     }
     @RequestMapping(value = "MoreInfo")
@@ -79,6 +77,12 @@ public class stu {
     public String Questions(){
 
         return "stu/Questions";
+    }
+
+    @RequestMapping(value = "Board/getBoard")
+    @ResponseBody
+    public List<BoardMsg> getBoard(){
+        return null;
     }
 
 

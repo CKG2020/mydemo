@@ -30,7 +30,7 @@
 
     <update id="updateFinishedQuestion" parameterType="Com.easyArch.entity.UserBoard">
         update SSHpro.UserBoard SET
-        IsFinishedQuestion=true,
+        IsFinishedQuestion=#{isFinishedQuestion},
         Scores=#{scores}
         where Sno = #{sno}
     </update>
@@ -50,6 +50,9 @@
     <select id="findScore" resultType="Integer">
         select SSHpro.UserBoard.Scores from SSHpro.UserBoard where IsFinishedQuestion=1
     </select>
+    <select id="findUserBoard" resultType="Com.easyArch.entity.UserBoard">
+        select * from SSHpro.UserBoard where Sno=#{sno}
+     </select>
 
 
 

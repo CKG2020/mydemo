@@ -57,35 +57,10 @@
                     <breadcrumb :style="{margin: '16px 0'}">
                         {{info}}
                     </breadcrumb>
-                    <card>
-                        <div style="width: 700px;float: left">
-                            <strong>Default Size:</strong>
-                            <br><br>
-                            <List header="Header" footer="Footer" border>
-                                <ListItem>This is a piece of text.</ListItem>
-                                <ListItem>This is a piece of text.</ListItem>
-                                <ListItem>This is a piece of text.</ListItem>
-                            </List>
-                            <br>
-                            <strong>Small Size:</strong>
-                            <br><br>
-                            <List header="Header" footer="Footer" border size="small">
-                                <ListItem>This is a piece of text.</ListItem>
-                                <ListItem>This is a piece of text.</ListItem>
-                                <ListItem>This is a piece of text.</ListItem>
-                            </List>
-                            <br>
-                            <strong>Large Size:</strong>
-                            <br><br>
-                            <List header="Header" footer="Footer" border size="large">
-                                <ListItem>This is a piece of text.</ListItem>
-                                <ListItem>This is a piece of text.</ListItem>
-                                <ListItem>This is a piece of text.</ListItem>
-                            </List>
-                        </div>
-
-                        <div style="margin-left: 65%;margin-top: 15%">
-                            <img src="/static/pic/cat.png" style="height: 250px;width: 250px">
+                    <card >
+                        <div  v-for="i in list">
+                        <divider orientation="left">{{i.message}}</divider>
+                            <p>{{i.content}}</p>
                         </div>
                     </card>
                 </i-content>
@@ -97,7 +72,6 @@
 </body>
 <script>
     var uu;
-
     function f(){
         $.ajax({
             url:'/search',
@@ -107,7 +81,6 @@
                 msg=$.parseJSON(msg);
                 uu=msg;
                 console.log(res);
-                mVue.formValidate.sno=res.sno;
                 if(res.sname==null){
                     active("新用户!","请完善你的个人信息");
                 }else{
@@ -123,13 +96,39 @@
     var mVue = new Vue({
         el:'#app',
         data(){
-            return{
-                message:'',
-                info:'',
+            return {
+                list: [
+                    {
+                        message: 'Title1' ,
+                        content:'content1'
+                    },
+                    {
+                        message: 'Title2',
+                        content:'content2'
+                    },
+                    {
+                        message: 'Title1' ,
+                        content:'content1'
+                    },
+                    {
+                        message: 'Title2',
+                        content:'content2'
+                    },
+                    {
+                        message: 'Title1' ,
+                        content:'content1'
+                    },
+                    {
+                        message: 'Title2',
+                        content:'content2'
+                    }
+                ],
+                message: '',
+                info: '',
                 isCollapsed: false,
-                choose:'',
-                result:'',
-                thanks:''
+                choose: '',
+                result: '',
+                thanks: ''
             }
         },
         computed: {

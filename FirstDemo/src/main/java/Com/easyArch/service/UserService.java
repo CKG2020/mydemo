@@ -1,9 +1,6 @@
 package Com.easyArch.service;
 
-import Com.easyArch.entity.Admin;
-import Com.easyArch.entity.FormValidate;
-import Com.easyArch.entity.User;
-import Com.easyArch.entity.AnalyzingData;
+import Com.easyArch.entity.*;
 
 import java.util.List;
 
@@ -33,6 +30,10 @@ public interface UserService {
     int findCollageCount(String collage);
     int findClassCount(String sclass);
     int findSnoCount(String sno);
+
+    UserBoard addScores(String sno, List<ReturnAnswer> list);
+    String returnResult(String sno);
+    boolean isFinished(String sno);
 
 
     int findAllFinished();

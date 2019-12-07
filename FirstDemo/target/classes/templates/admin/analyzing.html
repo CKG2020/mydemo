@@ -166,9 +166,6 @@
             url:'finishedPercent',
             type:'post',
             success(res) {
-                console.log(res.percent);
-                console.log(res.finishedCount);
-                console.log(res.allCount);
                 Page.percent=res.percent;
                 Page.allCount=res.allCount;
                 Page.finishedCount=res.finishedCount;
@@ -188,9 +185,9 @@
         data () {
             return {
                 isCollapsed: false,
-                percent:33.33,
-                allCount:100,
-                finishedCount:30,
+                percent:0,
+                allCount:0,
+                finishedCount:0,
                 countA:'',
                 countB:'',
                 countC:'',

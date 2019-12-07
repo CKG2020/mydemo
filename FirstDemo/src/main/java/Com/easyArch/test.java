@@ -1,21 +1,10 @@
 package Com.easyArch;
 
-import Com.easyArch.dao.QuestionDao;
-import Com.easyArch.dao.QuestionDaoImp;
-import Com.easyArch.dao.UserDaoImp;
-import Com.easyArch.entity.Question;
-import Com.easyArch.service.UserServiceImp;
-import Com.easyArch.util.LoadTxt;
-import Com.easyArch.util.mybatis;
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.core.io.ClassPathResource;
+import Com.easyArch.entity.BoardMsg;
 
 
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Stack;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class test {
 
@@ -46,7 +35,19 @@ public class test {
 //        System.out.println(user.analyzingRes());
 //        System.out.println(user.percent(3,4));
 
+        List<BoardMsg> list = new ArrayList<>();
 
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String time=df.format(System.currentTimeMillis());
+        System.out.println(time);
+        BoardMsg msg = new BoardMsg();
+        msg.setFromName("");
+        msg.setDate(time);
+        msg.setText("");
+        list.add(msg);
+        String li = list.toString();
+        System.out.println(li);
+        System.out.println(li.length());
 
     }
 }

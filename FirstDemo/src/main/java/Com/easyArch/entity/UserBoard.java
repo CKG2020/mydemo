@@ -11,5 +11,4 @@ public class UserBoard implements Serializable {
     private int Scores;
     private String Sno;
     private String Birth;
-    private String Board;
 }
