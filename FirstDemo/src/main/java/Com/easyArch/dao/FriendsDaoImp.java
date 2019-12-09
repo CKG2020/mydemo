@@ -1,5 +1,6 @@
 package Com.easyArch.dao;
 
+import Com.easyArch.entity.User;
 import Com.easyArch.util.mybatis;
 import org.apache.ibatis.session.SqlSession;
 
@@ -8,9 +9,10 @@ import java.util.Map;
 
 public class FriendsDaoImp implements FriendsDao{
 
-    SqlSession sqlSession ;
+    private UserDaoImp userDaoImp = new UserDaoImp();
+    private SqlSession sqlSession ;
     {
-        sqlSession= mybatis.getSqlSession();
+        sqlSession= userDaoImp.sqlSession;
     }
 
     @Override
@@ -19,7 +21,12 @@ public class FriendsDaoImp implements FriendsDao{
     }
 
     @Override
-    public List<Map<String, String>> friendList(String sno) {
+    public List<User> friendList(String sno) {
         return sqlSession.selectList("UserBoard.myFriends",sno);
+    }
+
+    @Override
+    public User findUserBySno(String sno) {
+        return sqlSession.selectOne("UserMapper.findUserBySno");
     }
 }

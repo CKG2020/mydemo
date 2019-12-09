@@ -59,8 +59,8 @@
                     </breadcrumb>
                     <card >
                         <div  v-for="i in list">
-                        <divider orientation="left">{{i.message}}</divider>
-                            <p>{{i.content}}</p>
+                        <divider orientation="left">From : {{i.fromName}} &nbsp;&nbsp;{{i.date_time}}</divider>
+                            <p>{{i.board_text}}</p>
                         </div>
                     </card>
                 </i-content>
@@ -85,6 +85,7 @@
                     active("新用户!","请完善你的个人信息");
                 }else{
                     active(msg.sname);
+                    showBoardMsg();
                 }
             }
         })
@@ -93,36 +94,25 @@
         mVue.message=res;
         mVue.info=ss;
     }
+    function showBoardMsg() {
+        $.ajax({
+            url:'/stu/Board/getBoard',
+            type:'post',
+            success(res) {
+                msg=JSON.stringify(res);
+                msg=$.parseJSON(msg);
+                mVue.list=msg;
+                console.log(JSON.stringify(res));
+                console.log(res);
+
+            }
+        })
+    }
     var mVue = new Vue({
         el:'#app',
         data(){
             return {
-                list: [
-                    {
-                        message: 'Title1' ,
-                        content:'content1'
-                    },
-                    {
-                        message: 'Title2',
-                        content:'content2'
-                    },
-                    {
-                        message: 'Title1' ,
-                        content:'content1'
-                    },
-                    {
-                        message: 'Title2',
-                        content:'content2'
-                    },
-                    {
-                        message: 'Title1' ,
-                        content:'content1'
-                    },
-                    {
-                        message: 'Title2',
-                        content:'content2'
-                    }
-                ],
+                list:[],
                 message: '',
                 info: '',
                 isCollapsed: false,

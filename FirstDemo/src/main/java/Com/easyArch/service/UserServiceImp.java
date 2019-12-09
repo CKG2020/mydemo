@@ -1,4 +1,6 @@
 package Com.easyArch.service;
+import Com.easyArch.dao.FriendsDao;
+import Com.easyArch.dao.FriendsDaoImp;
 import Com.easyArch.dao.UserDAO;
 import Com.easyArch.dao.UserDaoImp;
 import Com.easyArch.entity.*;
@@ -13,6 +15,7 @@ import java.util.List;
 public class UserServiceImp implements UserService{
 
     UserDAO userDao = new UserDaoImp();
+    FriendsDao friendsDao = new FriendsDaoImp();
     List<User> userList;
 
     private static UserServiceImp userService= null;
@@ -139,6 +142,11 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
+    public List<User> showFriends(String sno) {
+        return friendsDao.friendList(sno);
+    }
+
+    @Override
     public int findAgeCount(int age){
         return userDao.findAgeCount(age);
     }
@@ -235,6 +243,11 @@ public class UserServiceImp implements UserService{
     @Override
     public boolean isFinished(String sno) {
         return userDao.isFinished(sno);
+    }
+
+    @Override
+    public List<BoardMsg> showBoardMsg(String sno) {
+        return userDao.showBoardMsg(sno);
     }
 
 

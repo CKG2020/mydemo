@@ -10,6 +10,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,18 +36,8 @@ public class stu {
         return "test/chat";
     }
 
-//    @RequestMapping("search")
-//    @ResponseBody
-//    public Object search(){
-//        HttpSession session = request.getSession();
-//        System.out.println(session.getAttribute("user"));
-//        return session.getAttribute("user");
-//    }
-
-
     @RequestMapping(value = "Analyzing")
     public String Analyzing(){
-
         return "stu/Analyzing";
     }
 
@@ -75,15 +66,22 @@ public class stu {
 
     @RequestMapping(value = "Questions")
     public String Questions(){
-
         return "stu/Questions";
     }
 
     @RequestMapping(value = "Board/getBoard")
     @ResponseBody
     public List<BoardMsg> getBoard(){
-        return null;
+        HttpSession session = request.getSession();
+        return userService.showBoardMsg(((User)session.getAttribute("user")).getSno());
     }
 
+
+    @RequestMapping(value="FriendList/showFriends")
+    @ResponseBody
+    public List<User> getFriends(){
+        HttpSession session = request.getSession();
+        return userService.showFriends(((User)session.getAttribute("user")).getSno());
+    }
 
 }

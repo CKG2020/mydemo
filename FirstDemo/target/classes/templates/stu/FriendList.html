@@ -66,23 +66,23 @@
                                 <div class="demo-drawer-profile">
                                     <row>
                                         <i-col span="12">
-                                            Full Name: Aresn
+                                            Full Name: {{friendInfo.name}}
                                         </i-col>
                                         <i-col span="12">
-                                            Gender: Male
-                                        </i-col>
-                                    </row>
-                                    <row>
-                                        <i-col span="12">
-                                            Collage: 信息技术工程学院
-                                        </i-col>
-                                        <i-col span="12">
-                                            Major: 软件工程
+                                            Gender: {{friendInfo.gender}}
                                         </i-col>
                                     </row>
                                     <row>
                                         <i-col span="12">
-                                            Birthday: May 14, 1991
+                                            Collage: {{friendInfo.Collage}}
+                                        </i-col>
+                                        <i-col span="12">
+                                            Major: {{friendInfo.Major}}
+                                        </i-col>
+                                    </row>
+                                    <row>
+                                        <i-col span="12">
+                                            Birthday: {{friendInfo.birth}}
                                         </i-col>
                                     </row>
                                 </div>
@@ -91,7 +91,16 @@
                             </drawer>
                         </div>
                         <div style="width: 60%">
-                            <i-table border :columns="columns7" :data="data6"></i-table>
+                            <i-table border :columns="columns7" :data="data6">
+                                <template slot-scope="{ row }" slot="name">
+                                    <strong>{{ row.name }}</strong>
+                                </template>
+                                <template slot-scope="{ row, index }" slot="action">
+                                    <i-button type="primary" size="small" style="margin-right: 5px" @click="show(index)">View</i-button>
+                                    <i-button type="error" size="small" @click="remove(index)">Delete</i-button>
+                                </template>
+                            </i-table>
+
                         </div>
                     </card>
                 </i-content>
@@ -103,6 +112,29 @@
 </body>
 <script>
     var uu;
+    var cols = [
+        {
+            title: 'Sno',
+            key: 'sno'
+        },
+        {
+            title: "Sname",
+            key: "sname"
+        },
+        {
+            title: 'Action',
+            slot: 'action',
+            width: 150,
+            align: 'center'
+        }
+    ];
+    var friendInfo={
+        name:'xxx',
+        birth:'12-1',
+        gender:'male',
+        Collage:'信息',
+        Major:'专业',
+    };
 
     function f(){
         $.ajax({
@@ -112,13 +144,11 @@
                 let msg=JSON.stringify(res);
                 msg=$.parseJSON(msg);
                 uu=msg;
-                console.log(res);
-                console.log(res.sname);
-                console.log(msg.sname);
                 if(res.sname==null){
                     active("新用户!","请完善你的个人信息");
                 }else{
                     active(msg.sname);
+                    showFriends();
                 }
             }
         })
@@ -128,6 +158,21 @@
         mVue.info=ss;
     }
 
+    function showFriends() {
+        $.ajax({
+            url:'/stu/FriendList/showFriends',
+            type:'post',
+            success(res) {
+                let msg=JSON.stringify(res);
+                msg=$.parseJSON(msg);
+                setTable(msg);
+            }
+
+        })
+    }
+    function setTable(dd) {
+        mVue.data6=dd;
+    }
     var mVue = new Vue({
         el:'#app',
         data(){
@@ -138,71 +183,8 @@
                 choose: '',
                 result: '',
                 thanks: '',
-                columns7: [
-                    {
-                        title: 'Name',
-                        key: 'name',
-                        render: (h, params) => {
-                            return h('div', [
-                                h('Icon', {
-                                    props: {
-                                        type: 'person'
-                                    }
-                                }),
-                                h('strong', params.row.name)
-                            ]);
-                        }
-                    },
-                    {
-                        title: 'Action',
-                        key: 'action',
-                        width: 150,
-                        align: 'center',
-                        render: (h, params) => {
-                            return h('div', [
-                                h('Button', {
-                                    props: {
-                                        type: 'primary',
-                                        size: 'small'
-                                    },
-                                    style: {
-                                        marginRight: '5px'
-                                    },
-                                    on: {
-                                        click: () => {
-                                            this.show(params.index)
-                                        }
-                                    }
-                                }, 'View'),
-                                h('Button', {
-                                    props: {
-                                        type: 'error',
-                                        size: 'small'
-                                    },
-                                    on: {
-                                        click: () => {
-                                            this.remove(params.index)
-                                        }
-                                    }
-                                }, 'Delete')
-                            ]);
-                        }
-                    }
-                ],
-                data6: [
-                    {
-                        name: 'John Brown',
-                    },
-                    {
-                        name: 'Jim Green',
-                    },
-                    {
-                        name: 'Joe Black',
-                    },
-                    {
-                        name: 'Jon Snow',
-                    }
-                ],
+                columns7:cols,
+                data6: [],
                 value4: false,
                 pStyle: {
                     fontSize: '16px',
@@ -210,8 +192,8 @@
                     lineHeight: '24px',
                     display: 'block',
                     marginBottom: '16px'
-                }
-
+                },
+                friendInfo:friendInfo
             }
         },
         computed: {
@@ -226,7 +208,7 @@
             show (index) {
                 this.$Modal.info({
                     title: 'User Info',
-                    content: `Name：${this.data6[index].name}`
+                    content: `Name：${this.data6[index].sname}`
                 })
             },
             remove (index) {

@@ -23,6 +23,11 @@
     <select id="findallcount" resultType="Integer">
         select COUNT(*) from SSHpro.UserInfo
     </select>
+<!-- 精确匹配-->
+    <select id="findUserBySno" resultType="Com.easyArch.entity.User">
+        select Sno, Sname, Sage, Scall, Collage, Major, Sclass, Gender, Birth from SSHpro.UserInfo
+        where Sno = #{sno}
+    </select>
 
     <select id="findbysno" resultType="Com.easyArch.entity.User">
         select * FROM SSHpro.UserInfo where Sno like  concat(concat("%",#{Sno}),"%")

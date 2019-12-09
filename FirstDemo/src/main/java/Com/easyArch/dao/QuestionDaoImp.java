@@ -9,7 +9,7 @@ import java.util.List;
 
 public class QuestionDaoImp implements QuestionDao{
 
-    SqlSession sqlSession ;
+    private SqlSession sqlSession ;
     {
         sqlSession= mybatis.getSqlSession();
     }

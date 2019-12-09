@@ -34,12 +34,14 @@ public interface UserService {
     UserBoard addScores(String sno, List<ReturnAnswer> list);
     String returnResult(String sno);
     boolean isFinished(String sno);
-
+    List<BoardMsg> showBoardMsg(String sno);
 
     int findAllFinished();
     double percent(int a,int b);
     AnalyzingData analyzingRes();
 
     List findpage(int start, int end);
+
+    List<User> showFriends(String sno);
 
 }

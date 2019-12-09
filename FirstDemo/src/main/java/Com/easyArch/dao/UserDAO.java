@@ -1,6 +1,7 @@
 package Com.easyArch.dao;
 
 import Com.easyArch.entity.Admin;
+import Com.easyArch.entity.BoardMsg;
 import Com.easyArch.entity.User;
 import Com.easyArch.entity.UserBoard;
 
@@ -38,6 +39,7 @@ public interface UserDAO {
     UserBoard setScores(String sno,int scores);
     int searchScore(String sno);
     boolean isFinished(String sno);
+    List<BoardMsg> showBoardMsg(String sno);
 
 
     User findUserBySno(String sno);

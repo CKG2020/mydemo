@@ -2,6 +2,7 @@ package Com.easyArch.dao;
 
 
 import Com.easyArch.entity.Admin;
+import Com.easyArch.entity.BoardMsg;
 import Com.easyArch.entity.User;
 import Com.easyArch.entity.UserBoard;
 import Com.easyArch.util.mybatis;
@@ -10,7 +11,7 @@ import java.util.List;
 
 public class UserDaoImp implements UserDAO{
 
-    SqlSession sqlSession ;
+    public SqlSession sqlSession ;
 
     {
         sqlSession=mybatis.getSqlSession();
@@ -143,6 +144,11 @@ public class UserDaoImp implements UserDAO{
             return false;
         }
         return sqlSession.selectOne("UserBoard.isFinished", sno);
+    }
+
+    @Override
+    public List<BoardMsg> showBoardMsg(String sno) {
+        return sqlSession.selectList("UserBoard.showBoardMsg",sno);
     }
 
     @Override

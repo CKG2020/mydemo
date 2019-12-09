@@ -54,19 +54,33 @@
         select * from SSHpro.UserBoard where Sno=#{sno}
      </select>
 
+    <select id="showBoardMsg" resultType="Com.easyArch.entity.BoardMsg">
+        select Board_Msg.board_text,Board_Msg.fromName,Board_Msg.date_time from SSHpro.Board_Msg
+        where SSHpro.Board_Msg.Sno=#{sno}
+    </select>
+    <insert id="insertBoardMsg" parameterType="Com.easyArch.entity.BoardMsg">
+        insert into SSHpro.Board_Msg(sno, fromname, board_text, date_time)
+        values (#{sno},#{fromName},#{boardText},#{dateTime})
+    </insert>
 
 
-    <select id="myFriends" resultType="java.util.Map" parameterType="java.lang.String">
-        select SSHpro.UserInfo.Sname,SSHpro.UserInfo.Sno
-        from SSHpro.UserInfo where Sno in (select SSHpro.pyq.Sno2 from SSHpro.pyq where Sno1=#{sno})
+
+    <select id="myFriends" resultType="Com.easyArch.entity.User">
+        select
+        UserInfo.Sno, Sname, Sage, Scall, Collage, Major, Sclass, Gender, Birth
+        from SSHpro.UserInfo where UserInfo.Sno in (select SSHpro.pyq.Sno2 from SSHpro.pyq where Sno1=#{sno})
         </select>
 
     <select id="countFriends" resultType="Integer">
         select COUNT(*) from SSHpro.pyq where Sno1=#{sno}
     </select>
-    <insert id="addFriend" useGeneratedKeys="true">
+    <insert id="addFriend1" useGeneratedKeys="true">
         insert into SSHpro.pyq(Sno1,Sno2) values (null,#{sno1},#{sno2})
     </insert>
+    <insert id="addFriend2" useGeneratedKeys="true">
+        insert into SSHpro.pyq(Sno2,Sno1) values (null,#{sno2},#{sno1})
+    </insert>
+
 
     <delete id="delFriend">
         delete from SSHpro.pyq where Sno1=#{sno1} and Sno2=#{sno2};
