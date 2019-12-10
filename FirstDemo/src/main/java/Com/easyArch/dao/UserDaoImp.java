@@ -1,17 +1,14 @@
 package Com.easyArch.dao;
 
 
-import Com.easyArch.entity.Admin;
-import Com.easyArch.entity.BoardMsg;
-import Com.easyArch.entity.User;
-import Com.easyArch.entity.UserBoard;
+import Com.easyArch.entity.*;
 import Com.easyArch.util.mybatis;
 import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 public class UserDaoImp implements UserDAO{
 
-    public SqlSession sqlSession ;
+    public static SqlSession sqlSession ;
 
     {
         sqlSession=mybatis.getSqlSession();
@@ -124,6 +121,11 @@ public class UserDaoImp implements UserDAO{
     }
 
     @Override
+    public int findFriendsCount(String sno) {
+        return sqlSession.selectOne("UserBoard.countFriends",sno);
+    }
+
+    @Override
     public UserBoard setScores(String sno,int scores) {
         UserBoard userBoard = new UserBoard();
         userBoard.setSno(sno);
@@ -153,7 +155,7 @@ public class UserDaoImp implements UserDAO{
 
     @Override
     public User findUserBySno(String sno) {
-        return sqlSession.selectOne("UserMapper.selectUser",sno);
+        return sqlSession.selectOne("UserMapper.findUserBySno",sno);
     }
     //实现对数据库操作的接口中的方法
 
@@ -162,5 +164,30 @@ public class UserDaoImp implements UserDAO{
         return sqlSession.selectList("UserBoard.findScore");
     }
 
+    @Override
+    public boolean insertBoardMsg(BoardMsg msg) {
+        sqlSession.insert("UserBoard.insertBoardMsg",msg);
+        sqlSession.commit();
+        return true;
+    }
 
+    @Override
+    public boolean addRequest(FriendRequest request) {
+        sqlSession.insert("UserBoard.addFriendRequest",request);
+        sqlSession.commit();
+        return true;
+    }
+
+    @Override
+    public boolean acceptRequest(FriendRequest request) {
+        sqlSession.update("UserBoard.acceptAdd",request);
+        sqlSession.insert("UserBoard.addFriend",request);
+        sqlSession.commit();
+        return true;
+    }
+
+    @Override
+    public int countRequest(String sno) {
+        return sqlSession.selectOne("UserBoard.countRequest",sno);
+    }
 }

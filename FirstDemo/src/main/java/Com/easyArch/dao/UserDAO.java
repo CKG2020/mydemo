@@ -1,9 +1,6 @@
 package Com.easyArch.dao;
 
-import Com.easyArch.entity.Admin;
-import Com.easyArch.entity.BoardMsg;
-import Com.easyArch.entity.User;
-import Com.easyArch.entity.UserBoard;
+import Com.easyArch.entity.*;
 
 import java.util.List;
 
@@ -35,15 +32,20 @@ public interface UserDAO {
     int findNameCount(String name);
     int findCollageCount(String collage);
     int findClassCount(String sclass);
+    int findFriendsCount(String sno);
 
     UserBoard setScores(String sno,int scores);
     int searchScore(String sno);
     boolean isFinished(String sno);
-    List<BoardMsg> showBoardMsg(String sno);
 
+    List<BoardMsg> showBoardMsg(String sno);
+    boolean insertBoardMsg(BoardMsg msg);
+
+    boolean addRequest(FriendRequest request);
+    boolean acceptRequest(FriendRequest request);
+    int countRequest(String sno);
 
     User findUserBySno(String sno);
     List<Integer> findScore();
-//    List<User> findpage(int start,int end);
 
 }

@@ -4,6 +4,7 @@ package Com.easyArch.Controller;
 import Com.easyArch.entity.FormValidate;
 import Com.easyArch.entity.BoardMsg;
 import Com.easyArch.entity.User;
+import Com.easyArch.service.FriendsService;
 import Com.easyArch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
@@ -27,6 +28,8 @@ public class stu {
     HttpServletRequest request;
     @Autowired
     UserService userService;
+    @Autowired
+    FriendsService friendsService;
 
     @RequestMapping(value = "chat")
     public String ChatRoom(){
@@ -83,5 +86,86 @@ public class stu {
         HttpSession session = request.getSession();
         return userService.showFriends(((User)session.getAttribute("user")).getSno());
     }
+    @RequestMapping(value="FriendList/getRequest")
+    @ResponseBody
+    public  List<User>  getRequest(){
+        HttpSession session = request.getSession();
+        return userService.showFriendsRequest(((User)session.getAttribute("user")).getSno());
+    }
+    @RequestMapping(value="FriendList/friendInfo")
+    @ResponseBody
+    public User getFriendInfo(@RequestParam String sno){
+        return userService.findUserBySno(sno);
+    }
+
+    @RequestMapping(value="FriendList/showFewBoardMsg")
+    @ResponseBody
+    public List getFewBoardMsg(@RequestParam String sno){
+        return userService.showBoardMsg(sno);
+    }
+
+    @RequestMapping(value="FriendList/addNewBoardMsg")
+    @ResponseBody
+    public String addNewBoardMsg(@RequestBody BoardMsg msg){
+        HttpSession session = request.getSession();
+        msg.setFrom_name(((User)session.getAttribute("user")).getSname());
+        userService.addBoardMsg(msg);
+        return "";
+    }
+
+    @RequestMapping(value="findBySno")
+    @ResponseBody
+    public List<User> findBySno(@RequestParam String Sno){
+        System.out.println("Sno"+Sno);
+        return userService.findUsersBySno(Sno);
+    }
+    @RequestMapping(value="friendsCount")
+    @ResponseBody
+    public int friendsCount(){
+        HttpSession session = request.getSession();
+        return userService.findFriendsCount(((User)session.getAttribute("user")).getSno());
+    }
+
+    @RequestMapping(value="findSnoCount")
+    @ResponseBody
+    public int findSnoCount(@RequestParam String Sno){
+        return userService.findSnoCount(Sno);
+    }
+
+    @RequestMapping(value="findByName")
+    @ResponseBody
+    public List<User> findbyName(@RequestParam String Sname){
+        return userService.findUsersByName(Sname);
+    }
+
+    @RequestMapping(value="findNameCount")
+    @ResponseBody
+    public int findNameCount(@RequestParam String Sname){
+        return userService.findNameCount(Sname);
+    }
+
+    @RequestMapping(value="addRequest")
+    @ResponseBody
+    public String addRequest(@RequestParam String sno){
+        HttpSession session = request.getSession();
+        userService.addRequest(((User)session.getAttribute("user")).getSno(),sno);
+        return "";
+    }
+
+    @RequestMapping(value="acceptRequest")
+    @ResponseBody
+    public String acceptRequest(@RequestParam String sno){
+        HttpSession session = request.getSession();
+        userService.acceptRequest(sno,((User)session.getAttribute("user")).getSno());
+        return "";
+    }
+
+    @RequestMapping(value="countRequest")
+    @ResponseBody
+    public int countRequest(){
+        HttpSession session = request.getSession();
+        return userService.countRequest(((User)session.getAttribute("user")).getSno());
+    }
+
 
 }

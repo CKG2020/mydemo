@@ -6,6 +6,7 @@ import Com.easyArch.dao.UserDaoImp;
 import Com.easyArch.entity.*;
 import Com.easyArch.util.LoadTxt;
 import Com.easyArch.util.Page;
+import Com.easyArch.util.dateUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -147,6 +148,11 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
+    public List<User> showFriendsRequest(String sno) {
+        return friendsDao.friendRequestList(sno);
+    }
+
+    @Override
     public int findAgeCount(int age){
         return userDao.findAgeCount(age);
     }
@@ -169,6 +175,16 @@ public class UserServiceImp implements UserService{
     @Override
     public int findSnoCount(String sno) {
         return userDao.findSnoCount(sno);
+    }
+
+    @Override
+    public int findFriendsCount(String sno) {
+        return userDao.findFriendsCount(sno);
+    }
+
+    @Override
+    public int countRequest(String sno) {
+        return userDao.countRequest(sno);
     }
 
     @Override
@@ -248,6 +264,33 @@ public class UserServiceImp implements UserService{
     @Override
     public List<BoardMsg> showBoardMsg(String sno) {
         return userDao.showBoardMsg(sno);
+    }
+
+    @Override
+    public boolean addBoardMsg(BoardMsg msg) {
+        msg.setDate_time(dateUtil.sendDate());
+        return userDao.insertBoardMsg(msg);
+    }
+
+    @Override
+    public boolean addRequest(String sno1, String sno2) {
+        FriendRequest request = new FriendRequest();
+        request.setSno1(sno1);
+        request.setSno2(sno2);
+        request.setAddStatus(false);
+        userDao.addRequest(request);
+        return true;
+    }
+
+    @Override
+    public boolean acceptRequest(String sno1, String sno2) {
+        FriendRequest request = new FriendRequest();
+        request.setSno1(sno1);
+        request.setSno2(sno2);
+        request.setAddStatus(true);
+        userDao.acceptRequest(request);
+
+        return true;
     }
 
 

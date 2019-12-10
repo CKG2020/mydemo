@@ -55,11 +55,11 @@
                 </i-header>
                 <i-content :style="{padding: '0 16px 16px'}">
                     <breadcrumb :style="{margin: '16px 0'}">
-                        {{info}}
+                        留言板
                     </breadcrumb>
                     <card >
                         <div  v-for="i in list">
-                        <divider orientation="left">From : {{i.fromName}} &nbsp;&nbsp;{{i.date_time}}</divider>
+                        <divider orientation="left">From : {{i.from_name}} &nbsp;&nbsp;{{i.date_time}}</divider>
                             <p>{{i.board_text}}</p>
                         </div>
                     </card>
@@ -108,6 +108,7 @@
             }
         })
     }
+
     var mVue = new Vue({
         el:'#app',
         data(){

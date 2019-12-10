@@ -55,12 +55,13 @@
      </select>
 
     <select id="showBoardMsg" resultType="Com.easyArch.entity.BoardMsg">
-        select Board_Msg.board_text,Board_Msg.fromName,Board_Msg.date_time from SSHpro.Board_Msg
-        where SSHpro.Board_Msg.Sno=#{sno}
+        select Board_Msg.board_text,Board_Msg.from_name,Board_Msg.date_time from SSHpro.Board_Msg
+        where SSHpro.Board_Msg.Sno=#{sno} order by date_time DESC
     </select>
+
     <insert id="insertBoardMsg" parameterType="Com.easyArch.entity.BoardMsg">
-        insert into SSHpro.Board_Msg(sno, fromname, board_text, date_time)
-        values (#{sno},#{fromName},#{boardText},#{dateTime})
+        insert into SSHpro.Board_Msg(sno, from_name, board_text, date_time)
+        values (#{sno},#{from_name},#{board_text},#{date_time} )
     </insert>
 
 
@@ -68,17 +69,30 @@
     <select id="myFriends" resultType="Com.easyArch.entity.User">
         select
         UserInfo.Sno, Sname, Sage, Scall, Collage, Major, Sclass, Gender, Birth
-        from SSHpro.UserInfo where UserInfo.Sno in (select SSHpro.pyq.Sno2 from SSHpro.pyq where Sno1=#{sno})
-        </select>
+        from SSHpro.UserInfo where UserInfo.Sno in (select SSHpro.pyq.Sno2 from SSHpro.pyq where Sno1=#{sno} and addStatus=1)
+    </select>
+    <select id="friendsRequest" resultType="Com.easyArch.entity.User">
+        select
+        UserInfo.Sno, Sname, Sage, Scall, Collage, Major, Sclass, Gender, Birth
+        from SSHpro.UserInfo where UserInfo.Sno in (select SSHpro.pyq.Sno1 from SSHpro.pyq where Sno2=#{sno} and addStatus=0)
+    </select>
 
     <select id="countFriends" resultType="Integer">
-        select COUNT(*) from SSHpro.pyq where Sno1=#{sno}
+        select COUNT(*) from SSHpro.pyq where Sno1=#{sno} and addStatus=1
     </select>
-    <insert id="addFriend1" useGeneratedKeys="true">
-        insert into SSHpro.pyq(Sno1,Sno2) values (null,#{sno1},#{sno2})
+    <select id="countRequest" resultType="Integer">
+        select COUNT(*) from SSHpro.pyq where Sno2=#{sno} and addStatus=0
+    </select>
+
+    <insert id="addFriendRequest" parameterType="Com.easyArch.entity.FriendRequest" useGeneratedKeys="true">
+        insert into SSHpro.pyq(Sno1,Sno2,addStatus) values (#{sno1},#{sno2},0)
     </insert>
-    <insert id="addFriend2" useGeneratedKeys="true">
-        insert into SSHpro.pyq(Sno2,Sno1) values (null,#{sno2},#{sno1})
+    <update id="acceptAdd" parameterType="Com.easyArch.entity.FriendRequest">
+        update SSHpro.pyq set addStatus=1
+        where sno1=#{sno1} and sno2=#{sno2}
+    </update>
+    <insert id="addFriend" parameterType="Com.easyArch.entity.FriendRequest" useGeneratedKeys="true">
+        insert into SSHpro.pyq(Sno1,Sno2,addStatus) values (#{sno2},#{sno1},1)
     </insert>
 
 

@@ -59,54 +59,103 @@
                     </breadcrumb>
                     <card>
                         <div>
-                            <i-button @click="value4 = true" type="primary">View Profile</i-button>
-
                             <drawer :closable="false" width="640" v-model="value4">
                                 <p :style="pStyle">User Profile</p>
                                 <p :style="pStyle">Personal</p>
                                 <div class="demo-drawer-profile">
                                     <row>
                                         <i-col span="12">
-                                            Full Name: {{friendInfo.name}}
+                                            Full Name: {{friendInfo.sname}}
                                         </i-col>
                                         <i-col span="12">
-                                            Gender: {{friendInfo.gender}}
+                                            Gender: <span v-if="friendInfo.gender===0">女</span>
+                                            <span v-if="friendInfo.gender===1">男</span>
                                         </i-col>
+
                                     </row>
                                     <row>
                                         <i-col span="12">
-                                            Collage: {{friendInfo.Collage}}
+                                            Collage: {{friendInfo.collage}}
                                         </i-col>
                                         <i-col span="12">
-                                            Major: {{friendInfo.Major}}
+                                            Major: {{friendInfo.major}}
                                         </i-col>
                                     </row>
                                     <row>
                                         <i-col span="12">
                                             Birthday: {{friendInfo.birth}}
                                         </i-col>
+                                        <i-col span="12">
+                                            Age: {{friendInfo.sage}}
+                                        </i-col>
                                     </row>
                                     <row>
                                         <i-col span="12">
-                                            Age: {{friendInfo.age}}
+                                            PhoneNumber: {{friendInfo.scall}}
                                         </i-col>
                                     </row>
                                 </div>
-                                <divider />
-                                留言板
+                                <divider>
+                                Message Board
+                                </divider>
+                                <div style="margin: 30px">
+                                    <i-input v-model="BoardMsg.board_text" maxlength="50" show-word-limit type="textarea"
+                                             placeholder="Enter something..." style="width:100%"></i-input>
+                                    <i-button type="success" long @click="sendMsg()">SUBMIT</i-button>
+                                </div>
+                                <div  v-for="i in list">
+                                    <divider orientation="left">From : {{i.from_name}} &nbsp;&nbsp;{{i.date_time}}</divider>
+                                    <p>{{i.board_text}}</p>
+                                </div>
                             </drawer>
                         </div>
-                        <div style="width: 60%">
-                            <i-table border :columns="columns7" :data="data6">
+                        <div style="display: inline">
+                            <i-button type="success" @click="turnToSearch()">添加好友</i-button>
+                            <i-button type="info" @click="turnMyFriends()">我的好友</i-button>
+                            <i-button type="warning" @click="turnRequestList()">好友申请</i-button>
+                        </div>
+                        <div id="myFriends" style="width: 55%;display: block;margin: 30px">
+                            我的好友： {{count}}
+                            <i-table border :columns="columns7" :data="dataMy" style="margin-top: 20px">
                                 <template slot-scope="{ row }" slot="name">
                                     <strong>{{ row.name }}</strong>
                                 </template>
                                 <template slot-scope="{ row, index }" slot="action">
-                                    <i-button type="primary" size="small" style="margin-right: 5px" @click="show(index)">View</i-button>
-                                    <i-button type="error" size="small" @click="remove(index)">Delete</i-button>
+                                    <i-button type="primary" size="small" style="margin-right: 5px" @click="showMy(index)" ghost>查看详情</i-button>
+                                    <i-button type="error" size="small" @click="remove(index)" ghost>删除</i-button>
                                 </template>
                             </i-table>
-
+                        </div>
+                        <div id="requestList" style="width: 55%;display: none;margin: 30px">
+                            {{newMes}}
+                            <i-table border :columns="columns7" :data="dataRequest" style="margin-top: 20px">
+                                <template slot-scope="{ row }" slot="name">
+                                    <strong>{{ row.name }}</strong>
+                                </template>
+                                <template slot-scope="{ row, index }" slot="action">
+                                    <i-button type="primary" size="small" style="margin-right: 5px" @click="showStranger(index)" ghost>查看详情</i-button>
+                                    <i-button type="success" size="small" style="margin-right: 5px" @click="accept(index)" ghost>接受</i-button>
+                                    <i-button type="error" size="small" @click="refuse(index)" ghost>拒绝</i-button>
+                                </template>
+                            </i-table>
+                        </div>
+                        <div id="searchFriends" style="width: 55%;display: none;margin: 30px">
+                            <radio-group v-model="choose">
+                                <radio label="1">按学号</radio>
+                                <radio label="2">按姓名</radio>
+                            </radio-group>
+                            <i-input v-model="searchContext" maxlength="10" show-word-limit placeholder="Enter something..." style="width: 200px"></i-input>
+                            <i-button type="info" shape="circle" icon="ios-search" @click="searchRequest()"></i-button>
+                            <p>查询结果 共 {{xxx}} 条<p>
+                            <i-table border :columns="columns7" :data="dataSearch" style="margin-top: 20px">
+                                <template slot-scope="{ row }" slot="name">
+                                    <strong>{{ row.name }}</strong>
+                                </template>
+                                <template slot-scope="{ row, index }" slot="action">
+                                    <i-button type="primary" size="small" style="margin-right: 5px" @click="showSearch(index)" ghost>查看详情</i-button>
+                                    <i-button type="warning" size="small" @click="addRequest(index)" ghost>提交好友申请</i-button>
+                                </template>
+                            </i-table>
                         </div>
                     </card>
                 </i-content>
@@ -117,6 +166,30 @@
 
 </body>
 <script>
+    function countName() {
+        $.ajax({
+            url:'/stu/findNameCount',
+            type:'post',
+            data:{
+                "Sname":mVue.searchContext
+            },
+            success(res){
+                mVue.xxx=res;
+            }
+        })
+    }
+    function countSno() {
+        $.ajax({
+            url:'/stu/findSnoCount',
+            type:'post',
+            data:{
+                "Sno":mVue.searchContext,
+            },
+            success(res) {
+                mVue.xxx=res;
+            }
+        })
+    }
     var uu;
     var cols = [
         {
@@ -130,19 +203,10 @@
         {
             title: 'Action',
             slot: 'action',
-            width: 150,
+            width: 250,
             align: 'center'
         }
     ];
-    var friendInfo={
-        name:'xxx',
-        birth:'12-1',
-        gender:'male',
-        Collage:'信息',
-        Major:'专业',
-        age:'18'
-    };
-
     function f(){
         $.ajax({
             url:'/search',
@@ -156,6 +220,7 @@
                 }else{
                     active(msg.sname);
                     showFriends();
+                    friendsCount();
                 }
             }
         })
@@ -163,6 +228,15 @@
     function active(res,ss) {
         mVue.message=res;
         mVue.info=ss;
+    }
+    function friendsCount() {
+        $.ajax({
+            url:'/stu/friendsCount',
+            type:'post',
+            success(res) {
+                mVue.count=res;
+            }
+        })
     }
 
     function showFriends() {
@@ -172,13 +246,10 @@
             success(res) {
                 let msg=JSON.stringify(res);
                 msg=$.parseJSON(msg);
-                setTable(msg);
+                mVue.dataMy=msg;
             }
 
         })
-    }
-    function setTable(dd) {
-        mVue.data6=dd;
     }
     var mVue = new Vue({
         el:'#app',
@@ -186,12 +257,14 @@
             return {
                 message: '',
                 info: '',
+                newMes:'',
+                count:'',
                 isCollapsed: false,
                 choose: '',
-                result: '',
-                thanks: '',
                 columns7:cols,
-                data6: [],
+                dataMy: [],
+                dataSearch:[],
+                dataRequest:[],
                 value4: false,
                 pStyle: {
                     fontSize: '16px',
@@ -200,7 +273,17 @@
                     display: 'block',
                     marginBottom: '16px'
                 },
-                friendInfo:friendInfo
+                friendInfo:'',
+                list:[],
+                snoIndex:'',
+                BoardMsg:{
+                    sno:'',
+                    from_name:'',
+                    board_text:'',
+                    date_time:''
+                },
+                searchContext:'',
+                xxx:''
             }
         },
         computed: {
@@ -212,21 +295,149 @@
             },
         },
         methods: {
-            show (index) {
-                sno0=this.data6[index].sno;
-
-                console.log(this.data6[index].sno);
-
-                friendsInfo(sno0);
-
+            showStranger (index) {
+                mVue.snoIndex=this.dataRequest[index].sno;
+                friendsInfo(mVue.snoIndex);
                 mVue.value4=true;
-                this.$Modal.info({
-                    title: 'User Info',
-                    content: `Name：${this.data6[index].sno}`
-                })
+            },
+            showMy (index) {
+                mVue.snoIndex=this.dataMy[index].sno;
+                friendsInfo(mVue.snoIndex);
+                mVue.value4=true;
+            },
+            showSearch (index) {
+                mVue.snoIndex=this.dataSearch[index].sno;
+                friendsInfo(mVue.snoIndex);
+                mVue.value4=true;
             },
             remove (index) {
-                this.data6.splice(index, 1);
+                this.dataMy.splice(index, 1);
+            },
+            sendMsg(){
+                mVue.BoardMsg.sno=mVue.snoIndex;
+                if(mVue.BoardMsg.board_text==''){
+                    this.$Message.error('发送信息不可为空!');
+                }else{
+                    addNewBoardMsg();
+                }
+            },
+            accept(index){
+                $.ajax({
+                    url:'/stu/acceptRequest',
+                    type:'post',
+                    data:{
+                        "sno":this.dataRequest[index].sno
+                    },
+                    success(res){
+                        mVue.requestCount();
+                        mVue.getRequest();
+                    }
+                })
+            },
+            refuse(index){
+                mVue.snoIndex=this.dataRequest[index].sno;
+                $.ajax({
+
+                })
+            },
+            turnToSearch(){
+                window.document.getElementById("myFriends").style.display="none";
+                window.document.getElementById("searchFriends").style.display="block";
+                window.document.getElementById("requestList").style.display="none";
+            },
+            turnMyFriends(){
+                showFriends();
+                friendsCount();
+                window.document.getElementById("searchFriends").style.display="none";
+                window.document.getElementById("myFriends").style.display="block";
+                window.document.getElementById("requestList").style.display="none";
+
+            },
+            turnRequestList(){
+                this.requestCount();
+                this.getRequest();
+                window.document.getElementById("searchFriends").style.display="none";
+                window.document.getElementById("myFriends").style.display="none";
+                window.document.getElementById("requestList").style.display="block";
+
+            },
+            addRequest(index){
+                $.ajax({
+                    url:'/stu/addRequest',
+                    type:'post',
+                    data:{
+                        "sno":this.dataSearch[index].sno
+                    },
+                });
+                this.$Message.success('已发送！');
+            },
+            searchRequest(){
+                if(mVue.searchContext==''){
+                    this.$Message.error('查询内容不可为空!');
+                }else{
+                    if(mVue.choose==1){
+                        mVue.searchBySno(mVue.searchContext);
+                    }else{
+                        mVue.searchByName(mVue.searchContext);
+                    }
+                }
+                console.log(mVue.choose);
+                console.log(mVue.searchContext);
+            },
+            searchBySno(content){
+                countSno(content);
+                $.ajax({
+                    type:'post',
+                    url:'/stu/findBySno',
+                    data:{
+                        "Sno":mVue.searchContext,
+                    },
+                    success(res) {
+                        let msg = JSON.stringify(res);
+                        msg = $.parseJSON(msg);
+                        mVue.dataSearch=msg;
+                    }
+                });
+            },
+            searchByName(content){
+                countName(content);
+                console.log(mVue.searchContext);
+                $.ajax({
+                    type:'post',
+                    url:'/stu/findByName',
+                    data: {
+                        "Sname": mVue.searchContext
+                    },
+                    success(res){
+                        let msg = JSON.stringify(res);
+                        msg = $.parseJSON(msg);
+                        mVue.dataSearch=msg;
+                    }
+                });
+            },
+            requestCount(){
+                $.ajax({
+                    type:'post',
+                    url:'/stu/countRequest',
+                    success(res){
+                        if(res==0){
+                            mVue.newMes="你还没有新的好友申请哟～";
+                        }else{
+                            mVue.newMes="你有"+res+"条好友申请～";
+                        }
+                    }
+                })
+            },
+            getRequest(){
+                $.ajax({
+                    type:'post',
+                    url:'/stu/FriendList/getRequest',
+                    success(res) {
+                        let msg = JSON.stringify(res);
+                        msg = $.parseJSON(msg);
+                        mVue.dataRequest=msg;
+                    }
+                })
             }
         }
     });
@@ -236,12 +447,42 @@
             url:'/stu/FriendList/friendInfo',
             type:'post',
             data:{
-                sno:number
+                "sno":number
             },
             success(res){
                 msg = JSON.stringify(res);
                 msg=$.parseJSON(msg);
-                mVue.friendInfo=res;
+                console.log(res);
+                mVue.friendInfo=msg;
+            }
+        });
+        showFewBoardMsg(number);
+    }
+    function showFewBoardMsg(number) {
+        $.ajax({
+            url:'/stu/FriendList/showFewBoardMsg',
+            type:'post',
+            data:{
+                "sno":number
+            },
+            success(res) {
+                msg=JSON.stringify(res);
+                msg=$.parseJSON(msg);
+                mVue.list=msg;
+                console.log(JSON.stringify(res));
+                console.log(res);
+            }
+        })
+    }
+    function addNewBoardMsg() {
+        $.ajax({
+            url:'/stu/FriendList/addNewBoardMsg',
+            type:'post',
+            contentType: "application/json;charset=UTF-8",
+            data:JSON.stringify(mVue.BoardMsg),
+            success(res){
+                showFewBoardMsg(mVue.snoIndex);
+                mVue.BoardMsg.board_text='';
             }
         })
     }

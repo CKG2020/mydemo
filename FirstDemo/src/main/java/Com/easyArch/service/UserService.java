@@ -30,11 +30,19 @@ public interface UserService {
     int findCollageCount(String collage);
     int findClassCount(String sclass);
     int findSnoCount(String sno);
+    int findFriendsCount(String sno);
+    int countRequest(String sno);
 
     UserBoard addScores(String sno, List<ReturnAnswer> list);
     String returnResult(String sno);
     boolean isFinished(String sno);
+
     List<BoardMsg> showBoardMsg(String sno);
+    boolean addBoardMsg(BoardMsg sno);
+
+    boolean addRequest(String sno1,String sno2);
+    boolean acceptRequest(String sno1,String sno2);
+
 
     int findAllFinished();
     double percent(int a,int b);
@@ -43,5 +51,6 @@ public interface UserService {
     List findpage(int start, int end);
 
     List<User> showFriends(String sno);
+    List<User> showFriendsRequest(String sno);
 
 }

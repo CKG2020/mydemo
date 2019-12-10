@@ -1,18 +1,19 @@
 package Com.easyArch.dao;
 
+import Com.easyArch.entity.BoardMsg;
 import Com.easyArch.entity.User;
 import Com.easyArch.util.mybatis;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 
 public class FriendsDaoImp implements FriendsDao{
 
-    private UserDaoImp userDaoImp = new UserDaoImp();
     private SqlSession sqlSession ;
     {
-        sqlSession= userDaoImp.sqlSession;
+        sqlSession= UserDaoImp.sqlSession;
     }
 
     @Override
@@ -26,7 +27,21 @@ public class FriendsDaoImp implements FriendsDao{
     }
 
     @Override
+    public List<User> friendRequestList(String sno) {
+        return sqlSession.selectList("UserBoard.friendsRequest",sno);
+    }
+
+    @Override
     public User findUserBySno(String sno) {
         return sqlSession.selectOne("UserMapper.findUserBySno");
     }
+
+    @Override
+    public boolean insertBoardMsg(BoardMsg msg) {
+        sqlSession.insert("UserBoard.insertBoardMsg",msg);
+        sqlSession.commit();
+        return true;
+    }
+
+
 }

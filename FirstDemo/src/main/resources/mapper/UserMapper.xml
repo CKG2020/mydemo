@@ -62,8 +62,8 @@
         select COUNT(*) from SSHpro.UserInfo where Sno like  concat(concat("%",#{sno}),"%")
     </select>
 
-    <insert id="addUser" parameterType="Com.easyArch.entity.User" useGeneratedKeys="true">
-        insert into SSHpro.UserInfo(id,Sno,Spwd) values (null,#{Sno},#{Spwd})
+    <insert id="addUser" parameterType="Com.easyArch.entity.User">
+        insert into SSHpro.UserInfo(Sno,Spwd) values (#{Sno},#{Spwd})
     </insert>
 
 

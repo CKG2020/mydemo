@@ -18,8 +18,10 @@ Com/easyArch/entity/Question.class
 Com/easyArch/service/UserService.class
 Com/easyArch/dao/QuestionDao.class
 Com/easyArch/dao/FriendsDaoImp.class
+Com/easyArch/entity/FriendRequest.class
 Com/easyArch/dao/UserDAO.class
 Com/easyArch/dao/FriendsDao.class
+Com/easyArch/service/FriendsServiceImp.class
 Com/easyArch/Controller/Question.class
 Com/easyArch/test.class
 Com/easyArch/Controller/stu.class
