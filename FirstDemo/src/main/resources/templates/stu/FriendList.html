@@ -146,7 +146,7 @@
                             </radio-group>
                             <i-input v-model="searchContext" maxlength="10" show-word-limit placeholder="Enter something..." style="width: 200px"></i-input>
                             <i-button type="info" shape="circle" icon="ios-search" @click="searchRequest()"></i-button>
-                            <p>查询结果 共 {{xxx}} 条<p>
+                            <span v-if="xxx!=''">查询结果 共 {{xxx}} 条</span>>
                             <i-table border :columns="columns7" :data="dataSearch" style="margin-top: 20px">
                                 <template slot-scope="{ row }" slot="name">
                                     <strong>{{ row.name }}</strong>

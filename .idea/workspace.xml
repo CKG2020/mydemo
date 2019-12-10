@@ -7,50 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80826f5b-5953-4d63-a43a-b702f8589979" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/FriendRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/FriendsServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/util/dateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4cd4cc8a-f46c-48f2-830a-5b41850304ba.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4cd4cc8a-f46c-48f2-830a-5b41850304ba.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/stu.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/stu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/BoardMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/BoardMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/FriendsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/FriendsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserBoard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserBoard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/static/css/element/element.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/static/js/code.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/static/js/element/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/static/js/jquery-1.12.2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/static/js/regist_test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/static/js/vue/vue.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/static/pic/pika.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Board.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Board.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/FirstDemo-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/FirstDemo-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/FirstDemo-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/FirstDemo-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/Controller/stu.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/Controller/stu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/FriendsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/FriendsDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/FriendsDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/FriendsDaoImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/UserDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/UserDaoImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/service/FriendsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/service/FriendsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/service/UserServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/service/UserServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/mapper/UserBoard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/mapper/UserBoard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/Board.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/Board.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/FriendList.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/FriendList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -126,6 +84,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Board.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="841">
+              <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserBoard.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="500">
@@ -134,21 +105,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="430" column="12" selection-start-line="430" selection-start-column="12" selection-end-line="430" selection-end-column="12" />
+            <state relative-caret-position="286">
+              <caret line="148" column="47" lean-forward="true" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
               <folding>
                 <element signature="n#sider#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#1;n#drawer#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i-input#0;n#div#1;n#drawer#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i-table#0;n#div#2;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i-button#0;n#template#1;n#i-table#0;n#div#2;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i-button#0;n#template#1;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -160,7 +131,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="das://4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/pyq">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -331,9 +302,9 @@
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserServiceImp.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserBoard.xml" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDaoImp.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html" />
       </list>
     </option>
   </component>
@@ -829,7 +800,7 @@
       <workItem from="1575880379757" duration="5137000" />
       <workItem from="1575890508012" duration="6492000" />
       <workItem from="1575938753246" duration="1315000" />
-      <workItem from="1575942891395" duration="34487000" />
+      <workItem from="1575942891395" duration="35059000" />
     </task>
     <task id="LOCAL-00001" summary="准备添加Question模块">
       <created>1572445686792</created>
@@ -866,11 +837,18 @@
       <option name="project" value="LOCAL" />
       <updated>1575727533063</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="今天的提交：&#10;留言功能实现。&#10;添加好友实现。剩下一个拒绝以及徽标提示，以及。。。聊天室没设计&#10;用了iview，抽屉很不错，查看信息很像回事了。&#10;ajax的异步操作是真的快。。">
+      <created>1575985176943</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575985176943</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="592030000" />
+    <option name="totallyTimeSpent" value="592602000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -885,7 +863,7 @@
     <frame x="0" y="-1" width="1920" height="1017" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49346018" visible="true" weight="0.25349838" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49346018" visible="true" weight="0.25349838" />
       <window_info id="Structure" order="1" sideWeight="0.5065398" side_tool="true" weight="0.2583423" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -895,7 +873,7 @@
       <window_info id="Web" order="7" sideWeight="0.50358" side_tool="true" weight="0.25941873" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32818073" />
-      <window_info active="true" anchor="bottom" auto_hide="true" id="Run" order="2" sideWeight="0.49461788" visible="true" weight="0.6444709" />
+      <window_info anchor="bottom" auto_hide="true" id="Run" order="2" sideWeight="0.49461788" weight="0.6444709" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5469679" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -982,7 +960,8 @@
     <MESSAGE value="准备添加好友列表" />
     <MESSAGE value="准备添加好友列表,留言板&#10;以及聊天室UI设计&#10;&#10; 现已实现管理员可以看系统的总体分析，用circle很好看的百分比饼图" />
     <MESSAGE value="现已实现管理员可以看系统的总体分析，用circle很好看的百分比饼图&#10;数据不同步问题已修复&#10;原因是sqlsession这个事务管理没有理解好，&#10;业务搞混了，要操作的对象搞混了，对问题的session不要去对用户操作呀！" />
-    <option name="LAST_COMMIT_MESSAGE" value="现已实现管理员可以看系统的总体分析，用circle很好看的百分比饼图&#10;数据不同步问题已修复&#10;原因是sqlsession这个事务管理没有理解好，&#10;业务搞混了，要操作的对象搞混了，对问题的session不要去对用户操作呀！" />
+    <MESSAGE value="今天的提交：&#10;留言功能实现。&#10;添加好友实现。剩下一个拒绝以及徽标提示，以及。。。聊天室没设计&#10;用了iview，抽屉很不错，查看信息很像回事了。&#10;ajax的异步操作是真的快。。" />
+    <option name="LAST_COMMIT_MESSAGE" value="今天的提交：&#10;留言功能实现。&#10;添加好友实现。剩下一个拒绝以及徽标提示，以及。。。聊天室没设计&#10;用了iview，抽屉很不错，查看信息很像回事了。&#10;ajax的异步操作是真的快。。" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1291,17 +1270,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Board.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1388,30 +1356,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="430" column="12" selection-start-line="430" selection-start-column="12" selection-end-line="430" selection-end-column="12" />
-          <folding>
-            <element signature="n#sider#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#1;n#drawer#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-input#0;n#div#1;n#drawer#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-table#0;n#div#2;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-button#0;n#template#1;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-button#0;n#template#1;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-table#0;n#p#1;n#div#4;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-button#0;n#template#1;n#i-table#0;n#p#1;n#div#4;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -1446,6 +1390,41 @@
           <filtering enabled="true">
             <filter text="" />
           </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Board.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="148" column="47" lean-forward="true" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
+          <folding>
+            <element signature="n#sider#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#drawer#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-input#0;n#div#1;n#drawer#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-table#0;n#div#2;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-button#0;n#template#1;n#i-table#0;n#div#2;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-button#0;n#template#1;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-button#0;n#template#1;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-table#0;n#p#1;n#div#4;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-button#0;n#template#1;n#i-table#0;n#p#1;n#div#4;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
