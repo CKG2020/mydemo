@@ -1,15 +1,13 @@
 package Com.easyArch.websocket;
 
 import org.apache.log4j.Logger;
-import org.springframework.web.socket.CloseStatus;
-import org.springframework.web.socket.TextMessage;
-import org.springframework.web.socket.WebSocketSession;
+import org.springframework.web.socket.*;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class SpringWebSocketHandler extends TextWebSocketHandler {
+public class SpringWebSocketHandler extends TextWebSocketHandler{
     private static final ArrayList<WebSocketSession> users;//这个会出现性能问题，最好用Map来存储，key用userid
     private static Logger logger = Logger.getLogger(SpringWebSocketHandler.class);
 
@@ -45,13 +43,15 @@ public class SpringWebSocketHandler extends TextWebSocketHandler {
         users.remove(session);
         System.out.println("剩余在线用户"+users.size());
     }
-
     /**
      * js调用websocket.send时候，会调用该方法
      */
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         System.out.println(message.getPayload());
+        session.sendMessage(message);
+
+        sendMessageToUsers(message);
         super.handleTextMessage(session, message);
     }
 

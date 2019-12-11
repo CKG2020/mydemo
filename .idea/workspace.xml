@@ -7,40 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80826f5b-5953-4d63-a43a-b702f8589979" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/Tips.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4cd4cc8a-f46c-48f2-830a-5b41850304ba.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4cd4cc8a-f46c-48f2-830a-5b41850304ba.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/First.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/First.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/stu.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/stu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/FriendsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/FriendsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserBoard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserBoard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Analyzing.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Analyzing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Board.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Board.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/MoreInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/MoreInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Questions.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Questions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/FirstDemo-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/FirstDemo-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/FirstDemo-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/FirstDemo-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/Controller/First.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/Controller/First.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/Controller/stu.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/Controller/stu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/UserDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/UserDaoImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/service/UserServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/service/UserServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/mapper/UserBoard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/mapper/UserBoard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/templates/admin/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/templates/admin/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/Analyzing.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/Analyzing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/Board.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/Board.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/FriendList.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/FriendList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/MoreInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/MoreInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/Questions.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/templates/stu/Questions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/WebsocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/WebsocketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/FriendsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/FriendsDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/FriendsDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/Com/easyArch/dao/FriendsDaoImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstDemo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -85,13 +58,6 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="SSHpro: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="pyq: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="SSHpro: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="UserBoard: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
@@ -116,20 +82,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/stu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="214" column="58" selection-start-line="214" selection-start-column="58" selection-end-line="214" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1742#1743#0" expanded="true" />
-                <element signature="e#1779#1780#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="484">
@@ -150,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDaoImp.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="616">
-              <caret line="42" column="54" lean-forward="true" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+              <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
               <folding>
                 <element signature="e#467#468#0" expanded="true" />
                 <element signature="e#540#541#0" expanded="true" />
@@ -159,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="338" column="31" lean-forward="true" selection-start-line="338" selection-start-column="31" selection-end-line="338" selection-end-column="31" />
+            <state relative-caret-position="1181">
+              <caret line="248" column="13" selection-start-line="248" selection-start-column="13" selection-end-line="248" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -184,10 +136,71 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDao.java">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="440">
+              <caret line="20" column="31" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1045#1046#0" expanded="true" />
+                <element signature="e#1096#1097#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+              <folding>
+                <element signature="e#2234#2235#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+              <folding>
+                <element signature="e#403#404#0" expanded="true" />
+                <element signature="e#465#466#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandlerInterceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/WebsocketController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="e#657#658#0" expanded="true" />
+                <element signature="e#708#709#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -197,47 +210,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="602">
               <caret line="120" column="66" selection-start-line="120" selection-start-column="66" selection-end-line="120" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserServiceImp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="389" column="35" lean-forward="true" selection-start-line="389" selection-start-column="35" selection-end-line="389" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#641#642#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/FriendsServiceImp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/FriendsService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -272,12 +244,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Login.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/PermissionLimit.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Application.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/Question.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/util/LoadTxt.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/analyzingData.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/admin.java" />
@@ -323,6 +291,10 @@
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDaoImp.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/WebsocketController.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketConfig.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandler.java" />
       </list>
     </option>
   </component>
@@ -343,9 +315,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="8" />
-    <option name="width" value="1912" />
-    <option name="height" value="1016" />
+    <option name="width" value="1667" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -394,46 +365,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="easyArch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easyArch" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easyArch" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easyArch" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easyArch" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
@@ -513,6 +444,16 @@
             <path>
               <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="mydemo" type="462c0819:PsiDirectoryNode" />
+              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
               <item name="Personal_Relation_System" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -557,23 +498,23 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper" />
-      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/static/pic" />
-      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/static/js" />
-      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu" />
-      <recent name="$PROJECT_DIR$/out/artifacts/test_jar" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Com.easyArch.Controller" />
-      <recent name="Com.easyArch.util" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/Questions" />
       <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/static/pic" />
       <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin" />
       <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Com.easyArch.Controller" />
+      <recent name="Com.easyArch.util" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/static/pic" />
+      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/static/js" />
+      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu" />
+      <recent name="$PROJECT_DIR$/out/artifacts/test_jar" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -814,7 +755,7 @@
       <workItem from="1575942891395" duration="35398000" />
       <workItem from="1576031189329" duration="4023000" />
       <workItem from="1576038402733" duration="2880000" />
-      <workItem from="1576054793802" duration="10963000" />
+      <workItem from="1576054793802" duration="14248000" />
     </task>
     <task id="LOCAL-00001" summary="准备添加Question模块">
       <created>1572445686792</created>
@@ -865,11 +806,18 @@
       <option name="project" value="LOCAL" />
       <updated>1575985644358</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="今天的提交：&#10;留言板以及好友申请的徽标提示&#10;好友删除也做好了。">
+      <created>1576072271029</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576072271029</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="610807000" />
+    <option name="totallyTimeSpent" value="614092000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -982,50 +930,14 @@
     <MESSAGE value="准备添加好友列表,留言板&#10;以及聊天室UI设计&#10;&#10; 现已实现管理员可以看系统的总体分析，用circle很好看的百分比饼图" />
     <MESSAGE value="现已实现管理员可以看系统的总体分析，用circle很好看的百分比饼图&#10;数据不同步问题已修复&#10;原因是sqlsession这个事务管理没有理解好，&#10;业务搞混了，要操作的对象搞混了，对问题的session不要去对用户操作呀！" />
     <MESSAGE value="今天的提交：&#10;留言功能实现。&#10;添加好友实现。剩下一个拒绝以及徽标提示，以及。。。聊天室没设计&#10;用了iview，抽屉很不错，查看信息很像回事了。&#10;ajax的异步操作是真的快。。" />
-    <option name="LAST_COMMIT_MESSAGE" value="今天的提交：&#10;留言功能实现。&#10;添加好友实现。剩下一个拒绝以及徽标提示，以及。。。聊天室没设计&#10;用了iview，抽屉很不错，查看信息很像回事了。&#10;ajax的异步操作是真的快。。" />
+    <MESSAGE value="今天的提交：&#10;留言板以及好友申请的徽标提示&#10;好友删除也做好了。" />
+    <option name="LAST_COMMIT_MESSAGE" value="今天的提交：&#10;留言板以及好友申请的徽标提示&#10;好友删除也做好了。" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/UserBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/FriendShow.java" />
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/listener.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/userMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-107" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="758">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/QuestionDaoImp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1128,17 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="88" selection-start-line="88" selection-end-line="92" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding>
-            <element signature="e#403#404#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1287,15 +1188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/pyq">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/FriendRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1387,7 +1279,7 @@
     <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDaoImp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
-          <caret line="42" column="54" lean-forward="true" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+          <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
           <folding>
             <element signature="e#467#468#0" expanded="true" />
             <element signature="e#540#541#0" expanded="true" />
@@ -1395,10 +1287,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/pyq">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="338" column="31" lean-forward="true" selection-start-line="338" selection-start-column="31" selection-end-line="338" selection-end-column="31" />
+        <state relative-caret-position="1181">
+          <caret line="248" column="13" selection-start-line="248" selection-start-column="13" selection-end-line="248" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1413,6 +1314,71 @@
             <element signature="n#style#0;n#i-button#0;n#template#1;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i-button#1;n#template#1;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i-table#0;n#div#4;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/5.1.10.RELEASE/spring-websocket-5.1.10.RELEASE.jar!/org/springframework/web/socket/handler/AbstractWebSocketHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding>
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandlerInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/WebsocketController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#708#709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1045#1046#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+          <folding>
+            <element signature="e#2234#2235#0" expanded="true" />
           </folding>
         </state>
       </provider>

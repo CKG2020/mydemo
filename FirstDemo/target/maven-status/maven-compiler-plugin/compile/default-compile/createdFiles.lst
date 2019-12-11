@@ -23,6 +23,7 @@ Com/easyArch/dao/UserDAO.class
 Com/easyArch/dao/FriendsDao.class
 Com/easyArch/service/FriendsServiceImp.class
 Com/easyArch/Controller/Question.class
+Com/easyArch/entity/Tips.class
 Com/easyArch/test.class
 Com/easyArch/Controller/stu.class
 Com/easyArch/websocket/WebsocketController.class
