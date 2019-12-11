@@ -1,6 +1,7 @@
 package Com.easyArch.dao;
 
 import Com.easyArch.entity.BoardMsg;
+import Com.easyArch.entity.FriendRequest;
 import Com.easyArch.entity.User;
 import Com.easyArch.util.mybatis;
 import org.apache.ibatis.session.SqlSession;
@@ -14,6 +15,7 @@ public interface FriendsDao {
     List<User> friendList(String sno);
     List<User> friendRequestList(String sno);
     User findUserBySno(String sno);
+    boolean delFriends(FriendRequest del);
 
     boolean insertBoardMsg(BoardMsg msg);
 

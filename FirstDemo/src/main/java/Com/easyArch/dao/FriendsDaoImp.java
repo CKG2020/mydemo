@@ -1,6 +1,7 @@
 package Com.easyArch.dao;
 
 import Com.easyArch.entity.BoardMsg;
+import Com.easyArch.entity.FriendRequest;
 import Com.easyArch.entity.User;
 import Com.easyArch.util.mybatis;
 import org.apache.ibatis.session.SqlSession;
@@ -34,6 +35,14 @@ public class FriendsDaoImp implements FriendsDao{
     @Override
     public User findUserBySno(String sno) {
         return sqlSession.selectOne("UserMapper.findUserBySno");
+    }
+
+    @Override
+    public boolean delFriends(FriendRequest del) {
+        sqlSession.delete("UserBoard.delFriend1",del);
+        sqlSession.delete("UserBoard.delFriend2",del);
+        sqlSession.commit();
+        return true;
     }
 
     @Override

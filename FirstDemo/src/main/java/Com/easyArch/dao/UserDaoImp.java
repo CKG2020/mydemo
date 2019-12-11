@@ -10,7 +10,7 @@ public class UserDaoImp implements UserDAO{
 
     public static SqlSession sqlSession ;
 
-    {
+    static {
         sqlSession=mybatis.getSqlSession();
     }
 
@@ -24,7 +24,6 @@ public class UserDaoImp implements UserDAO{
 
     @Override
     public boolean deleteUser(String sno) {
-//
         sqlSession.delete("UserMapper.delpyq",sno);
         sqlSession.delete("UserMapper.delb",sno);
         sqlSession.delete("UserMapper.delUser", sno);
@@ -172,6 +171,36 @@ public class UserDaoImp implements UserDAO{
     }
 
     @Override
+    public int countBoardMsg(String sno) {
+        return sqlSession.selectOne("UserBoard.boardMsgCount",sno);
+    }
+
+    @Override
+    public int historyMsgCount(String sno) {
+        return sqlSession.selectOne("UserBoard.historyMsgCount",sno);
+    }
+
+    @Override
+    public int historyRequestCount(String sno) {
+        return sqlSession.selectOne("UserBoard.historyRequestCount",sno);
+    }
+
+    @Override
+    public int setHistoryMsgCount(Tips tips) {
+        System.out.println(tips);
+        sqlSession.update("UserBoard.setHistoryMsgCount", tips);
+        sqlSession.commit();
+        return 0;
+    }
+
+    @Override
+    public int setHistoryRequestCount(Tips tips) {
+        sqlSession.update("UserBoard.setHistoryRequestCount", tips);
+        sqlSession.commit();
+        return 0;
+    }
+
+    @Override
     public boolean addRequest(FriendRequest request) {
         sqlSession.insert("UserBoard.addFriendRequest",request);
         sqlSession.commit();
@@ -187,7 +216,24 @@ public class UserDaoImp implements UserDAO{
     }
 
     @Override
+    public boolean refuseRequest(FriendRequest request) {
+        sqlSession.delete("UserBoard.refuseAdd",request);
+        sqlSession.commit();
+        return true;
+    }
+
+    @Override
     public int countRequest(String sno) {
         return sqlSession.selectOne("UserBoard.countRequest",sno);
+    }
+
+    @Override
+    public void close() {
+        sqlSession.close();
+    }
+
+    @Override
+    public void getSession() {
+        sqlSession=mybatis.getSqlSession();
     }
 }

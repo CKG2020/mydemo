@@ -19,6 +19,14 @@ public class UserServiceImp implements UserService{
     FriendsDao friendsDao = new FriendsDaoImp();
     List<User> userList;
 
+    private int countMsg=0;
+    private int countRequest=0;
+    private int times=0;
+
+    public void setTimes(int times) {
+        this.times = times;
+    }
+
     private static UserServiceImp userService= null;
     private User user;
     private UserBoard userBoard;
@@ -153,6 +161,16 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
+    public void close() {
+        userDao.close();
+    }
+
+    @Override
+    public void getSession() {
+        userDao.getSession();
+    }
+
+    @Override
     public int findAgeCount(int age){
         return userDao.findAgeCount(age);
     }
@@ -273,6 +291,68 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
+    public int boardMsgCount(String sno) {
+        if(times==0){
+            countMsg=userDao.countBoardMsg(sno);
+            System.out.println("sno:"+countMsg+"\ntimes"+times);
+            times++;
+        }else{
+            int count1 = userDao.countBoardMsg(sno);
+            System.out.println("count1"+count1+"\ntimes"+times);
+            if(count1>countMsg){
+                int countDiv = count1 - countMsg;
+                System.out.println("div"+ countDiv);
+                return countDiv;
+            }
+        }
+        return 0;
+    }
+
+    @Override
+    public int tipMsgCount(String sno) {
+        int count1=userDao.countBoardMsg(sno);
+        countMsg=userDao.historyMsgCount(sno);
+        if(count1>countMsg){
+            return count1;
+        }else{
+            return 0;
+        }
+    }
+
+    @Override
+    public int tipRequestCount(String sno) {
+        int count1=userDao.countRequest(sno);
+        countRequest=userDao.historyRequestCount(sno);
+        if(count1>countRequest){
+            return count1;
+        }else{
+            return 0;
+        }
+    }
+
+    @Override
+    public int historyMsgCount(String sno) {
+        countMsg=userDao.countBoardMsg(sno);
+        System.out.println(countMsg);
+        Tips tips = new Tips();
+        tips.setSno(sno);
+        tips.setCount(countMsg);
+        userDao.setHistoryMsgCount(tips);
+        return 0;
+    }
+
+    @Override
+    public int historyRequestCount(String sno) {
+        countRequest=userDao.countRequest(sno);
+        System.out.println(countRequest);
+        Tips tips = new Tips();
+        tips.setSno(sno);
+        tips.setCount(countRequest);
+        userDao.setHistoryRequestCount(tips);
+        return 0;
+    }
+
+    @Override
     public boolean addRequest(String sno1, String sno2) {
         FriendRequest request = new FriendRequest();
         request.setSno1(sno1);
@@ -289,7 +369,25 @@ public class UserServiceImp implements UserService{
         request.setSno2(sno2);
         request.setAddStatus(true);
         userDao.acceptRequest(request);
+        return true;
+    }
 
+    @Override
+    public boolean refuseRequest(String sno1, String sno2) {
+        FriendRequest request = new FriendRequest();
+        request.setSno1(sno1);
+        request.setSno2(sno2);
+        request.setAddStatus(false);
+        userDao.refuseRequest(request);
+        return true;
+    }
+
+    @Override
+    public boolean delFriend(String sno1, String sno2) {
+        FriendRequest del = new FriendRequest();
+        del.setSno1(sno1);
+        del.setSno2(sno2);
+        friendsDao.delFriends(del);
         return true;
     }
 

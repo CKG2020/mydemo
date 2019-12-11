@@ -18,4 +18,6 @@ public interface FriendsService {
 
     boolean addBoardMsg(BoardMsg sno);
 
+
+
 }

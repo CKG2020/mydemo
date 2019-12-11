@@ -41,15 +41,18 @@ public class stu {
 
     @RequestMapping(value = "Analyzing")
     public String Analyzing(){
+//        userService.tipMsgCount()
         return "stu/Analyzing";
     }
 
     @RequestMapping(value = "Board")
     public String Board(){
+        userService.setTimes(0);
         return "stu/Board";
     }
     @RequestMapping(value = "FriendList")
     public String FriendList(){
+
         return "stu/FriendList";
     }
     @RequestMapping(value = "MoreInfo")
@@ -84,6 +87,8 @@ public class stu {
     @ResponseBody
     public List<User> getFriends(){
         HttpSession session = request.getSession();
+        System.out.println(((User)session.getAttribute("user")).getSno());
+        System.out.println(userService.showFriends(((User)session.getAttribute("user")).getSno()));
         return userService.showFriends(((User)session.getAttribute("user")).getSno());
     }
     @RequestMapping(value="FriendList/getRequest")
@@ -160,11 +165,55 @@ public class stu {
         return "";
     }
 
+    @RequestMapping(value="refuseRequest")
+    @ResponseBody
+    public String refuseRequest(@RequestParam String sno){
+        HttpSession session = request.getSession();
+        userService.refuseRequest(sno,((User)session.getAttribute("user")).getSno());
+        return "";
+    }
+
     @RequestMapping(value="countRequest")
     @ResponseBody
     public int countRequest(){
         HttpSession session = request.getSession();
         return userService.countRequest(((User)session.getAttribute("user")).getSno());
+    }
+
+    @RequestMapping(value="newMsgCount")
+    @ResponseBody
+    public int newMsgCount(){
+        HttpSession session = request.getSession();
+        return userService.tipMsgCount(((User)session.getAttribute("user")).getSno());
+    }
+
+    @RequestMapping(value="newRequestCount")
+    @ResponseBody
+    public int newRequestCount(){
+        HttpSession session = request.getSession();
+        return userService.tipRequestCount(((User)session.getAttribute("user")).getSno());
+    }
+
+    @RequestMapping(value="changeHistoryMsg")
+    @ResponseBody
+    public int changeHistoryMsg(){
+        HttpSession session = request.getSession();
+        return userService.historyMsgCount(((User)session.getAttribute("user")).getSno());
+    }
+
+    @RequestMapping(value="changeHistoryRequest")
+    @ResponseBody
+    public int changeHistoryRequest(){
+        HttpSession session = request.getSession();
+        return userService.historyRequestCount(((User)session.getAttribute("user")).getSno());
+    }
+
+    @RequestMapping(value="delFriend")
+    @ResponseBody
+    public String delFriend(@RequestParam String sno){
+        HttpSession session = request.getSession();
+        userService.delFriend(((User)session.getAttribute("user")).getSno(),sno);
+        return "";
     }
 
 

@@ -26,7 +26,9 @@ public class First {
         if(session.getAttribute("user")!=null){
             session.removeAttribute("user");
             session.removeAttribute("userBoard");
+            userService.close();
         }
+        userService.getSession();
         return "First/Login";
     }
 

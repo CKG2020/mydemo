@@ -7,7 +7,8 @@ import java.util.List;
 public interface UserService {
 
     //业务层 创建User实例
-
+    int times=0;
+    void setTimes(int times);
     User addUser(String sno, String pwd);
 
     boolean delUser(String sno);
@@ -33,15 +34,23 @@ public interface UserService {
     int findFriendsCount(String sno);
     int countRequest(String sno);
 
+
     UserBoard addScores(String sno, List<ReturnAnswer> list);
     String returnResult(String sno);
     boolean isFinished(String sno);
 
     List<BoardMsg> showBoardMsg(String sno);
     boolean addBoardMsg(BoardMsg sno);
+    int boardMsgCount(String sno);
+    int tipMsgCount(String sno);
+    int tipRequestCount(String sno);
+    int historyMsgCount(String sno);
+    int historyRequestCount(String sno);
 
     boolean addRequest(String sno1,String sno2);
     boolean acceptRequest(String sno1,String sno2);
+    boolean refuseRequest(String sno1,String sno2);
+    boolean delFriend(String sno1,String sno2);
 
 
     int findAllFinished();
@@ -52,5 +61,8 @@ public interface UserService {
 
     List<User> showFriends(String sno);
     List<User> showFriendsRequest(String sno);
+
+    void close();
+    void getSession();
 
 }

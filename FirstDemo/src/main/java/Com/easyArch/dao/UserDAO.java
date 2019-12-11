@@ -19,7 +19,6 @@ public interface UserDAO {
 
     String findUserNameBySno(String sno);
 
-
     User login(String username, String pwd);
     Admin adminlogin(String username, String pwd);
     boolean updateUser(User user);
@@ -41,9 +40,19 @@ public interface UserDAO {
     List<BoardMsg> showBoardMsg(String sno);
     boolean insertBoardMsg(BoardMsg msg);
 
+    int countBoardMsg(String sno);
+    int countRequest(String sno);
+
+    int historyMsgCount(String sno);
+    int historyRequestCount(String sno);
+    int setHistoryMsgCount(Tips tips);
+    int setHistoryRequestCount(Tips tips);
+
     boolean addRequest(FriendRequest request);
     boolean acceptRequest(FriendRequest request);
-    int countRequest(String sno);
+    boolean refuseRequest(FriendRequest request);
+    void close();
+    void getSession();
 
     User findUserBySno(String sno);
     List<Integer> findScore();
