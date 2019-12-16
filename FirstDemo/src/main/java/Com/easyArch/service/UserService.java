@@ -12,12 +12,12 @@ public interface UserService {
     User addUser(String sno, String pwd);
 
     boolean delUser(String sno);
-    List<User> findAll();
-    List<User> findUsersBySno(String sno);
-    List<User> findUsersByName(String name);
-    List<User> findUsersByAge(int age);
-    List<User> findUsersByCollage(String collage);
-    List<User> findUsersByClass(String sclass);
+    List<UserShow> findAll();
+    List<UserShow> findUsersBySno(String sno);
+    List<UserShow> findUsersByName(String name);
+    List<UserShow> findUsersByAge(int age);
+    List<UserShow> findUsersByCollage(String collage);
+    List<UserShow> findUsersByClass(String sclass);
 
     User findUserBySno(String sno);
 
@@ -61,6 +61,8 @@ public interface UserService {
 
     List<User> showFriends(String sno);
     List<User> showFriendsRequest(String sno);
+
+    List<UserBoard> findUserBoard(String sno);
 
     void close();
     void getSession();

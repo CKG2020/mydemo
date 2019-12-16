@@ -12,12 +12,12 @@
       select * from SSHpro.UserInfo where Sno= #{Sno}
    </select>
 
+    <select id="findUserShow" resultType="Com.easyArch.entity.UserShow">
+        select SSHpro.UserInfo.Sno,Sage,Scall,Sname,Sclass,Collage,Major,SSHpro.UserBoard.Scores from SSHpro.UserInfo,SSHpro.UserBoard where UserInfo.Sno=UserBoard.Sno;
+    </select>
+
     <select id="selectAdmin" resultType="Com.easyArch.entity.Admin">
       select * from SSHpro.admins where username = #{username}
-   </select>
-
-    <select id="findall" resultType="Com.easyArch.entity.User">
-      select * from SSHpro.UserInfo
    </select>
 
     <select id="findallcount" resultType="Integer">
@@ -29,21 +29,32 @@
         where Sno = #{sno}
     </select>
 
-    <select id="findbysno" resultType="Com.easyArch.entity.User">
-        select * FROM SSHpro.UserInfo where Sno like  concat(concat("%",#{Sno}),"%")
+    <select id="findbysno" resultType="Com.easyArch.entity.UserShow">
+        select SSHpro.UserInfo.Sno,Sage,Scall,Sname,Sclass,Collage,Major,SSHpro.UserBoard.Scores
+        from SSHpro.UserInfo,SSHpro.UserBoard
+        where( UserInfo.Sno=UserBoard.Sno ) and UserInfo.Sno like  concat(concat("%",#{Sno}),"%");
+
     </select>
 
-    <select id="findbyAge" resultType="Com.easyArch.entity.User">
-        select * from SSHpro.UserInfo where Sage = #{Sage}
+    <select id="findbyAge" resultType="Com.easyArch.entity.UserShow">
+        select SSHpro.UserInfo.Sno,Sage,Scall,Sname,Sclass,Collage,Major,SSHpro.UserBoard.Scores
+        from SSHpro.UserInfo,SSHpro.UserBoard
+        where( UserInfo.Sno=UserBoard.Sno ) and UserInfo.Sage = #{Sage}
     </select>
-    <select id="findbyName" resultType="Com.easyArch.entity.User">
-        select * from SSHpro.UserInfo where Sname like  concat(concat("%",#{sname}),"%")
+    <select id="findbyName" resultType="Com.easyArch.entity.UserShow">
+        select SSHpro.UserInfo.Sno,Sage,Scall,Sname,Sclass,Collage,Major,SSHpro.UserBoard.Scores
+        from SSHpro.UserInfo,SSHpro.UserBoard
+        where( UserInfo.Sno=UserBoard.Sno ) and UserInfo.Sname like  concat(concat("%",#{sname}),"%")
     </select>
-    <select id="findbyCollage" resultType="Com.easyArch.entity.User">
-        select * from SSHpro.UserInfo where Collage like concat(concat("%",#{collage}),"%")
+    <select id="findbyCollage" resultType="Com.easyArch.entity.UserShow">
+        select SSHpro.UserInfo.Sno,Sage,Scall,Sname,Sclass,Collage,Major,SSHpro.UserBoard.Scores
+        from SSHpro.UserInfo,SSHpro.UserBoard
+        where( UserInfo.Sno=UserBoard.Sno ) and UserInfo.Collage like concat(concat("%",#{collage}),"%")
     </select>
-    <select id="findbyClass" resultType="Com.easyArch.entity.User">
-        select * from SSHpro.UserInfo where Sclass like concat(concat("%",#{sclass}),"%")
+    <select id="findbyClass" resultType="Com.easyArch.entity.UserShow">
+        select SSHpro.UserInfo.Sno,Sage,Scall,Sname,Sclass,Collage,Major,SSHpro.UserBoard.Scores
+        from SSHpro.UserInfo,SSHpro.UserBoard
+        where( UserInfo.Sno=UserBoard.Sno ) and UserInfo.Sclass like concat(concat("%",#{sclass}),"%")
     </select>
 
     <select id="findAgeCount" resultType="Integer">

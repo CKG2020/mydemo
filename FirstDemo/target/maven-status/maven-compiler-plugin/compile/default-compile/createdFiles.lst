@@ -8,6 +8,7 @@ Com/easyArch/websocket/SpringWebSocketHandler.class
 Com/easyArch/service/FriendsService.class
 Com/easyArch/util/LoadTxt.class
 Com/easyArch/Application.class
+Com/easyArch/util/dateUtil.class
 Com/easyArch/service/QuestionServiceImp.class
 Com/easyArch/Controller/admin.class
 Com/easyArch/websocket/SpringWebSocketHandlerInterceptor.class
@@ -16,6 +17,7 @@ Com/easyArch/entity/Admin.class
 Com/easyArch/service/UserServiceImp.class
 Com/easyArch/entity/Question.class
 Com/easyArch/service/UserService.class
+Com/easyArch/entity/UserShow.class
 Com/easyArch/dao/QuestionDao.class
 Com/easyArch/dao/FriendsDaoImp.class
 Com/easyArch/entity/FriendRequest.class

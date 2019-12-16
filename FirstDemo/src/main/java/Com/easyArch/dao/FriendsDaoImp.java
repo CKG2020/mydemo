@@ -29,6 +29,7 @@ public class FriendsDaoImp implements FriendsDao{
 
     @Override
     public List<User> friendRequestList(String sno) {
+
         return sqlSession.selectList("UserBoard.friendsRequest",sno);
     }
 

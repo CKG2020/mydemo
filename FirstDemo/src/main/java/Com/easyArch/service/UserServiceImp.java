@@ -17,7 +17,7 @@ public class UserServiceImp implements UserService{
 
     UserDAO userDao = new UserDaoImp();
     FriendsDao friendsDao = new FriendsDaoImp();
-    List<User> userList;
+    List<UserShow> userList;
 
     private int countMsg=0;
     private int countRequest=0;
@@ -56,37 +56,37 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public List<User> findAll() {
+    public List<UserShow> findAll() {
         userList=userDao.findAll();
         return userList;
     }
 
     @Override
-    public List<User> findUsersBySno(String sno) {
+    public List<UserShow> findUsersBySno(String sno) {
         userList=userDao.findUsersBySno(sno);
         return userList;
     }
 
     @Override
-    public List<User> findUsersByName(String name) {
+    public List<UserShow> findUsersByName(String name) {
         userList=userDao.findUsersByName(name);
         return userList;
     }
 
     @Override
-    public List<User> findUsersByAge(int age) {
+    public List<UserShow> findUsersByAge(int age) {
         userList=userDao.findUsersByAge(age);
         return userList;
     }
 
     @Override
-    public List<User> findUsersByCollage(String collage) {
+    public List<UserShow> findUsersByCollage(String collage) {
         userList=userDao.findUsersByCollage(collage);
         return userList;
     }
 
     @Override
-    public List<User> findUsersByClass(String sclass) {
+    public List<UserShow> findUsersByClass(String sclass) {
         userList=userDao.findUsersByClass(sclass);
         return userList;
     }
@@ -158,6 +158,11 @@ public class UserServiceImp implements UserService{
     @Override
     public List<User> showFriendsRequest(String sno) {
         return friendsDao.friendRequestList(sno);
+    }
+
+    @Override
+    public List<UserBoard> findUserBoard(String sno) {
+        return userDao.findUserBoard(sno);
     }
 
     @Override
@@ -313,7 +318,7 @@ public class UserServiceImp implements UserService{
         int count1=userDao.countBoardMsg(sno);
         countMsg=userDao.historyMsgCount(sno);
         if(count1>countMsg){
-            return count1;
+            return count1-countMsg;
         }else{
             return 0;
         }
@@ -324,7 +329,7 @@ public class UserServiceImp implements UserService{
         int count1=userDao.countRequest(sno);
         countRequest=userDao.historyRequestCount(sno);
         if(count1>countRequest){
-            return count1;
+            return count1-countRequest;
         }else{
             return 0;
         }

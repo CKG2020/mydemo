@@ -1,9 +1,7 @@
 package Com.easyArch.Controller;
 
 
-import Com.easyArch.entity.FormValidate;
-import Com.easyArch.entity.BoardMsg;
-import Com.easyArch.entity.User;
+import Com.easyArch.entity.*;
 import Com.easyArch.service.FriendsService;
 import Com.easyArch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,6 +93,7 @@ public class stu {
     @ResponseBody
     public  List<User>  getRequest(){
         HttpSession session = request.getSession();
+        System.out.println(userService.showFriendsRequest(((User)session.getAttribute("user")).getSno()));
         return userService.showFriendsRequest(((User)session.getAttribute("user")).getSno());
     }
     @RequestMapping(value="FriendList/friendInfo")
@@ -117,10 +116,16 @@ public class stu {
         userService.addBoardMsg(msg);
         return "";
     }
+    @RequestMapping(value="findUserBoard")
+    @ResponseBody
+    public List<UserBoard> findUserBoard(){
+        HttpSession session = request.getSession();
+        return userService.findUserBoard(((User)session.getAttribute("user")).getSno());
+    }
 
     @RequestMapping(value="findBySno")
     @ResponseBody
-    public List<User> findBySno(@RequestParam String Sno){
+    public List<UserShow> findBySno(@RequestParam String Sno){
         System.out.println("Sno"+Sno);
         return userService.findUsersBySno(Sno);
     }
@@ -139,7 +144,7 @@ public class stu {
 
     @RequestMapping(value="findByName")
     @ResponseBody
-    public List<User> findbyName(@RequestParam String Sname){
+    public List<UserShow> findbyName(@RequestParam String Sname){
         return userService.findUsersByName(Sname);
     }
 

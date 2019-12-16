@@ -27,10 +27,10 @@ public class SpringWebSocketHandler extends TextWebSocketHandler{
         // TODO Auto-generated method stub
 //        count++;
         users.add(session);
-        System.out.println("connect to the websocket success......当前数量:"+users.size());
+        String username= (String) session.getAttributes().get("WEBSOCKET_USERNAME");
         //这块会实现自己业务，比如，当用户登录后，会把离线消息推送给用户
-        TextMessage returnMessage = new TextMessage("你将收到的离线");
-        session.sendMessage(returnMessage);
+        TextMessage returnMessage = new TextMessage("欢迎"+username+"进入多人聊天室！当前人数："+users.size());
+        sendMessageToUsers(returnMessage);
     }
 
     /**
@@ -39,7 +39,7 @@ public class SpringWebSocketHandler extends TextWebSocketHandler{
     public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) throws Exception {
         logger.debug("websocket connection closed......");
         String username= (String) session.getAttributes().get("WEBSOCKET_USERNAME");
-        System.out.println("用户"+username+"已退出！");
+        sendMessageToUsers(new TextMessage("用户"+username+"已退出！"));
         users.remove(session);
         System.out.println("剩余在线用户"+users.size());
     }
@@ -49,8 +49,6 @@ public class SpringWebSocketHandler extends TextWebSocketHandler{
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         System.out.println(message.getPayload());
-        session.sendMessage(message);
-
         sendMessageToUsers(message);
         super.handleTextMessage(session, message);
     }
@@ -96,6 +94,7 @@ public class SpringWebSocketHandler extends TextWebSocketHandler{
         for (WebSocketSession user : users) {
             try {
                 if (user.isOpen()) {
+
                     user.sendMessage(message);
                 }
             } catch (IOException e) {

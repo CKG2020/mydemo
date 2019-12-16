@@ -9,13 +9,13 @@ public interface UserDAO {
     int addUser(User user, UserBoard userBoard);//注册
     boolean deleteUser(String id);
 
-    List<User> findAll();//管理员查所有成员 简单分页
+    List<UserShow> findAll();//管理员查所有成员 简单分页
 
-    List<User> findUsersBySno(String sno);
-    List<User> findUsersByName(String name);
-    List<User> findUsersByAge(int age);
-    List<User> findUsersByCollage(String collage);
-    List<User> findUsersByClass(String sclass);
+    List<UserShow> findUsersBySno(String sno);
+    List<UserShow> findUsersByName(String name);
+    List<UserShow> findUsersByAge(int age);
+    List<UserShow> findUsersByCollage(String collage);
+    List<UserShow> findUsersByClass(String sclass);
 
     String findUserNameBySno(String sno);
 
@@ -54,6 +54,7 @@ public interface UserDAO {
     void close();
     void getSession();
 
+    List<UserBoard> findUserBoard(String sno);
     User findUserBySno(String sno);
     List<Integer> findScore();
 

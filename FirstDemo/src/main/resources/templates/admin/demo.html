@@ -169,12 +169,18 @@
             key: "sclass"
         },
         {
+            title:'Scores',
+            key:'scores'
+        },
+        {
             title: 'Action',
             slot: 'action',
-            width: 250,
+            width: 150,
             align: 'center'
         }
     ];
+
+
     function showFewBoardMsg(number) {
         $.ajax({
             url:'/stu/FriendList/showFewBoardMsg',
@@ -206,6 +212,16 @@
         showFewBoardMsg(number)
     }
 
+    function findUserBoard() {
+        $.ajax({
+            url:'/stu/findUserBoard',
+            type:'post',
+            success(res) {
+                msg = JSON.stringify(res);
+                msg=$.parseJSON(msg);
+            }
+        })
+    }
     function deleteuser() {
         window.location.href='/admin/deleteuser'
     }

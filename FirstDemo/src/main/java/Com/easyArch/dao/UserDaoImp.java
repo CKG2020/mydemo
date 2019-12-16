@@ -33,32 +33,31 @@ public class UserDaoImp implements UserDAO{
     }
 
     @Override
-    public List<User> findAll() {
-        return sqlSession.selectList("UserMapper.findall");
+    public List<UserShow> findAll() {
+        return sqlSession.selectList("UserMapper.findUserShow");
     }
 
     @Override
-    public List<User> findUsersBySno(String Sno) {
+    public List<UserShow> findUsersBySno(String Sno) {
         return sqlSession.selectList("UserMapper.findbysno",Sno);
     }
 
     @Override
-    public List<User> findUsersByName(String name) {
+    public List<UserShow> findUsersByName(String name) {
         return sqlSession.selectList("UserMapper.findbyName",name);
     }
 
     @Override
-    public List<User> findUsersByAge(int age) {
+    public List<UserShow> findUsersByAge(int age) {
         return sqlSession.selectList("UserMapper.findbyAge",age);
     }
 
     @Override
-    public List<User> findUsersByCollage(String collage) {
+    public List<UserShow> findUsersByCollage(String collage) {
         return sqlSession.selectList("UserMapper.findbyCollage",collage);
     }
-
     @Override
-    public List<User> findUsersByClass(String sclass) {
+    public List<UserShow> findUsersByClass(String sclass) {
         return sqlSession.selectList("UserMapper.findbyClass",sclass);
     }
 
@@ -235,5 +234,10 @@ public class UserDaoImp implements UserDAO{
     @Override
     public void getSession() {
         sqlSession=mybatis.getSqlSession();
+    }
+
+    @Override
+    public List<UserBoard> findUserBoard(String sno) {
+        return sqlSession.selectOne("UserBoard.findUserBoard",sno);
     }
 }

@@ -3,6 +3,7 @@ package Com.easyArch.Controller;
 
 import Com.easyArch.entity.AnalyzingData;
 import Com.easyArch.entity.User;
+import Com.easyArch.entity.UserShow;
 import Com.easyArch.service.UserService;
 import com.rabbitmq.tools.json.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,35 +31,35 @@ public class admin {
 
     @RequestMapping("findpage")
     @ResponseBody
-    public List<User> findpage(@RequestParam String curr, String pageSize){
+    public List<UserShow> findpage(@RequestParam String curr, String pageSize){
         return userService.findpage(Integer.valueOf(curr),Integer.valueOf(pageSize));
     }
 
     @RequestMapping("findbySno")
     @ResponseBody
-    public List<User> findbySno(@RequestParam String Sno){
+    public List<UserShow> findbySno(@RequestParam String Sno){
         return userService.findUsersBySno(Sno);
     }
 
     @RequestMapping("findbyAge")
     @ResponseBody
-    public List<User> findbyAge(@RequestParam String Sage){
+    public List<UserShow> findbyAge(@RequestParam String Sage){
         return userService.findUsersByAge(Integer.valueOf(Sage));
     }
     @RequestMapping("findbyCollage")
     @ResponseBody
-    public List<User> findbyCollage(@RequestParam String Collage){
+    public List<UserShow> findbyCollage(@RequestParam String Collage){
         return userService.findUsersByCollage(Collage);
     }
     @RequestMapping("findbyClass")
     @ResponseBody
-    public List<User> findbyClass(@RequestParam String Sclass){
+    public List<UserShow> findbyClass(@RequestParam String Sclass){
         return userService.findUsersByClass(Sclass);
     }
 
     @RequestMapping("findbyName")
     @ResponseBody
-    public List<User> findbyName(@RequestParam String Sname){
+    public List<UserShow> findbyName(@RequestParam String Sname){
         return userService.findUsersByName(Sname);
     }
 
