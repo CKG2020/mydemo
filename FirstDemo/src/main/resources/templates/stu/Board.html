@@ -8,7 +8,7 @@
     <script type="text/javascript" src="http://unpkg.com/view-design/dist/iview.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
-<body onload="f()">
+<body onload="f();newRequestCount();changeHistoryMsg()">
 <div id="app">
     <!--    {{message}}-->
     <div class="layout">
@@ -22,9 +22,8 @@
                         </template>
                         <menu-item name="1-1"><span onclick="MoreInfo()">完善信息</span></menu-item>
                         <menu-item name="1-2">
-                            <span>
-                                留言板
-                            </span></menu-item>
+                            <span>留言板</span>
+                        </menu-item>
                         <menu-item name="1-3">
                             <span onclick="Questions()">
                                 调查问卷
@@ -38,8 +37,10 @@
                         <template slot="title">聊天室
                             <icon type="ios-people" />
                         </template>
+                        <Badge :count="countNewRequest">
                         <menu-item name="2-1">
-                            <span onclick="FriendList()">好友列表</span></menu-item>
+                            <span onclick="FriendList()">好友列表</span>
+                        </menu-item></Badge>
                         <menu-item name="2-2">
                             <span onclick="chat()">聊天室</span>
                         </menu-item>
@@ -55,37 +56,12 @@
                 </i-header>
                 <i-content :style="{padding: '0 16px 16px'}">
                     <breadcrumb :style="{margin: '16px 0'}">
-                        {{info}}
+                        留言板
                     </breadcrumb>
-                    <card>
-                        <div style="width: 700px;float: left">
-                            <strong>Default Size:</strong>
-                            <br><br>
-                            <List header="Header" footer="Footer" border>
-                                <ListItem>This is a piece of text.</ListItem>
-                                <ListItem>This is a piece of text.</ListItem>
-                                <ListItem>This is a piece of text.</ListItem>
-                            </List>
-                            <br>
-                            <strong>Small Size:</strong>
-                            <br><br>
-                            <List header="Header" footer="Footer" border size="small">
-                                <ListItem>This is a piece of text.</ListItem>
-                                <ListItem>This is a piece of text.</ListItem>
-                                <ListItem>This is a piece of text.</ListItem>
-                            </List>
-                            <br>
-                            <strong>Large Size:</strong>
-                            <br><br>
-                            <List header="Header" footer="Footer" border size="large">
-                                <ListItem>This is a piece of text.</ListItem>
-                                <ListItem>This is a piece of text.</ListItem>
-                                <ListItem>This is a piece of text.</ListItem>
-                            </List>
-                        </div>
-
-                        <div style="margin-left: 65%;margin-top: 15%">
-                            <img src="/static/pic/cat.png" style="height: 250px;width: 250px">
+                    <card >
+                        <div  v-for="i in list">
+                        <divider orientation="left">From : {{i.from_name}} &nbsp;&nbsp;{{i.date_time}}</divider>
+                            <p>{{i.board_text}}</p>
                         </div>
                     </card>
                 </i-content>
@@ -96,8 +72,23 @@
 
 </body>
 <script>
+    function changeHistoryMsg() {
+        $.ajax({
+            url:'/stu/changeHistoryMsg',
+            type:'post'
+        })
+    }
+    function newRequestCount(){
+        $.ajax({
+            url:'/stu/newRequestCount',
+            type:'post',
+            success(res) {
+                mVue.countNewRequest=res;
+                console.log(res);
+            }
+        })
+    }
     var uu;
-
     function f(){
         $.ajax({
             url:'/search',
@@ -107,11 +98,11 @@
                 msg=$.parseJSON(msg);
                 uu=msg;
                 console.log(res);
-                mVue.formValidate.sno=res.sno;
                 if(res.sname==null){
                     active("新用户!","请完善你的个人信息");
                 }else{
                     active(msg.sname);
+                    showBoardMsg();
                 }
             }
         })
@@ -120,16 +111,34 @@
         mVue.message=res;
         mVue.info=ss;
     }
+    function showBoardMsg() {
+        $.ajax({
+            url:'/stu/Board/getBoard',
+            type:'post',
+            success(res) {
+                msg=JSON.stringify(res);
+                msg=$.parseJSON(msg);
+                mVue.list=msg;
+                console.log(JSON.stringify(res));
+                console.log(res);
+
+            }
+        })
+    }
+
     var mVue = new Vue({
         el:'#app',
         data(){
-            return{
-                message:'',
-                info:'',
+            return {
+                countMsg:'',
+                countNewRequest:'',
+                list:[],
+                message: '',
+                info: '',
                 isCollapsed: false,
-                choose:'',
-                result:'',
-                thanks:''
+                choose: '',
+                result: '',
+                thanks: '',
             }
         },
         computed: {

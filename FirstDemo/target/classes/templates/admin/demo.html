@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta content=no-cache/ http-equiv=Cache-Control>
     <title>Admin</title>
     <link rel="stylesheet" type="text/css" href="http://unpkg.com/view-design/dist/styles/iview.css">
     <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
@@ -71,8 +72,61 @@
                         <i-button shape="circle" icon="ios-search" @click="searchbySage"></i-button>
                     </breadcrumb>
                     <card>
+                        <div>
+                            <drawer :closable="false" width="640" v-model="value4">
+                                <p :style="pStyle">User Profile</p>
+                                <p :style="pStyle">Personal</p>
+                                <div class="demo-drawer-profile">
+                                    <row>
+                                        <i-col span="12">
+                                            Full Name: {{friendInfo.sname}}
+                                        </i-col>
+                                        <i-col span="12">
+                                            Gender: <span v-if="friendInfo.gender===0">女</span>
+                                            <span v-if="friendInfo.gender===1">男</span>
+                                        </i-col>
+
+                                    </row>
+                                    <row>
+                                        <i-col span="12">
+                                            Collage: {{friendInfo.collage}}
+                                        </i-col>
+                                        <i-col span="12">
+                                            Major: {{friendInfo.major}}
+                                        </i-col>
+                                    </row>
+                                    <row>
+                                        <i-col span="12">
+                                            Birthday: {{friendInfo.birth}}
+                                        </i-col>
+                                        <i-col span="12">
+                                            Age: {{friendInfo.sage}}
+                                        </i-col>
+                                    </row>
+                                    <row>
+                                        <i-col span="12">
+                                            PhoneNumber: {{friendInfo.scall}}
+                                        </i-col>
+                                    </row>
+                                </div>
+                                <divider>
+                                    Message Board
+                                </divider>
+                                <div  v-for="i in list">
+                                    <divider orientation="left">From : {{i.from_name}} &nbsp;&nbsp;{{i.date_time}}</divider>
+                                    <p>{{i.board_text}}</p>
+                                </div>
+                            </drawer>
+                        </div>
                         <div style="height: 100%">
-                            <i-table stripe :columns="columns1" :data="data1" ></i-table>
+                            <i-table stripe :columns="columns1" :data="data1" >
+                                <template slot-scope="{ row }" slot="name">
+                                    <strong>{{ row.name }}</strong>
+                                </template>
+                                <template slot-scope="{ row, index }" slot="action">
+                                    <i-button type="primary" size="small" style="margin-right: 5px" @click="showSearch(index)" ghost>查看详情</i-button>
+                                </template>
+                            </i-table>
                         </div>
                         <div style="margin-left: 50px;margin-top: 20px">
                             <page :total="dataCount" :page-size="pageSize" :current.sync="pageNum"
@@ -113,9 +167,61 @@
         {
             title: "Sclass",
             key: "sclass"
+        },
+        {
+            title:'Scores',
+            key:'scores'
+        },
+        {
+            title: 'Action',
+            slot: 'action',
+            width: 150,
+            align: 'center'
         }
     ];
 
+
+    function showFewBoardMsg(number) {
+        $.ajax({
+            url:'/stu/FriendList/showFewBoardMsg',
+            type:'post',
+            data:{
+                "sno":number
+            },
+            success(res) {
+                msg=JSON.stringify(res);
+                msg=$.parseJSON(msg);
+                Page.list=msg;
+            }
+        })
+    }
+    function friendsInfo(number) {
+        $.ajax({
+            url:'/stu/FriendList/friendInfo',
+            type:'post',
+            data:{
+                "sno":number
+            },
+            success(res){
+                msg = JSON.stringify(res);
+                msg=$.parseJSON(msg);
+                console.log(res);
+                Page.friendInfo=msg;
+            }
+        });
+        showFewBoardMsg(number)
+    }
+
+    function findUserBoard() {
+        $.ajax({
+            url:'/stu/findUserBoard',
+            type:'post',
+            success(res) {
+                msg = JSON.stringify(res);
+                msg=$.parseJSON(msg);
+            }
+        })
+    }
     function deleteuser() {
         window.location.href='/admin/deleteuser'
     }
@@ -142,7 +248,25 @@
                 Sname:'',
                 Sclass:'',
                 Collage:'',
-                Sage:''
+                Sage:'',
+
+                value4: false,
+                pStyle: {
+                    fontSize: '16px',
+                    color: 'rgba(0,0,0,0.85)',
+                    lineHeight: '24px',
+                    display: 'block',
+                    marginBottom: '16px'
+                },
+                friendInfo:'',
+                list:[],
+                snoIndex:'',
+                BoardMsg:{
+                    sno:'',
+                    from_name:'',
+                    board_text:'',
+                    date_time:''
+                },
             };
         },
         computed: {
@@ -154,6 +278,11 @@
             }
         },
         methods:{
+            showSearch (index) {
+                Page.snoIndex=this.data1[index].sno;
+                friendsInfo(Page.snoIndex);
+                Page.value4=true;
+            },
             changepage(curr){
                 $.ajax({
                     url: '/admin/findpage',

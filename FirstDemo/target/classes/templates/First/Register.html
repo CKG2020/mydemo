@@ -99,22 +99,24 @@
             },
             f() {
                 let Sno = this.formCustom.sno;
-                $.ajax({
-                    url:'isused',
-                    type:'post',
-                    data:{
-                        "Sno":Sno
-                    },
-                    success(res){
-                        if(res==="ok"){
-                            alert("此账号可以使用");
-                            console.log("ok");
-                            Main.subm();
-                        }else{
-                            alert("此账号已注册过")
+                if(Sno!=null){
+                    $.ajax({
+                        url:'isused',
+                        type:'post',
+                        data:{
+                            "Sno":Sno
+                        },
+                        success(res){
+                            if(res==="ok"){
+                                alert("此账号可以使用");
+                                console.log("ok");
+                                Main.subm();
+                            }else{
+                                alert("此账号已注册过")
+                            }
                         }
-                    }
-                });
+                    });
+                }
             },
             subm(){
                 pp1=this.formCustom.passwd;

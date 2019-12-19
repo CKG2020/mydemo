@@ -1,51 +1,28 @@
 package Com.easyArch;
 
-import Com.easyArch.dao.QuestionDao;
-import Com.easyArch.dao.QuestionDaoImp;
+
+import Com.easyArch.dao.FriendsDaoImp;
 import Com.easyArch.dao.UserDaoImp;
-import Com.easyArch.entity.Question;
-import Com.easyArch.service.UserServiceImp;
-import Com.easyArch.util.LoadTxt;
-import Com.easyArch.util.mybatis;
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.core.io.ClassPathResource;
-
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Stack;
+import Com.easyArch.entity.BoardMsg;
 
 public class test {
 
     public static void main(String[] args) {
-//        List<Integer> list = new ArrayList<>();
-//        list.add(1);
-//        System.out.println(list.get(0));
-//        SqlSession sqlSession= mybatis.Connection();
-//        String str =sqlSession.selectOne("QuestionMapper.loadAnswers");
+
+        UserDaoImp imp = new UserDaoImp();
+        System.out.println(imp.findUsersBySno("224017"));
+//        imp.showBoardMsg("2240170128");
+//        System.out.println(imp.showBoardMsg("2240170128"));
 //
-//        List<Question> list = LoadTxt.ReadQuestions(str);
+//        FriendsDaoImp imp2 = new FriendsDaoImp();
+//        BoardMsg msg = new BoardMsg();
+//        msg.setBoard_text("tesst222222222222222");
+//        msg.setDate_time("2019-12-01 11:11:11");
+//        msg.setFrom_name("me");
+//        msg.setSno("2240170128");
+//        imp2.insertBoardMsg(msg);
 //
-//        System.out.println(list);
-
-//        QuestionDao questionDao = new QuestionDaoImp();
-//        System.out.println(questionDao.isFinished("2240170128"));
-//        System.out.println(questionDao.searchScore("2240170128"));
-//        try {
-
-
-//        System.out.println(LoadTxt.ReadQuestions("classpath:Questions/Research_2"));
-
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        UserServiceImp user = new UserServiceImp();
-//        UserDaoImp userDaoImp = new UserDaoImp();
-//        System.out.println(user.analyzingRes());
-//        System.out.println(user.percent(3,4));
-
+//        System.out.println(imp.showBoardMsg("2240170128"));
 
 
     }

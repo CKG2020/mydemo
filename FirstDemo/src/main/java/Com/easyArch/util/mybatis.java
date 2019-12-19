@@ -13,7 +13,6 @@ public class mybatis {
     private static mybatis mm= new mybatis();
     private static SqlSessionFactory sqlSessionFactory;
     private mybatis(){
-
         // 读取配置文件
         InputStream inputStream = null;
         try {

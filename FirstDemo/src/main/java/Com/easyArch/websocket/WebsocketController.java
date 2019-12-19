@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class WebsocketController {
+
     @Bean//这个注解会从Spring容器拿出Bean
     public SpringWebSocketHandler infoHandler() {
         return new SpringWebSocketHandler();
@@ -34,7 +35,8 @@ public class WebsocketController {
     @ResponseBody
     public String send(HttpServletRequest request) {
         String userSno = ((User)request.getSession().getAttribute("user")).getSno();
-        infoHandler().sendMessageToUser(userSno, new TextMessage("你好，测试！！！！"));
+        System.out.println("sendFrom:"+userSno);
+        infoHandler().sendMessageToUsers(new TextMessage("你好，测试！！！！"));
         return null;
     }
 }

@@ -30,7 +30,7 @@
 
     <update id="updateFinishedQuestion" parameterType="Com.easyArch.entity.UserBoard">
         update SSHpro.UserBoard SET
-        IsFinishedQuestion=true,
+        IsFinishedQuestion=#{isFinishedQuestion},
         Scores=#{scores}
         where Sno = #{sno}
     </update>
@@ -50,23 +50,74 @@
     <select id="findScore" resultType="Integer">
         select SSHpro.UserBoard.Scores from SSHpro.UserBoard where IsFinishedQuestion=1
     </select>
+    <select id="findUserBoard" resultType="Com.easyArch.entity.UserBoard">
+        select * from SSHpro.UserBoard where Sno=#{sno}
+     </select>
 
-
-
-    <select id="myFriends" resultType="java.util.Map" parameterType="java.lang.String">
-        select SSHpro.UserInfo.Sname,SSHpro.UserInfo.Sno
-        from SSHpro.UserInfo where Sno in (select SSHpro.pyq.Sno2 from SSHpro.pyq where Sno1=#{sno})
-        </select>
-
-    <select id="countFriends" resultType="Integer">
-        select COUNT(*) from SSHpro.pyq where Sno1=#{sno}
+    <select id="showBoardMsg" resultType="Com.easyArch.entity.BoardMsg">
+        select Board_Msg.board_text,Board_Msg.from_name,Board_Msg.date_time from SSHpro.Board_Msg
+        where SSHpro.Board_Msg.Sno=#{sno} order by date_time DESC
     </select>
-    <insert id="addFriend" useGeneratedKeys="true">
-        insert into SSHpro.pyq(Sno1,Sno2) values (null,#{sno1},#{sno2})
+
+    <insert id="insertBoardMsg" parameterType="Com.easyArch.entity.BoardMsg">
+        insert into SSHpro.Board_Msg(sno, from_name, board_text, date_time)
+        values (#{sno},#{from_name},#{board_text},#{date_time} )
     </insert>
 
-    <delete id="delFriend">
+    <select id="boardMsgCount" resultType="Integer">
+        select count(*) from SSHpro.Board_Msg where sno=#{sno}
+    </select>
+
+    <select id="historyMsgCount" resultType="Integer">
+        select msgCount from SSHpro.UserBoard where sno=#{sno}
+    </select>
+    <select id="historyRequestCount" resultType="Integer">
+        select requestCount from SSHpro.UserBoard where sno=#{sno}
+    </select>
+    <update id="setHistoryMsgCount" parameterType="Com.easyArch.entity.Tips">
+        update SSHpro.UserBoard set msgCount=#{count} where sno=#{sno}
+    </update>
+    <update id="setHistoryRequestCount">
+        update SSHpro.UserBoard set requestCount=#{count} where sno=#{sno}
+    </update>
+
+    <select id="myFriends" resultType="Com.easyArch.entity.User">
+        select
+        UserInfo.Sno, Sname, Sage, Scall, Collage, Major, Sclass, Gender, Birth
+        from SSHpro.UserInfo where UserInfo.Sno in (select SSHpro.pyq.Sno2 from SSHpro.pyq where Sno1=#{sno} and addStatus=1)
+    </select>
+    <select id="friendsRequest" resultType="Com.easyArch.entity.User">
+        select
+        UserInfo.Sno, Sname, Sage, Scall, Collage, Major, Sclass, Gender, Birth
+        from SSHpro.UserInfo where UserInfo.Sno in (select SSHpro.pyq.Sno1 from SSHpro.pyq where Sno2=#{sno} and addStatus=0)
+    </select>
+
+    <select id="countFriends" resultType="Integer">
+        select COUNT(*) from SSHpro.pyq where Sno1=#{sno} and addStatus=1
+    </select>
+    <select id="countRequest" resultType="Integer">
+        select COUNT(*) from SSHpro.pyq where Sno2=#{sno} and addStatus=0
+    </select>
+
+    <insert id="addFriendRequest" parameterType="Com.easyArch.entity.FriendRequest" useGeneratedKeys="true">
+        insert into SSHpro.pyq(Sno1,Sno2,addStatus) values (#{sno1},#{sno2},0)
+    </insert>
+    <update id="acceptAdd" parameterType="Com.easyArch.entity.FriendRequest">
+        update SSHpro.pyq set addStatus=1
+        where sno1=#{sno1} and sno2=#{sno2}
+    </update>
+    <insert id="addFriend" parameterType="Com.easyArch.entity.FriendRequest" useGeneratedKeys="true">
+        insert into SSHpro.pyq(Sno1,Sno2,addStatus) values (#{sno2},#{sno1},1)
+    </insert>
+    <delete id="refuseAdd">
+        delete from SSHpro.pyq where sno1=#{sno1} and sno2=#{sno2};
+    </delete>
+
+
+    <delete id="delFriend1" parameterType="Com.easyArch.entity.FriendRequest">
         delete from SSHpro.pyq where Sno1=#{sno1} and Sno2=#{sno2};
+    </delete>
+    <delete id="delFriend2" parameterType="Com.easyArch.entity.FriendRequest">
         delete from SSHpro.pyq where Sno2=#{sno1} and Sno1=#{sno2}
     </delete>
 

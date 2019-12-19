@@ -1,8 +1,6 @@
 package Com.easyArch.dao;
 
-import Com.easyArch.entity.Admin;
-import Com.easyArch.entity.User;
-import Com.easyArch.entity.UserBoard;
+import Com.easyArch.entity.*;
 
 import java.util.List;
 
@@ -11,31 +9,53 @@ public interface UserDAO {
     int addUser(User user, UserBoard userBoard);//注册
     boolean deleteUser(String id);
 
-    List<User> findAll();//管理员查所有成员 简单分页
+    List<UserShow> findAll();//管理员查所有成员 简单分页
 
-    List<User> findUsersBySno(String sno);
-    List<User> findUsersByName(String name);
-    List<User> findUsersByAge(int age);
-    List<User> findUsersByCollage(String collage);
-    List<User> findUsersByClass(String sclass);
+    List<UserShow> findUsersBySno(String sno);
+    List<UserShow> findUsersByName(String name);
+    List<UserShow> findUsersByAge(int age);
+    List<UserShow> findUsersByCollage(String collage);
+    List<UserShow> findUsersByClass(String sclass);
 
     String findUserNameBySno(String sno);
-
 
     User login(String username, String pwd);
     Admin adminlogin(String username, String pwd);
     boolean updateUser(User user);
 
     int findSnoCount(String sno);
+
     int findallcount();
+    int findAllFinished();
     int findAgeCount(int age);
     int findNameCount(String name);
     int findCollageCount(String collage);
     int findClassCount(String sclass);
+    int findFriendsCount(String sno);
 
+    UserBoard setScores(String sno,int scores);
+    int searchScore(String sno);
+    boolean isFinished(String sno);
+
+    List<BoardMsg> showBoardMsg(String sno);
+    boolean insertBoardMsg(BoardMsg msg);
+
+    int countBoardMsg(String sno);
+    int countRequest(String sno);
+
+    int historyMsgCount(String sno);
+    int historyRequestCount(String sno);
+    int setHistoryMsgCount(Tips tips);
+    int setHistoryRequestCount(Tips tips);
+
+    boolean addRequest(FriendRequest request);
+    boolean acceptRequest(FriendRequest request);
+    boolean refuseRequest(FriendRequest request);
+    void close();
+    void getSession();
+
+    List<UserBoard> findUserBoard(String sno);
     User findUserBySno(String sno);
-
-
-//    List<User> findpage(int start,int end);
+    List<Integer> findScore();
 
 }

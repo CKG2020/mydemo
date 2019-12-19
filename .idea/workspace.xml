@@ -6,7 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80826f5b-5953-4d63-a43a-b702f8589979" name="Default Changelist" comment="准备添加好友列表,留言板&#10;以及聊天室UI设计&#10;&#10; 现已实现管理员可以看系统的总体分析，用circle很好看的百分比饼图" />
+    <list default="true" id="80826f5b-5953-4d63-a43a-b702f8589979" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4cd4cc8a-f46c-48f2-830a-5b41850304ba.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4cd4cc8a-f46c-48f2-830a-5b41850304ba.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstDemo/target/FirstDemo-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/FirstDemo-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstDemo/target/FirstDemo-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/FirstDemo-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstDemo/target/classes/templates/test/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/FirstDemo/target/classes/templates/test/chat.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/FirstDemo/target/" />
@@ -50,6 +57,20 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="SSHpro: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="Board_Msg: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="SSHpro: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="pyq: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="SSHpro: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="Questions: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
@@ -81,130 +102,81 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/QuestionDaoImp.java">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="264">
+              <caret line="14" column="34" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/demo.html">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="248" column="7" selection-start-line="248" selection-start-column="7" selection-end-line="248" selection-end-column="7" />
-              <folding>
-                <element signature="n#breadcrumb#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/analyzing.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="51" column="55" lean-forward="true" selection-start-line="51" selection-start-column="55" selection-end-line="51" selection-end-column="55" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i-circle#1;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i-circle#2;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i-circle#3;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/MoreInfo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
-              <folding>
-                <element signature="n#i-menu#0;n#sider#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i-input#0;n#form-item#0;n#i-form#0;n#div#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i-input#0;n#form-item#1;n#i-form#0;n#div#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i-input#0;n#form-item#2;n#i-form#0;n#div#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form-item#3;n#i-form#0;n#div#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form-item#4;n#i-form#0;n#div#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form-item#5;n#i-form#0;n#div#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Login.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="121" column="29" lean-forward="true" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i-button#0;n#form-item#3;n#i-form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i-button#1;n#form-item#3;n#i-form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="3806">
+              <caret line="218" column="52" selection-start-line="218" selection-start-column="52" selection-end-line="218" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/First.java">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="79" column="20" lean-forward="true" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+            <state relative-caret-position="332">
+              <caret line="64" column="20" lean-forward="true" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1980#1981#0" expanded="true" />
-                <element signature="e#2019#2020#0" expanded="true" />
-                <element signature="e#2380#2381#0" expanded="true" />
-                <element signature="e#2415#2416#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i-input#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/addQuestion.html">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandlerInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="440">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/Questions/Research_2">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+            <state relative-caret-position="572">
+              <caret line="31" column="74" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/Questions">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true">
-                <filter text="" />
-              </filtering>
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/Questions/Research_2_Res">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mybatis-config.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/QuestionMapper.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -215,8 +187,8 @@
         <option value="spring-beans.schema" />
         <option value="Tag Library Descriptor" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -224,9 +196,11 @@
     <findStrings>
       <find>update</find>
       <find>$PROJECT_DIR$/../../..</find>
+      <find>updateFinishedQuestion</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
@@ -235,57 +209,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/test.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Question.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/Questions/Research_1.txt" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/util/Page.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/questions.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/ReturnAnswer.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/Questions/Research_2_Result" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/Questions/Research_2_Res" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/UserBoard.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/FormValidate.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/pom.xml" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/QuestionMapper.xml" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/QuestionService.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/QuestionDao.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/QuestionServiceImp.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/Questions/Research_2" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDAO.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Questions.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Analyzing.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Login.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/stu.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/PermissionLimit.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Application.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/util/mybatis.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/QuestionDaoImp.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDaoImp.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/First.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/MoreInfo.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/Question.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/User.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/Question.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/demo.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/util/LoadTxt.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/listener.html" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/addQuestion.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/demodel.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/News.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/util/mybatis.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Register.html" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/analyzing.html" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/UserBoard.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/Question.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/QuestionDao.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/QuestionServiceImp.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/QuestionService.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/User.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/FriendShow.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/QuestionDaoImp.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/BoardMsg.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/FriendsServiceImp.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/util/dateUtil.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4cd4cc8a-f46c-48f2-830a-5b41850304ba/console_1.sql" />
+        <option value="4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/Board_Msg.sql" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/friendRequest.java" />
+        <option value="4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/UserInfo.sql" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Questions.html" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/Tips.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/MoreInfo.html" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Analyzing.html" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Board.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/analyzingData.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDao.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/FriendsService.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserBoard.xml" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/WebsocketController.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketConfig.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDaoImp.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/First.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/UserA.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserService.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserServiceImp.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/test.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/stu.java" />
         <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/admin.java" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/analyzing.html" />
-        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Register.html" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/UserShow.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/demo.html" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Login.html" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Hello.html" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandler.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandlerInterceptor.java" />
+        <option value="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html" />
       </list>
     </option>
   </component>
@@ -301,18 +275,13 @@
           <item name="FirstDemo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="FirstDemo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="8" />
-    <option name="width" value="1912" />
+    <option name="x" value="240" />
+    <option name="width" value="1440" />
     <option name="height" value="1016" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -321,7 +290,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -361,55 +329,6 @@
               <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easyArch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easyArch" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easyArch" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easyArch" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easyArch" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -438,6 +357,25 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="QuestionsFinished" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
+              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
+              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="pic" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
@@ -482,12 +420,28 @@
               <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="mydemo" type="462c0819:PsiDirectoryNode" />
               <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
+              <item name="FirstDemo" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mydemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mydemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Personal_Relation_System" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -521,27 +475,27 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper" />
-      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/static/pic" />
-      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/static/js" />
-      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu" />
-      <recent name="$PROJECT_DIR$/out/artifacts/test_jar" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Com.easyArch.Controller" />
-      <recent name="Com.easyArch.util" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/Questions" />
       <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/static/pic" />
       <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin" />
       <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Com.easyArch.Controller" />
+      <recent name="Com.easyArch.util" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/static/pic" />
+      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/static/js" />
+      <recent name="$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu" />
+      <recent name="$PROJECT_DIR$/out/artifacts/test_jar" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -636,19 +590,22 @@
     </configuration>
     <list>
       <item itemvalue="Application.test" />
-      <item itemvalue="Spring Boot.Application" />
       <item itemvalue="JAR Application.FirstDemo-0.0.1-SNAPSHOT.jar" />
+      <item itemvalue="Spring Boot.Application" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JAR Application.FirstDemo-0.0.1-SNAPSHOT.jar" />
-        <item itemvalue="Spring Boot.Application" />
         <item itemvalue="Application.test" />
+        <item itemvalue="Spring Boot.Application" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpringRepositoriesView">
     <option name="searchInLibraries" value="true" />
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
   </component>
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
@@ -752,7 +709,27 @@
       <workItem from="1575251682344" duration="3304000" />
       <workItem from="1575285946410" duration="10663000" />
       <workItem from="1575299361750" duration="1356000" />
-      <workItem from="1575351391619" duration="6689000" />
+      <workItem from="1575351391619" duration="7871000" />
+      <workItem from="1575444690950" duration="4998000" />
+      <workItem from="1575456059371" duration="3159000" />
+      <workItem from="1575461849690" duration="1316000" />
+      <workItem from="1575510869110" duration="2861000" />
+      <workItem from="1575721019386" duration="7055000" />
+      <workItem from="1575880379757" duration="5137000" />
+      <workItem from="1575890508012" duration="6492000" />
+      <workItem from="1575938753246" duration="1315000" />
+      <workItem from="1575942891395" duration="35398000" />
+      <workItem from="1576031189329" duration="4023000" />
+      <workItem from="1576038402733" duration="2880000" />
+      <workItem from="1576054793802" duration="14282000" />
+      <workItem from="1576151759770" duration="7619000" />
+      <workItem from="1576203004395" duration="1556000" />
+      <workItem from="1576205291666" duration="428000" />
+      <workItem from="1576221593276" duration="38000" />
+      <workItem from="1576222901059" duration="1978000" />
+      <workItem from="1576491576067" duration="1025000" />
+      <workItem from="1576758853273" duration="346000" />
+      <workItem from="1576760549540" duration="641000" />
     </task>
     <task id="LOCAL-00001" summary="准备添加Question模块">
       <created>1572445686792</created>
@@ -782,11 +759,46 @@
       <option name="project" value="LOCAL" />
       <updated>1575368577651</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="现已实现管理员可以看系统的总体分析，用circle很好看的百分比饼图&#10;数据不同步问题已修复&#10;原因是sqlsession这个事务管理没有理解好，&#10;业务搞混了，要操作的对象搞混了，对问题的session不要去对用户操作呀！">
+      <created>1575727533063</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575727533063</updated>
+    </task>
+    <task id="LOCAL-00006" summary="今天的提交：&#10;留言功能实现。&#10;添加好友实现。剩下一个拒绝以及徽标提示，以及。。。聊天室没设计&#10;用了iview，抽屉很不错，查看信息很像回事了。&#10;ajax的异步操作是真的快。。">
+      <created>1575985176943</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575985176943</updated>
+    </task>
+    <task id="LOCAL-00007" summary="今天的提交：&#10;留言功能实现。&#10;添加好友实现。剩下一个拒绝以及徽标提示，以及。。。聊天室没设计&#10;用了iview，抽屉很不错，查看信息很像回事了。&#10;ajax的异步操作是真的快。。">
+      <created>1575985644358</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575985644358</updated>
+    </task>
+    <task id="LOCAL-00008" summary="今天的提交：&#10;留言板以及好友申请的徽标提示&#10;好友删除也做好了。">
+      <created>1576072271029</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576072271029</updated>
+    </task>
+    <task id="LOCAL-00009" summary="今天的提交：&#10;留言板以及好友申请的徽标提示&#10;好友删除也做好了。&#10;调通了websocket代码，现在差聊天室的界面了。。。">
+      <created>1576075358842</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1576075358842</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="524028000" />
+    <option name="totallyTimeSpent" value="627757000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -798,194 +810,307 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1920" height="1017" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1016" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49464923" visible="true" weight="0.30086115" />
-      <window_info id="Structure" order="1" sideWeight="0.50535077" side_tool="true" weight="0.25026911" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.489893" visible="true" weight="0.2007535" />
+      <window_info id="Structure" order="1" sideWeight="0.51010704" side_tool="true" weight="0.24165769" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" sideWeight="0.50358" side_tool="true" weight="0.25941873" />
-      <window_info anchor="bottom" id="SVN Repositories" weight="0.32936978" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32818073" />
-      <window_info anchor="bottom" auto_hide="true" id="Run" order="2" sideWeight="0.49515608" weight="0.79785967" />
+      <window_info anchor="bottom" auto_hide="true" id="Run" order="2" sideWeight="0.49461788" weight="0.83253586" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5469679" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32818073" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.32818073" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32818073" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32535884" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4967707" weight="0.46730083" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5048439" side_tool="true" weight="0.51486325" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5053821" side_tool="true" weight="0.5065398" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32818073" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32818073" />
       <window_info anchor="bottom" id="Database Changes" order="13" weight="0.32818073" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32818073" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.57193816" />
       <window_info anchor="bottom" id="TypeScript" order="15" />
-      <window_info anchor="bottom" id="SQL Generator" order="16" weight="0.32818073" />
-      <window_info anchor="bottom" id="Database Console" order="17" weight="0.89179546" />
+      <window_info anchor="bottom" id="SQL Generator" order="16" weight="0.69138753" />
+      <window_info anchor="bottom" id="SVN Repositories" order="17" weight="0.32936978" />
+      <window_info anchor="bottom" id="Database Console" order="18" weight="0.89179546" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.2497309" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.32992464" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="right" id="Bean Validation" order="8" weight="0.32992464" />
-      <window_info anchor="right" id="Database" order="9" weight="0.21959096" />
+      <window_info anchor="right" id="Bean Validation" order="3" weight="0.32992464" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.32992464" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Database" order="9" weight="0.25188375" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="准备添加Question模块" />
     <MESSAGE value="准备添加好友列表" />
     <MESSAGE value="准备添加好友列表,留言板&#10;以及聊天室UI设计&#10;&#10; 现已实现管理员可以看系统的总体分析，用circle很好看的百分比饼图" />
-    <option name="LAST_COMMIT_MESSAGE" value="准备添加好友列表,留言板&#10;以及聊天室UI设计&#10;&#10; 现已实现管理员可以看系统的总体分析，用circle很好看的百分比饼图" />
+    <MESSAGE value="现已实现管理员可以看系统的总体分析，用circle很好看的百分比饼图&#10;数据不同步问题已修复&#10;原因是sqlsession这个事务管理没有理解好，&#10;业务搞混了，要操作的对象搞混了，对问题的session不要去对用户操作呀！" />
+    <MESSAGE value="今天的提交：&#10;留言功能实现。&#10;添加好友实现。剩下一个拒绝以及徽标提示，以及。。。聊天室没设计&#10;用了iview，抽屉很不错，查看信息很像回事了。&#10;ajax的异步操作是真的快。。" />
+    <MESSAGE value="今天的提交：&#10;留言板以及好友申请的徽标提示&#10;好友删除也做好了。" />
+    <MESSAGE value="今天的提交：&#10;留言板以及好友申请的徽标提示&#10;好友删除也做好了。&#10;调通了websocket代码，现在差聊天室的界面了。。。" />
+    <option name="LAST_COMMIT_MESSAGE" value="今天的提交：&#10;留言板以及好友申请的徽标提示&#10;好友删除也做好了。&#10;调通了websocket代码，现在差聊天室的界面了。。。" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mybatis-config.xml">
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/static/pic/pika.png" />
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+        <state relative-caret-position="-264">
+          <caret line="78" column="27" lean-forward="true" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1405">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandlerInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/WebsocketController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/Error.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/stu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/util/LoadTxt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Questions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1914">
-          <caret line="87" column="44" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-button#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/LoginAdmin.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Board.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="131" column="25" lean-forward="true" selection-start-line="131" selection-start-column="25" selection-end-line="131" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/listener.html">
+    <entry file="das://4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/UserInfo.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/demodel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="758">
+          <caret line="81" column="82" selection-start-line="81" selection-start-column="76" selection-end-line="81" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#5015#5670#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/Board_Msg">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/FriendRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/FriendsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/5.1.10.RELEASE/spring-websocket-5.1.10.RELEASE.jar!/org/springframework/web/socket/handler/AbstractWebSocketHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding>
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDaoImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+          <folding>
+            <element signature="e#644#645#0" expanded="true" />
+            <element signature="e#715#716#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/First.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/Question.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="333">
+          <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserBoard.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/QuestionServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/util/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/Tips.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="18" selection-start-line="18" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/FriendsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="60" column="17" lean-forward="true" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+          <folding>
+            <element signature="e#2065#2066#0" expanded="true" />
+            <element signature="e#2134#2135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.1.10.RELEASE/spring-beans-5.1.10.RELEASE.jar!/org/springframework/beans/factory/annotation/Autowired.class">
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/UserBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="110">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/QuestionMapper.xml">
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/UserShow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="242">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Hello.html" />
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="8" selection-end-column="97" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Analyzing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="8" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/QuestionFinished" />
     <entry file="das://4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/UserBoard">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -995,223 +1120,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/SingleChoiceAnswers.java" />
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/ReturnAnswer.java">
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/FriendList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/FormValidate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/Answer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/ResearchService.java" />
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/FriendsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/QuestionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/QuestionServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="40" selection-start-line="40" selection-end-line="54" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Analyzing.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="83" column="37" lean-forward="true" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+        <state relative-caret-position="8">
+          <caret line="276" column="26" lean-forward="true" selection-start-line="276" selection-start-column="26" selection-end-line="281" selection-end-column="27" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#drawer#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-input#0;n#div#1;n#drawer#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-table#0;n#div#2;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-button#0;n#template#1;n#i-table#0;n#div#2;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-button#0;n#template#1;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-button#1;n#template#1;n#i-table#0;n#div#3;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-table#0;n#div#4;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/WebsocketController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+        <state relative-caret-position="528">
+          <caret line="36" column="75" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="83" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/demodel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="162" column="34" lean-forward="true" selection-start-line="162" selection-start-column="34" selection-end-line="162" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/Questions/Research_2_Res">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserBoard.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1804">
-          <caret line="121" column="44" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/AnalyzingData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3190">
-          <caret line="167" column="55" selection-start-line="167" selection-start-column="55" selection-end-line="167" selection-end-column="55" />
-          <folding>
-            <element signature="e#3935#3936#0" expanded="true" />
-            <element signature="e#3999#4000#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/entity/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
-          <caret line="125" column="15" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
-          <folding>
-            <element signature="e#3363#3364#0" expanded="true" />
-            <element signature="e#3431#3432#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/QuestionDaoImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="248" column="7" selection-start-line="248" selection-start-column="7" selection-end-line="248" selection-end-column="7" />
-          <folding>
-            <element signature="n#breadcrumb#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/addQuestion.html">
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Login.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/UserInfo">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/Questions">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/Questions/Research_2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1045#1046#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/MoreInfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
+        <state relative-caret-position="308">
+          <caret line="125" column="10" selection-start-line="14" selection-end-line="126" />
           <folding>
-            <element signature="n#i-menu#0;n#sider#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1228,42 +1183,154 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/analyzing.html">
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/admin/demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="51" column="55" lean-forward="true" selection-start-line="51" selection-start-column="55" selection-end-line="51" selection-end-column="55" />
+        <state relative-caret-position="2442">
+          <caret line="111" column="41" selection-start-line="111" selection-start-column="41" selection-end-line="111" selection-end-column="41" />
           <folding>
+            <element signature="n#style#0;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Board.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2948">
+          <caret line="134" column="24" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/stu/Questions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-circle#1;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-circle#2;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-circle#3;n#div#1;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-button#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/First/Register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="121" column="29" lean-forward="true" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-button#0;n#form-item#3;n#i-form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i-button#1;n#form-item#3;n#i-form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/First.java">
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/Controller/stu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="79" column="20" lean-forward="true" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+        <state relative-caret-position="303">
+          <caret line="115" column="24" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1980#1981#0" expanded="true" />
-            <element signature="e#2019#2020#0" expanded="true" />
-            <element signature="e#2380#2381#0" expanded="true" />
-            <element signature="e#2415#2416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/FriendsServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/QuestionsFinished/02240170128_20191101.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/Questions/Research_2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4972">
+          <caret line="272" column="18" selection-start-line="272" selection-start-column="18" selection-end-line="272" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/dao/UserDaoImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3806">
+          <caret line="218" column="52" selection-start-line="218" selection-start-column="52" selection-end-line="218" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandlerInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/java/Com/easyArch/websocket/SpringWebSocketHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="31" column="74" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/Questions/Research_2_Res">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/mapper/QuestionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://4cd4cc8a-f46c-48f2-830a-5b41850304ba/schema/SSHpro/table/pyq">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FirstDemo/src/main/resources/templates/test/chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="64" column="20" lean-forward="true" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#i-header#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i-input#0;n#div#0;n#card#0;n#i-content#0;n#layout#0;n#layout#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

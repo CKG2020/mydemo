@@ -1,18 +1,16 @@
 package Com.easyArch.dao;
 
 
-import Com.easyArch.entity.Admin;
-import Com.easyArch.entity.User;
-import Com.easyArch.entity.UserBoard;
+import Com.easyArch.entity.*;
 import Com.easyArch.util.mybatis;
 import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 public class UserDaoImp implements UserDAO{
 
-    SqlSession sqlSession ;
+    public static SqlSession sqlSession ;
 
-    {
+    static {
         sqlSession=mybatis.getSqlSession();
     }
 
@@ -26,7 +24,6 @@ public class UserDaoImp implements UserDAO{
 
     @Override
     public boolean deleteUser(String sno) {
-//
         sqlSession.delete("UserMapper.delpyq",sno);
         sqlSession.delete("UserMapper.delb",sno);
         sqlSession.delete("UserMapper.delUser", sno);
@@ -36,32 +33,31 @@ public class UserDaoImp implements UserDAO{
     }
 
     @Override
-    public List<User> findAll() {
-        return sqlSession.selectList("UserMapper.findall");
+    public List<UserShow> findAll() {
+        return sqlSession.selectList("UserMapper.findUserShow");
     }
 
     @Override
-    public List<User> findUsersBySno(String Sno) {
+    public List<UserShow> findUsersBySno(String Sno) {
         return sqlSession.selectList("UserMapper.findbysno",Sno);
     }
 
     @Override
-    public List<User> findUsersByName(String name) {
+    public List<UserShow> findUsersByName(String name) {
         return sqlSession.selectList("UserMapper.findbyName",name);
     }
 
     @Override
-    public List<User> findUsersByAge(int age) {
+    public List<UserShow> findUsersByAge(int age) {
         return sqlSession.selectList("UserMapper.findbyAge",age);
     }
 
     @Override
-    public List<User> findUsersByCollage(String collage) {
+    public List<UserShow> findUsersByCollage(String collage) {
         return sqlSession.selectList("UserMapper.findbyCollage",collage);
     }
-
     @Override
-    public List<User> findUsersByClass(String sclass) {
+    public List<UserShow> findUsersByClass(String sclass) {
         return sqlSession.selectList("UserMapper.findbyClass",sclass);
     }
 
@@ -98,6 +94,11 @@ public class UserDaoImp implements UserDAO{
     }
 
     @Override
+    public int findAllFinished(){
+        return sqlSession.selectOne("UserBoard.allFinished");
+    }
+
+    @Override
     public int findAgeCount(int age){
         return sqlSession.selectOne("UserMapper.findAgeCount",age);
     }
@@ -118,16 +119,125 @@ public class UserDaoImp implements UserDAO{
     }
 
     @Override
+    public int findFriendsCount(String sno) {
+        return sqlSession.selectOne("UserBoard.countFriends",sno);
+    }
+
+    @Override
+    public UserBoard setScores(String sno,int scores) {
+        UserBoard userBoard = new UserBoard();
+        userBoard.setSno(sno);
+        userBoard.setIsFinishedQuestion(true);
+        userBoard.setScores(scores);
+        sqlSession.update("updateFinishedQuestion",userBoard);
+        sqlSession.commit();
+        return userBoard;
+    }
+    @Override
+    public int searchScore(String sno){
+        return sqlSession.selectOne("UserBoard.searchScore",sno);
+    }
+
+    @Override
+    public boolean isFinished(String sno) {
+        if(sqlSession.selectOne("UserBoard.isFinished", sno)==null){
+            return false;
+        }
+        return sqlSession.selectOne("UserBoard.isFinished", sno);
+    }
+
+    @Override
+    public List<BoardMsg> showBoardMsg(String sno) {
+        return sqlSession.selectList("UserBoard.showBoardMsg",sno);
+    }
+
+    @Override
     public User findUserBySno(String sno) {
-        return sqlSession.selectOne("UserMapper.selectUser",sno);
+        return sqlSession.selectOne("UserMapper.findUserBySno",sno);
     }
     //实现对数据库操作的接口中的方法
 
-    public int findAllFinished(){
-        return sqlSession.selectOne("UserBoard.allFinished");
-    }
-
+    @Override
     public List<Integer> findScore(){
         return sqlSession.selectList("UserBoard.findScore");
+    }
+
+    @Override
+    public boolean insertBoardMsg(BoardMsg msg) {
+        sqlSession.insert("UserBoard.insertBoardMsg",msg);
+        sqlSession.commit();
+        return true;
+    }
+
+    @Override
+    public int countBoardMsg(String sno) {
+        return sqlSession.selectOne("UserBoard.boardMsgCount",sno);
+    }
+
+    @Override
+    public int historyMsgCount(String sno) {
+        return sqlSession.selectOne("UserBoard.historyMsgCount",sno);
+    }
+
+    @Override
+    public int historyRequestCount(String sno) {
+        return sqlSession.selectOne("UserBoard.historyRequestCount",sno);
+    }
+
+    @Override
+    public int setHistoryMsgCount(Tips tips) {
+        System.out.println(tips);
+        sqlSession.update("UserBoard.setHistoryMsgCount", tips);
+        sqlSession.commit();
+        return 0;
+    }
+
+    @Override
+    public int setHistoryRequestCount(Tips tips) {
+        sqlSession.update("UserBoard.setHistoryRequestCount", tips);
+        sqlSession.commit();
+        return 0;
+    }
+
+    @Override
+    public boolean addRequest(FriendRequest request) {
+        sqlSession.insert("UserBoard.addFriendRequest",request);
+        sqlSession.commit();
+        return true;
+    }
+
+    @Override
+    public boolean acceptRequest(FriendRequest request) {
+        sqlSession.update("UserBoard.acceptAdd",request);
+        sqlSession.insert("UserBoard.addFriend",request);
+        sqlSession.commit();
+        return true;
+    }
+
+    @Override
+    public boolean refuseRequest(FriendRequest request) {
+        sqlSession.delete("UserBoard.refuseAdd",request);
+        sqlSession.commit();
+        return true;
+    }
+
+    @Override
+    public int countRequest(String sno) {
+        return sqlSession.selectOne("UserBoard.countRequest",sno);
+    }
+
+    @Override
+    public void close() {
+        sqlSession.close();
+    }
+
+    @Override
+    public void getSession() {
+        sqlSession=mybatis.getSqlSession();
+    }
+
+    @Override
+    public List<UserBoard> findUserBoard(String sno) {
+        return sqlSession.selectOne("UserBoard.findUserBoard",sno);
     }
 }

@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/view-design/dist/styles/iview.css">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/view-design/dist/iview.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
-<body>
+<body onload="f();newMsgCount();newRequestCount()">
 <script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src="http://cdn.bootcss.com/sockjs-client/1.1.1/sockjs.js"></script>
 <script type="text/javascript">
+
     var websocket = null;
     if ('WebSocket' in window) {
         websocket = new WebSocket("ws://47.93.225.242:8080/websocket/socketServer.do");
@@ -23,19 +28,27 @@
     websocket.onerror = onError;
     websocket.onclose = onClose;
 
+
     function onOpen(openEvt) {
-        //alert(openEvt.Data);
+        // alert(openEvt.data);
     }
 
     function onMessage(evt) {
-        alert(evt.data);
+        setMessageInnerHTML(evt.data)
+        // alert(evt.data);
     }
     function onError() {}
     function onClose() {}
 
-    function doSend() {
+
+    function doSend(msg) {
         if (websocket.readyState === websocket.OPEN) {
-            var msg = document.getElementById("inputMsg").value;
+            d = new Date();
+            // var msg = document.getElementById("inputMsg").value;
+            msg='From:'+uu.sname+' '+d.getFullYear()
+                +'年'+(d.getMonth()+1)+'月'+d.getDate()
+                +'日'+d.getHours()+':'+d.getMinutes()
+                +':'+d.getSeconds()+":\n"+msg;
             websocket.send(msg);//调用后台handleTextMessage方法
             alert("发送成功!");
         } else {
@@ -45,10 +58,171 @@
     window.close=function()
     {
         websocket.onclose();
-    }
+    };
 
 </script>
-请输入：<textarea rows="5" cols="10" id="inputMsg" name="inputMsg"></textarea>
-<button onclick="doSend()">发送</button>
+<div id="app">
+<div class="layout">
+    <layout :style="{minHeight: '100vh'}">
+        <sider collapsible :collapsed-width="78" v-model="isCollapsed">
+            <i-menu theme="dark" width="auto" :class="menuitemClasses" open-names="['1','2']">
+                <submenu name="1">
+                    <template slot="title">
+                        个人中心
+                        <icon type="ios-paper"/>
+                    </template>
+                    <menu-item name="1-1">完善信息</menu-item>
+                    <Badge :count="countMsg">
+                        <menu-item name="1-2">
+                            <span onclick="Board()">
+                                留言板</span>
+                        </menu-item></Badge>
+                    <menu-item name="1-3">
+                            <span onclick="Questions()">
+                                调查问卷
+                            </span></menu-item>
+                    <menu-item name="1-4">
+                            <span onclick="Analyzing()">
+                                分析结果
+                            </span></menu-item>
+                </submenu>
+                <submenu name="2">
+                    <template slot="title">聊天室
+                        <icon type="ios-people" />
+                    </template>
+                    <Badge :count="countNewRequest">
+                        <menu-item name="2-1">
+                            <span onclick="FriendList()">好友列表</span>
+                        </menu-item></Badge>
+                    <menu-item name="2-2">
+                        <span onclick="chat()">聊天室</span>
+                    </menu-item>
+                </submenu>
+            </i-menu>
+        </sider>
+        <layout>
+            <i-header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}">
+                <div style="float: left;margin-left: 70%">
+                    <h1>欢迎您 ! &nbsp;&nbsp; {{message}}</h1>
+                </div>
+                <a href="/Login" style="margin-left: 50px"> 注销</a>
+            </i-header>
+            <i-content :style="{padding: '0 16px 16px'}">
+                <breadcrumb :style="{margin: '16px 0'}">
+                    {{info}}
+                </breadcrumb>
+                <card>
+                    <div>
+                        <i-input v-model="boardText" maxlength="50" show-word-limit type="textarea"
+                                 placeholder="Enter something..." style="width:100%"></i-input>
+                        <i-button type="success" long @click="sendMsg()">SUBMIT</i-button>
+                    </div>
+                    <div id="message">
+
+                    </div>
+                    <div style="margin-left: 65%;margin-top: 25%">
+                        <img src="/static/pic/cat.png" style="height: 250px;width: 250px">
+                    </div>
+                </card>
+            </i-content>
+        </layout>
+    </layout>
+</div>
+</div>
+<script>
+    function setMessageInnerHTML(innerHTML) {
+        document.getElementById('message').innerHTML+=innerHTML+'<br/>'
+    }
+    function Questions() {
+        mVue.choose="Questions";
+        window.location.href="/stu/Questions/";
+    }
+    function Analyzing() {
+        mVue.choose="Analyzing";
+        window.location.href="/stu/Analyzing/";
+    }
+    function Board() {
+        mVue.choose="Board";
+        window.location.href="/stu/Board/";
+    }
+    function FriendList() {
+        mVue.choose="FriendList";
+        window.location.href="/stu/FriendList/";
+    }
+    function MoreInfo() {
+        // mVue.choose="Questions";
+        window.location.href="/stu/MoreInfo/";
+    }
+    var mVue = new Vue({
+        el:'#app',
+        data(){
+            return{
+                boardText:'',
+                countMsg:'',
+                countNewRequest:'',
+                message:'',
+                info:'',
+                isCollapsed: false,
+                choose:'',
+            }
+        },
+        computed: {
+            menuitemClasses: function () {
+                return [
+                    'menu-item',
+                    this.isCollapsed ? 'collapsed-menu' : ''
+                ]
+            },
+        },
+        methods:{
+            sendMsg() {
+                doSend(mVue.boardText);
+            }
+        }
+    });
+    function newMsgCount() {
+        $.ajax({
+            url:'/stu/newMsgCount',
+            type:'post',
+            success(res){
+                mVue.countMsg=res;
+                console.log(res);
+            }
+        })
+    }
+    function newRequestCount(){
+        $.ajax({
+            url:'/stu/newRequestCount',
+            type:'post',
+            success(res) {
+                mVue.countNewRequest=res;
+                console.log(res);
+            }
+        })
+    }
+    var uu;
+    function f(){
+        $.ajax({
+            url:'/search',
+            type:'get',
+            success(res) {
+                let msg=JSON.stringify(res);
+                msg=$.parseJSON(msg);
+                uu=msg;
+                if(res.sname===null){
+                    active("新用户!","请完善你的个人信息");
+                    MoreInfo();
+                }else{
+                    active(msg.sname);
+                }
+            }
+        })
+    }
+
+    function active(res,ss) {
+        mVue.message=res;
+        mVue.info=ss;
+    }
+</script>
 </body>
 </html>
