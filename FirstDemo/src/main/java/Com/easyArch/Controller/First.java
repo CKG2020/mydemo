@@ -29,6 +29,10 @@ public class First {
         }
         return "First/Login";
     }
+    @RequestMapping(value="")
+    public String index(){
+        return "index";
+    }
 
     @RequestMapping("LoginAdmin")
     public String test2(){ return "First/LoginAdmin"; }
